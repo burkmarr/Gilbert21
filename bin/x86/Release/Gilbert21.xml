@@ -1,0 +1,613 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gilbert21
+</name>
+</assembly>
+<members>
+<member name="T:G21.clsExifWorks.TagNames">
+	<summary>
+ Contains possible values of EXIF tag names (ID)
+ </summary>
+	<remarks>See GdiPlusImaging.h</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.Orientations">
+	<summary>
+ Real position of 0th row and column of picture
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.ExposurePrograms">
+	<summary>
+ Exposure programs
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.ExposureMeteringModes">
+	<summary>
+ Exposure metering modes
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.FlashModes">
+	<summary>
+ Flash activity modes
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.LightSources">
+	<summary>
+ Possible light sources (white balance)
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.ExifDataTypes">
+	<summary>
+ EXIF data types
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.Rational.ToString(System.String)">
+	<summary>
+ Converts rational to string representation
+ </summary>
+	<param name="Delimiter">Optional, default "/". String to be used as delimiter of components.</param>
+	<returns>String representation of the rational.</returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.Rational.ToDouble">
+	<summary>
+ Converts rational to double precision real number
+ </summary>
+	<returns>The rational as double precision real number.</returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.Rational">
+	<summary>
+ Represents rational which is type of some Exif properties
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.#ctor(System.Drawing.Bitmap@)">
+	<summary>
+ Initializes new instance of this class.
+ </summary>
+	<param name="Bitmap">Bitmap to read exif information from</param>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.#ctor(System.String)">
+	<summary>
+ Initializes new instance of this class.
+ </summary>
+	<param name="FileName">Name of file to be loaded</param>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Encoding">
+	<summary>
+ Get or set encoding used for string metadata
+ </summary>
+	<value>Encoding used for string metadata</value>
+	<remarks>Default encoding is UTF-8</remarks>
+	<history>
+ [altair] 11.07.2004 Created
+ [altair] 05.09.2005 Changed from shared to instance member
+ </history>
+</member><member name="M:G21.clsExifWorks.GetBitmap">
+	<summary>
+ Returns copy of bitmap this instance is working on
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.ToString">
+	<summary>
+ Returns all available data in formatted string form
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.EquipmentMaker">
+	<summary>
+ Brand of equipment (EXIF EquipMake)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.EquipmentModel">
+	<summary>
+ Model of equipment (EXIF EquipModel)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Software">
+	<summary>
+ Software used for processing (EXIF Software)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Orientation">
+	<summary>
+ Orientation of image (position of row 0, column 0) (EXIF Orientation)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.DateTimeLastModified">
+	<summary>
+ Time when image was last modified (EXIF DateTime).
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.DateTimeOriginal">
+	<summary>
+ Time when image was taken (EXIF DateTimeOriginal).
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.DateTimeDigitized">
+	<summary>
+ Time when image was digitized (EXIF DateTimeDigitized).
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Width">
+	<summary>
+ Image width
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 04.09.2005 Changed output to Int32, load from image instead of EXIF
+ </history>
+</member><member name="P:G21.clsExifWorks.Height">
+	<summary>
+ Image height
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 04.09.2005 Changed output to Int32, load from image instead of EXIF
+ </history>
+</member><member name="P:G21.clsExifWorks.ResolutionX">
+	<summary>
+ X resolution in dpi (EXIF XResolution/ResolutionUnit)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ResolutionY">
+	<summary>
+ Y resolution in dpi (EXIF YResolution/ResolutionUnit)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Title">
+	<summary>
+ Image title (EXIF ImageTitle)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.UserComment">
+	<summary>
+ User comment (EXIF UserComment)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Artist">
+	<summary>
+ Artist name (EXIF Artist)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Description">
+	<summary>
+ Image description (EXIF ImageDescription)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Copyright">
+	<summary>
+ Image copyright (EXIF Copyright)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ExposureTime">
+	<summary>
+ Exposure time in seconds (EXIF ExifExposureTime/ExifShutterSpeed)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Aperture">
+	<summary>
+ Aperture value as F number (EXIF ExifFNumber/ExifApertureValue)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ExposureProgram">
+	<summary>
+ Exposure program used (EXIF ExifExposureProg)
+ </summary>
+	<value></value>
+	<remarks>If not specified, returns Normal (2)</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ISO">
+	<summary>
+ ISO sensitivity
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.SubjectDistance">
+	<summary>
+ Subject distance in meters (EXIF SubjectDistance)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ExposureMeteringMode">
+	<summary>
+ Exposure method metering mode used (EXIF MeteringMode)
+ </summary>
+	<value></value>
+	<remarks>If not specified, returns Unknown (0)</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.FocalLength">
+	<summary>
+ Focal length of lenses in mm (EXIF FocalLength)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.FlashMode">
+	<summary>
+ Flash mode (EXIF Flash)
+ </summary>
+	<value></value>
+	<remarks>If not present, value NotFired (0) is returned</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.LightSource">
+	<summary>
+ Light source / white balance (EXIF LightSource)
+ </summary>
+	<value></value>
+	<remarks>If not specified, returns Unknown (0).</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.IsPropertyDefined(System.Int32)">
+	<summary>
+ Checks if current image has specified certain property
+ </summary>
+	<returns>True if image has specified property, False otherwise.</returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyInt32(System.Int32,System.Int32)">
+	<summary>
+ Gets specified Int32 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default 0. Default value returned if property is not present.</param>
+	<remarks>Value of property or DefaultValue if property is not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyInt16(System.Int32,System.Int16)">
+	<summary>
+ Gets specified Int16 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default 0. Default value returned if property is not present.</param>
+	<remarks>Value of property or DefaultValue if property is not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyString(System.Int32,System.String)">
+	<summary>
+ Gets specified string property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default String.Empty. Default value returned if property is not present.</param>
+	<returns></returns>
+	<remarks>Value of property or DefaultValue if property is not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetProperty(System.Int32,System.Byte[])">
+	<summary>
+ Gets specified property in raw form
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default Nothing. Default value returned if property is not present.</param>
+	<returns></returns>
+	<remarks>Is recommended to use typed methods (like <see cref="M:G21.clsExifWorks.GetPropertyString(System.Int32,System.String)"/> etc.) instead, when possible.</remarks>
+	<history>
+ [altair] 05.09.2005 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyRational(System.Int32)">
+	<summary>
+ Gets specified rational property
+ </summary>
+	<param name="PID">Property ID</param>
+	<returns></returns>
+	<remarks>Value of property or 0/1 if not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetPropertyString(System.Int32,System.String)">
+	<summary>
+ Sets specified string property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Value">Value to be set</param>
+	<remarks></remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetPropertyInt16(System.Int32,System.Int16)">
+	<summary>
+ Sets specified Int16 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Value">Value to be set</param>
+	<remarks></remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetPropertyInt32(System.Int32,System.Int32)">
+	<summary>
+ Sets specified Int32 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Value">Value to be set</param>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetProperty(System.Int32,System.Byte[],G21.clsExifWorks.ExifDataTypes)">
+	<summary>
+ Sets specified propery in raw form
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Data">Raw data</param>
+	<param name="Type">EXIF data type</param>
+	<remarks>Is recommended to use typed methods (like <see cref="M:G21.clsExifWorks.SetPropertyString(System.Int32,System.String)"/> etc.) instead, when possible.</remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetInt32(System.Byte[])">
+	<summary>
+ Read Int32 from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetInt16(System.Byte[])">
+	<summary>
+ Read Int16 from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetString(System.Byte[])">
+	<summary>
+ Read string from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetRational(System.Byte[])">
+	<summary>
+ Read rational from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyRational(G21.clsExifWorks.TagNames,System.Int32)">
+	<summary>
+ Get specified rational property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="rank"></param>
+	<returns>Value of property or 0/1 if not present</returns>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.DMStoDD(System.Double,System.Double,System.Double)">
+	<summary>
+ Degrees, Minutes, Seconds to Decimal Degrees
+ </summary>
+	<param name="Deg">Degrees</param>
+	<param name="Min">Minutes</param>
+	<param name="Sec">Seconds</param>
+	<returns>Decimal Degrees</returns>
+	<remarks>in EXIF, Deg is always positive, but added case for negative degrees in case this routine is reused</remarks>
+</member><member name="P:G21.clsExifWorks.Latitude">
+	<summary>
+ GPS Latitude
+ </summary>
+	<returns>Decimal degrees of latitude</returns>
+</member><member name="P:G21.clsExifWorks.Longitude">
+	<summary>
+ GPS Longitude
+ </summary>
+	<returns>Decimal degrees of longitude</returns>
+</member><member name="M:G21.clsExifWorks.Dispose">
+	<summary>
+ Disposes unmanaged resources of this class
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks">
+	<summary>
+ Utility class for working with EXIF data in images. Provides abstraction
+ for most common data and generic utilities for work with all other. 
+ </summary>
+	<remarks>
+ Copyright (c) Michal A. Valášek - Altair Communications, 2003-2005
+ Copmany: http://software.altaircom.net, E-mail: support@altaircom.net
+ Private: http://www.rider.cz, E-mail: rider@rider.cz
+ This is free software licensed under GNU Lesser General Public License
+ </remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 12.06.2004 Added capability to write EXIF data
+ [altair] 11.07.2004 Added option to change encoding
+ [altair] 04.09.2005 Changed source of Width and Height properties from EXIF to image
+ [altair] 05.09.2005 Code clean-up and minor changes
+ </history>
+</member><member name="P:G21.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:G21.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:G21.My.Resources.Resources.ChangeMetadata">
+	<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="P:G21.My.Resources.Resources.Windows_Ding">
+	<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="P:G21.My.Resources.Resources.Windows_Exclamation">
+	<summary>
+  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+</summary>
+</member><member name="T:G21.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:G21.clsPolygon.#ctor(System.Drawing.PointF[])">
+	<summary>
+		Creates a new instance of the <see cref="T:G21.clsPolygon"/> class with the specified vertices.
+ </summary>
+	<param name="vertices">
+		An array of <see cref="T:System.Drawing.PointF"/> structures representing the points between the sides of the polygon.
+ </param>
+</member><member name="M:G21.clsPolygon.PointInPolygon(System.Drawing.PointF)">
+	<summary>
+		Determines if the specified <see cref="T:System.Drawing.PointF"/> if within this polygon.
+ </summary>
+	<remarks>
+		This algorithm is extremely fast, which makes it appropriate for use in brute force algorithms.
+ </remarks>
+	<param name="point">
+		The point containing the x,y coordinates to check.
+ </param>
+	<returns>
+		<c>true</c> if the point is within the polygon, otherwise <c>false</c>
+	</returns>
+</member>
+</members>
+</doc>

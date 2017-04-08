@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:dataset="http://www.nbnws.net/Dataset" xmlns:taxon="http://www.nbnws.net/Taxon" xmlns:metadata="http://www.nbnws.net/Metadata" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gwd="http://www.nbnws.net/Taxon/GatewayData" xmlns:nbn="http://www.nbnws.net/" xmlns:map="http://www.nbnws.net/Map" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Taxon/GatewayData" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=6" namespace="http://www.nbnws.net/Metadata" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=1" namespace="http://www.nbnws.net/Dataset" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=9" namespace="http://www.nbnws.net/Spatial" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" namespace="http://www.nbnws.net/Taxon" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=5" namespace="http://www.nbnws.net/Map" />
+  <xsd:element name="Site">
+    <xsd:annotation>
+      <xsd:documentation>An individual site, with information on its geometry.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" ref="spatial:Area" />
+        <xsd:element ref="spatial:GridSquare" />
+      </xsd:sequence>
+      <xsd:attribute name="siteKey" type="xsd:string" use="required" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteList">
+    <xsd:annotation>
+      <xsd:documentation>A list of distinct locations represented in the document.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="gwd:Site" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="RecordAttributes" type="nbn:AttributeCollectionType">
+    <xsd:annotation>
+      <xsd:documentation>A set of attributes for this record. Attributes consist of a set of key=value pairs which may change depending on the record in question.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:simpleType name="DateAccuracy">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">A date type records the accuracy of an date record - is it an individual day, or does it cover a range of possible dates (e.g. a month).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="After Year" />
+      <xsd:enumeration value="Before Year" />
+      <xsd:enumeration value="Circa" />
+      <xsd:enumeration value="Day Range" />
+      <xsd:enumeration value="Day" />
+      <xsd:enumeration value="Month Range" />
+      <xsd:enumeration value="Month" />
+      <xsd:enumeration value="No date" />
+      <xsd:enumeration value="Publication Date" />
+      <xsd:enumeration value="Unknown" />
+      <xsd:enumeration value="Year Range" />
+      <xsd:enumeration value="Year" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="RecordDate">
+    <xsd:annotation>
+      <xsd:documentation>A record date (range). Records can be recorded on a specific day or at some point in a defined time period.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:attribute name="accuracy" type="gwd:DateAccuracy" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">Survey dates can be either acccurate to the day, month or year.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="from" type="xsd:date" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The start date.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="to" type="xsd:date" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The end date. May be greater than or equal to the start date.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Recorder" type="xsd:string" />
+  <xsd:element name="Determiner" type="xsd:string" />
+  <xsd:complexType name="AbstractRecordType" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Base record type for occurrence records.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="gwd:RecordDate">
+        <xsd:annotation>
+          <xsd:documentation>The date (or period within which) this record was made.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" ref="gwd:Determiner" />
+      <xsd:element minOccurs="0" ref="gwd:Recorder" />
+      <xsd:element minOccurs="0" ref="gwd:RecordAttributes" />
+    </xsd:sequence>
+    <xsd:attribute name="pid" type="xsd:string" use="required" />
+    <xsd:attribute default="false" name="isSensitive" type="xsd:boolean" />
+  </xsd:complexType>
+  <xsd:element name="SpeciesRecord">
+    <xsd:annotation>
+      <xsd:documentation>A species occurrence record.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="gwd:AbstractRecordType">
+          <xsd:attribute name="id" type="xsd:int" use="required" />
+          <xsd:attribute name="taxonVersionKey" type="xsd:string" use="required" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="LocationName" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The name of the location.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Location">
+    <xsd:annotation>
+      <xsd:documentation>A location where an occurrence is recorded.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" ref="gwd:LocationName" />
+        <xsd:element maxOccurs="unbounded" ref="gwd:SpeciesRecord">
+          <xsd:annotation>
+            <xsd:documentation>An individual record of species occurrence. There may be many species records for a given location.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="siteKey" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The unique NBN Gateway ID of the real world location - this is a pointer to the ID of a LocationShape element defined in the LocationList at the top of the document.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="id" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The unique NBN Gateway ID of the location.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="pid" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The provider ID of the location.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute default="false" name="blurred" type="xsd:boolean" use="optional" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Dataset">
+    <xsd:annotation>
+      <xsd:documentation>Data for an individual NBN Gateway dataset. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="metadata:ProviderMetadata">
+          <xsd:annotation>
+            <xsd:documentation>The metadata for the dataset.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="dataset:Privileges" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gwd:Location">
+          <xsd:annotation>
+            <xsd:documentation>A location which is relevant to the client query. There may be many locations in a 	dataset/survey which are relevant and therefore returned to the client.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The unique NBN Gateway ID of the dataset.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Data">
+    <xsd:annotation>
+      <xsd:documentation>The set of occurrence or boundary data, organised by dataset.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" ref="map:Map" />
+        <xsd:element minOccurs="0" ref="taxon:SpeciesList" />
+        <xsd:element minOccurs="0" ref="gwd:SiteList" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gwd:Dataset">
+          <xsd:annotation>
+            <xsd:documentation>An individual dataset that is available on the NBN Gateway, which contains records that are 	relevant to the client query.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="ErrorTime" type="xsd:string" />
+  <xsd:element name="ErrorDescription" type="xsd:string" />
+  <xsd:element name="ErrorCode" type="xsd:string" />
+  <xsd:element name="Status">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" ref="gwd:ErrorCode" />
+        <xsd:element minOccurs="0" ref="gwd:ErrorDescription" />
+        <xsd:element minOccurs="0" ref="gwd:ErrorTime" />
+      </xsd:sequence>
+      <xsd:attribute name="isError" type="xsd:boolean" use="required" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatasetCount" type="xsd:int" />
+  <xsd:element name="LocationCount" type="xsd:int" />
+  <xsd:element name="RecordCount" type="xsd:int" />
+  <xsd:element name="Summary">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="gwd:DatasetCount" />
+        <xsd:element ref="gwd:LocationCount" />
+        <xsd:element ref="gwd:RecordCount" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Header">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="gwd:Status" />
+        <xsd:element ref="gwd:Summary" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="AggregateSite">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="gwd:Site" />
+        <xsd:element minOccurs="0" name="RecordCount" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Contains the number of records used to create an aggregate site.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="SpeciesCount" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Contains the number of distinct species attached to the site.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="HasSensitiveData" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>Indicates that the site has sensitive records attached to it.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="HasNonSensitiveData" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>Indicates that the site has non-sensitive records attached to it.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="EarliestRecord" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Contains the year of the earliest record attached to this site.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="LatestRecord" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Contains the year of the latest record attached to this site.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="AggregateSiteList">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="gwd:AggregateSite" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GatewayData">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="gwd:Header" />
+            <xsd:element minOccurs="0" ref="gwd:Data" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

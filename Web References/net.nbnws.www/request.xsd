@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://webservices.searchnbn.net/taxonomyQuery" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://webservices.searchnbn.net/taxonomyQuery" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Version 1.0.0 </xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="TaxonVersionKey" />
+  <xsd:element name="SpeciesName" />
+  <xsd:element name="TaxonomySearchRequest">
+    <xsd:complexType>
+      <xsd:choice>
+        <xsd:element ref="SpeciesName" />
+        <xsd:element ref="TaxonVersionKey" />
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

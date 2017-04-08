@@ -1,0 +1,285 @@
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.config
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.manifest
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.application
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.pdb
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.xml
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmConvertDB.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExport.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmHashCode.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmImageProperties.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmInitTracks.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmMain.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageLocations.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOptions.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmRecordDetails.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSelectRecords.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSplash.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\G21.Resources.resources
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe.manifest
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.application
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.xml
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.pdb
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.lib
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.dll
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.Linq.dll
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.dll
+C:\Users\Rich\Documents\Visual Studio 2008\Projects\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.xml
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.config
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.xml
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.pdb
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.lib
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.dll
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.Linq.dll
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.manifest
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.application
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.pdb
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.xml
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.dll
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.xml
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmConvertDB.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExport.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmHashCode.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmImageProperties.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmInitTracks.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmMain.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageLocations.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOptions.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmRecordDetails.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSplash.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.Resources.resources
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe.manifest
+C:\Documents and Settings\Rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.application
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOpenByFilter.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.config
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.xml
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.pdb
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.lib
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.Linq.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.manifest
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.application
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.pdb
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.xml
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.xml
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmConvertDB.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExport.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmHashCode.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmImageProperties.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmInitTracks.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmMain.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageLocations.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOpenByFilter.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOptions.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmRecordDetails.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSelectRecords.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSplash.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.Resources.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe.manifest
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.application
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.config
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.xml
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.pdb
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.lib
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.Linq.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.manifest
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.application
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.pdb
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.xml
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Thrift.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.xml
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\ResolveAssemblyReference.cache
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmConvertDB.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExport.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmHashCode.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmImageProperties.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmInitTracks.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmMain.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageLocations.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOpenByFilter.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOptions.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmRecordDetails.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSplash.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.Resources.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe.manifest
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.application
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Evernote.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Thrift.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmEvernote.resources
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Evernote.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Thrift.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Thrift.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmEvernote.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Evernote.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Thrift.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Thrift.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmEvernote.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSearchGazetteer.resources
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSearchGazetteer.resources
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Interop.QTOControlLib.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Interop.QTOLibrary.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\AxInterop.QTOControlLib.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.ResolveComReference.cache
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Interop.QTOControlLib.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Interop.QTOLibrary.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\AxInterop.QTOControlLib.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.ResolveComReference.cache
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Interop.QTOControlLib.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Interop.QTOLibrary.dll
+E:\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\AxInterop.QTOControlLib.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Interop.QTOControlLib.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Interop.QTOLibrary.dll
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\AxInterop.QTOControlLib.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Interop.QTOControlLib.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Interop.QTOLibrary.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\AxInterop.QTOControlLib.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.ResolveComReference.cache
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Interop.QTOControlLib.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Interop.QTOLibrary.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\AxInterop.QTOControlLib.dll
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSearchGazetteer.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmNBNTaxonSelection.resources
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmNBNTaxonSelection.resources
+C:\Users\Rich\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmNBNTaxonSelection.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExportManageRecipients.resources
+E:\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExportsManage.resources
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExportManageRecipients.resources
+C:\Documents and Settings\rich\My Documents\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExportsManage.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.config
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.ResolveComReference.cache
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.pdb
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.lib
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Evernote.dll
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Evernote\Thrift.dll
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.dll
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\SQLite\System.Data.SQLite.Linq.dll
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.pdb
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.dll
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\System.Data.SQLite.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmConvertDB.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmEvernote.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExport.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExportManageRecipients.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmExportsManage.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmHashCode.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmImageProperties.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmInitTracks.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmMain.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageLocations.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmNBNTaxonSelection.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOpenByFilter.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmOptions.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmRecordDetails.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSearchGazetteer.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.frmSplash.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\G21.Resources.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.exe.manifest
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\bin\x86\Release\Gilbert21.application
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.TrustInfo.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.exe.manifest
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21\obj\x86\Release\Gilbert21.application
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.exe.config
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.exe
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.pdb
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.exe
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.pdb
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\System.Data.SQLite.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.vbprojResolveAssemblyReference.cache
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmConvertDB.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmEvernote.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmExport.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmExportManageRecipients.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmExportsManage.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmHashCode.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmImageProperties.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmInitTracks.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmMain.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmManageLocations.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmNBNTaxonSelection.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmOpenByFilter.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmOptions.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmRecordDetails.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmSearchGazetteer.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmSplash.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.Resources.resources
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\System.Data.SQLite.dll
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\System.Data.SQLite.pdb
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.exe.manifest
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.application
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.TrustInfo.xml
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.exe.manifest
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.application
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\g21resources.db3
+C:\Users\fsc\Dropbox\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmBTOBirdNameMatch.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.exe.config
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.exe
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.xml
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.pdb
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\g21resources.db3
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.exe.manifest
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.application
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.exe
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.pdb
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\Gilbert21.xml
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\System.Data.SQLite.dll
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\System.Data.SQLite.pdb
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\bin\x86\Release\System.Data.SQLite.xml
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.vbprojResolveAssemblyReference.cache
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmBTOBirdNameMatch.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmConvertDB.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmEvernote.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmExport.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmExportManageRecipients.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmExportsManage.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmHashCode.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmImageProperties.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmInitTracks.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmMain.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmManageLocations.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmManageTaxonDictionary.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmNBNTaxonSelection.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmOpenByFilter.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmOptions.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmRecordDetails.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmSearchGazetteer.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.frmSplash.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\G21.Resources.resources
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.vbproj.GenerateResource.Cache
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.TrustInfo.xml
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.exe.manifest
+C:\Users\fsc\Google Drive\G21\Gilbert21\Gilbert21 2010\obj\x86\Release\Gilbert21.application

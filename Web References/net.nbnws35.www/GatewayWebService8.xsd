@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:metadata="http://www.nbnws.net/Metadata" xmlns:nbnhab="http://www.nbnws.net/Habitat" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:nbn="http://www.nbnws.net/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Habitat" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=9" namespace="http://www.nbnws.net/Spatial" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=6" namespace="http://www.nbnws.net/Metadata" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:element name="HabitatDiscoveryResponse">
+    <xsd:annotation>
+      <xsd:documentation>The list of habitat layers in the NBN gateway.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnhab:HabitatDatasetList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatDatasetList">
+    <xsd:annotation>
+      <xsd:documentation>A list of site boundaries</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="metadata:ProviderMetadata" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatDiscoveryRequest">
+    <xsd:annotation>
+      <xsd:documentation>User requesting the habitat layers supported by the NBN Gateway.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements" />
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatQueryResponse">
+    <xsd:annotation>
+      <xsd:documentation>Habitat details present in the input polygon. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnhab:SummaryInformation" />
+            <xsd:element ref="nbnhab:HabitatLayers" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatLayers">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="nbnhab:HabitatLayer" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatLayer">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="metadata:ProviderMetadata" />
+        <xsd:element name="NumberOfHabitatFeatures" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Returns the total number of admin layer polygons that exist inside the spatial filter.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="HabitatArea" type="xsd:double">
+          <xsd:annotation>
+            <xsd:documentation>The total area this particular admin boundary layer occupied within the user input polygon. This area includes both the whole and part polygons.  </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="HabitatCoveragePercentage" type="xsd:double">
+          <xsd:annotation>
+            <xsd:documentation>Percentage of area covered by the admin within the user input polygon. This area includes both the whole and part polygons. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="nbnhab:HabitatFeatures" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatFeatures">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="nbnhab:HabitatFeature" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatFeature">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="Polygons">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" ref="nbnhab:HabitatPolygon" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatPolygon" substitutionGroup="spatial:AbstractGeometryFeature" type="spatial:ClippedPolygon">
+    <xsd:annotation>
+      <xsd:documentation>A simple polygon, with one outer boundary and possibly some holes in it.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SummaryInformation">
+    <xsd:annotation>
+      <xsd:documentation>The details about the admin layers present in the user input polygon.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="NumberOfHabitatLayers" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Number of habitat layers present inside the user input polygon. E.g., If Grassland and woodland layers present inside the user input polygon, this tag returns 2. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="NumberOfHabitatFeatures" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Total number of habitat polygon features present inside the user input polygon. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="InputPolygonArea" type="xsd:double">
+          <xsd:annotation>
+            <xsd:documentation>Area of the input polygon in Hectares. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="HabitatQueryRequest">
+    <xsd:annotation>
+      <xsd:documentation>Querying the habitat details inside the user input polygon.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="HabitatLayerID" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation>When no layer id is passed, all the admin layers inside the input polygon will be returned. More than one admin layer can be used as a filter. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="RequiredPolygonVertices" type="xsd:boolean">
+              <xsd:annotation>
+                <xsd:documentation>The user has an option for including/exluding the resultant (clipped) raw polygon data (vertices) from the response. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="HabitatLayerFilter" type="spatial:Filter" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

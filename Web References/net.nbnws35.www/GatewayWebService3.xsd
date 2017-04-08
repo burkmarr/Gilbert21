@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:metadata="http://www.nbnws.net/Metadata" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:nbnsb="http://www.nbnws.net/SiteBoundary" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:nbn="http://www.nbnws.net/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/SiteBoundary" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=9" namespace="http://www.nbnws.net/Spatial" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=6" namespace="http://www.nbnws.net/Metadata" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:element name="SiteBoundaryType" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The site boundary type, e.g. SSSI</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryName" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The name of a site boundary</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SiteBoundary" substitutionGroup="spatial:SpatialFeature">
+    <xsd:annotation>
+      <xsd:documentation>A site boundary on the Gateway (e.g. NNR, SSSI), identified by key.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:GeographicalFeature">
+          <xsd:sequence minOccurs="0">
+            <xsd:element minOccurs="0" ref="nbnsb:SiteBoundaryName" />
+            <xsd:element minOccurs="0" ref="nbnsb:SiteBoundaryType" />
+          </xsd:sequence>
+          <xsd:attribute name="siteKey" type="xsd:string" use="required" />
+          <xsd:attribute name="providerKey" type="xsd:string" use="required" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryLayer">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="metadata:ProviderMetadata" />
+        <xsd:element name="NumberOfSiteBoundaryFeatures" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Returns the total number of admin layer polygons that exist inside the spatial filter.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="SiteBoundaryArea" type="xsd:double">
+          <xsd:annotation>
+            <xsd:documentation>The total area this particular admin boundary layer occupied within the user input polygon. This area includes both the whole and part polygons.  </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="SiteBoundaryCoveragePercentage" type="xsd:double">
+          <xsd:annotation>
+            <xsd:documentation>Percentage of area covered by the admin within the user input polygon. This area includes both the whole and part polygons. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element ref="nbnsb:SiteBoundaryFeatures" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryFeatures">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="nbnsb:SiteBoundaryFeature" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryFeature">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="nbnsb:SiteBoundary" />
+        <xsd:element minOccurs="0" name="Polygons">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" ref="nbnsb:SiteBoundaryPolygon" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryList">
+    <xsd:annotation>
+      <xsd:documentation>A list of site boundaries</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="nbnsb:SiteBoundary" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryListResponse">
+    <xsd:annotation>
+      <xsd:documentation>A list of site boundaries, e.g. SSSI </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnsb:SiteBoundaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryListRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for a list of site boundaries, e.g. SAC, Vice county, etc</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnsb:SiteBoundaryType" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryNameResponse">
+    <xsd:annotation>
+      <xsd:documentation>Information for a known site</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnsb:SiteBoundary" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryNameRequest">
+    <xsd:annotation>
+      <xsd:documentation>A lookup request for a site boundary, e.g. SSSI, using a provider key and site key</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnsb:SiteBoundary" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryDiscoveryResponse">
+    <xsd:annotation>
+      <xsd:documentation>The list of Administrative Boundary layers available on the NBN Gateway.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnsb:SiteBoundaryDatasetList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryDatasetList">
+    <xsd:annotation>
+      <xsd:documentation>A list of site boundaries</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="metadata:ProviderMetadata" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryDiscoveryRequest">
+    <xsd:annotation>
+      <xsd:documentation>User requesting the Administrative Boundary layers available on the NBN Gateway.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements" />
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryQueryResponse">
+    <xsd:annotation>
+      <xsd:documentation>Habitat details present in the input polygon. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbnsb:SummaryInformation" />
+            <xsd:element ref="nbnsb:SiteBoundaryLayers" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryLayers">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="nbnsb:SiteBoundaryLayer" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SummaryInformation">
+    <xsd:annotation>
+      <xsd:documentation>The details about the admin layers present in the user input polygon.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="NumberOfSiteBoundaryLayers" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Number of habitat layers present inside the user input polygon. E.g., If Grassland and woodland layers present inside the user input polygon, this tag returns 2. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="NumberOfSiteBoundaryFeatures" type="xsd:integer">
+          <xsd:annotation>
+            <xsd:documentation>Total number of habitat polygon features present inside the user input polygon. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="InputPolygonArea" type="xsd:double">
+          <xsd:annotation>
+            <xsd:documentation>Area of the input polygon in Hectares. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryPolygon" substitutionGroup="spatial:AbstractGeometryFeature" type="spatial:ClippedPolygon">
+    <xsd:annotation>
+      <xsd:documentation>A simple polygon, with one outer boundary and possibly some holes in it.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SiteBoundaryQueryRequest">
+    <xsd:annotation>
+      <xsd:documentation>Querying the habitat details inside the user input polygon.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="SiteBoundaryLayerID" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation>When no layer id is passed, all the admin layers inside the input polygon will be returned. More than one admin layer can be used as a filter. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="RequiredPolygonVertices" type="xsd:boolean">
+              <xsd:annotation>
+                <xsd:documentation>The user has an option for including/exluding the resultant (clipped) raw polygon data (vertices) from the response. </xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SiteBoundaryLayerFilter" type="spatial:Filter" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:nbn="http://www.nbnws.net/" xmlns:dataset="http://www.nbnws.net/Dataset" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:map="http://www.nbnws.net/Map" xmlns:taxon="http://www.nbnws.net/Taxon" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Map" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=9" namespace="http://www.nbnws.net/Spatial" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" namespace="http://www.nbnws.net/Taxon" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=1" namespace="http://www.nbnws.net/Dataset" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:element name="Url" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The URL of the map image.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Width" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The width of the map image in pixels.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Height" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The height of the map image in pixels.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Format">
+    <xsd:annotation>
+      <xsd:documentation>The format of the map image - e.g. 'image/gif'.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="image/gif" />
+        <xsd:enumeration value="image/jpeg" />
+        <xsd:enumeration value="image/png" />
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="Map" type="map:MapImage">
+    <xsd:annotation>
+      <xsd:documentation>A link to a map of the data represented in the document.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="MapImage">
+    <xsd:annotation>
+      <xsd:documentation>A map produced by ArcIMS.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="map:Url" />
+      <xsd:element ref="map:Width" />
+      <xsd:element ref="map:Height" />
+      <xsd:element ref="map:Format" />
+      <xsd:element ref="spatial:BoundingBox" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="colourType">
+    <xsd:annotation>
+      <xsd:documentation>A colour in hex notation e.g. #ff0000 is red, #00ff00 is greef, #0000ff is blue, #ffffff is white.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="#([A-F]|[a-f]|[0-9]){6}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="MapSettings">
+    <xsd:annotation>
+      <xsd:documentation>Defines properties for a map image. If absent no map image has been requested.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:attribute name="height" type="xsd:int" use="optional" />
+      <xsd:attribute name="width" type="xsd:int" use="optional" />
+      <xsd:attribute name="outlineWidth" type="xsd:int" use="optional" />
+      <xsd:attribute name="outlineColour" type="map:colourType" use="optional" />
+      <xsd:attribute name="fillColour" type="map:colourType" use="optional" />
+      <xsd:attribute name="fillTransparency" use="optional">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:double">
+            <xsd:minInclusive value="0.0" />
+            <xsd:maxInclusive value="1.0" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="mapOnly" type="xsd:boolean" use="optional" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Classification">
+    <xsd:annotation>
+      <xsd:documentation>A map classification based on date ranges.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="3" ref="map:Band" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Band">
+    <xsd:annotation>
+      <xsd:documentation>An individual classification band.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:attribute name="from" use="required">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="1800" />
+            <xsd:maxExclusive value="2100" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="to" use="required">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minExclusive value="1801" />
+            <xsd:maxExclusive value="2101" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="fill" type="map:colourType" use="required" />
+      <xsd:attribute default="#000000" name="border" type="map:colourType" use="optional" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GridMapRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for a grid map for a given species.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="taxon:TaxonVersionKey" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList">
+              <xsd:annotation>
+                <xsd:documentation>The range of datasets that should be included in the map.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Resolution" type="taxon:Resolution">
+              <xsd:annotation>
+                <xsd:documentation>The resolution of the data that should be shown on the map.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="map:GridMapSettings" />
+            <xsd:element minOccurs="0" ref="map:Classification" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="GridMapSettings">
+    <xsd:annotation>
+      <xsd:documentation>Settings to control the map output.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" ref="map:Width" />
+        <xsd:element minOccurs="0" ref="map:Height" />
+        <xsd:element minOccurs="0" ref="map:Grid" />
+        <xsd:element minOccurs="0" ref="map:Background" />
+        <xsd:element minOccurs="0" ref="map:ViceCounty" />
+        <xsd:element minOccurs="0" ref="map:Region" />
+        <xsd:element minOccurs="0" ref="map:FillColour" />
+        <xsd:element minOccurs="0" ref="spatial:GeographicalFilter" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Grid">
+    <xsd:annotation>
+      <xsd:documentation>Any grid layers that should be shown over the map.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="None" />
+        <xsd:enumeration value="Grid_10km" />
+        <xsd:enumeration value="Grid_100km" />
+        <xsd:enumeration value="Grid_10km_100km" />
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="Background">
+    <xsd:annotation>
+      <xsd:documentation>The type of background layer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="None" />
+        <xsd:enumeration value="OSMap" />
+        <xsd:enumeration value="ViceCounty" />
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="ViceCounty" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>A vice county filter. Although Vice counties can be used on Site reports, this is a special case for setting a bounding box for a gridmap</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FillColour" type="map:colourType">
+    <xsd:annotation>
+      <xsd:documentation>The fill colour for a gridsquare on a map</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Region">
+    <xsd:annotation>
+      <xsd:documentation>A country region filter. Used case for setting a bounding box for a gridmap</xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="GB" />
+        <xsd:enumeration value="GBIreland" />
+        <xsd:enumeration value="Ireland" />
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+  <xsd:element name="GridMap">
+    <xsd:annotation>
+      <xsd:documentation>A grid map produced by ArcIMS with the map URL and the boundary of the map as a Box.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="map:Map" />
+            <xsd:element minOccurs="0" ref="taxon:Species" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetSummaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D857D293-80F7-43DE-A0DE-CBB44CEBD659}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>G21.My.MyApplication</StartupObject>
+    <RootNamespace>G21</RootNamespace>
+    <AssemblyName>Gilbert21</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>G21-48.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>01EDFEBEAF9E6320A887425034385008F53275A5</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <TargetZone>Internet</TargetZone>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>ftp://ftp.gilbert21.org.uk/htdocs/version3/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.gilbert21.org.uk/version3/</InstallUrl>
+    <SupportUrl>http://www.gilbert21.org.uk</SupportUrl>
+    <ProductName>Gilbert 21</ProductName>
+    <PublisherName>The Gilbert 21 Project</PublisherName>
+    <SuiteName>The Gilbert 21 Project</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>3.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Gilbert21.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Gilbert21.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>Gilbert21.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>Gilbert21.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.84.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>SQLite\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Runtime.Serialization" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="clsDB.vb" />
+    <Compile Include="clsExifWorks.vb" />
+    <Compile Include="clsExportRecipient.vb" />
+    <Compile Include="clsInputFile.vb" />
+    <Compile Include="clsInputFileG21App.vb" />
+    <Compile Include="clsInputFileVisiontac.vb" />
+    <Compile Include="clsLocations.vb" />
+    <Compile Include="clsMediaItem.vb" />
+    <Compile Include="clsOffsetGR.vb" />
+    <Compile Include="clsPolygon.vb" />
+    <Compile Include="clsRecordMappings.vb" />
+    <Compile Include="clsSound.vb" />
+    <Compile Include="clsSound2.vb" />
+    <Compile Include="clsTaxonRest.vb" />
+    <Compile Include="clsToolbarHelpProvider.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="clsCFun.vb" />
+    <Compile Include="clsInputFileImage.vb" />
+    <Compile Include="clsInputFileGeneral.vb" />
+    <Compile Include="clsInputFileEvernote.vb" />
+    <Compile Include="clsInputFileEvernoteExport.vb" />
+    <Compile Include="clsTVK.vb" />
+    <Compile Include="frmBTOBirdNameMatch.Designer.vb">
+      <DependentUpon>frmBTOBirdNameMatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBTOBirdNameMatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConvertDB.Designer.vb">
+      <DependentUpon>frmConvertDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConvertDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvernote.Designer.vb">
+      <DependentUpon>frmEvernote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvernote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExport.Designer.vb">
+      <DependentUpon>frmExport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportManageRecipients.Designer.vb">
+      <DependentUpon>frmExportManageRecipients.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportManageRecipients.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportsManage.Designer.vb">
+      <DependentUpon>frmExportsManage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportsManage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHashCode.Designer.vb">
+      <DependentUpon>frmHashCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmHashCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmImageProperties.Designer.vb">
+      <DependentUpon>frmImageProperties.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmImageProperties.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInitTracks.Designer.vb">
+      <DependentUpon>frmInitTracks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInitTracks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageLocations.Designer.vb">
+      <DependentUpon>frmManageLocations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageLocations.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageTaxonDictionary.Designer.vb">
+      <DependentUpon>frmManageTaxonDictionary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageTaxonDictionary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNBNTaxonSelection.Designer.vb">
+      <DependentUpon>frmNBNTaxonSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNBNTaxonSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenByFilter.Designer.vb">
+      <DependentUpon>frmOpenByFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenByFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOptions.designer.vb">
+      <DependentUpon>frmOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordDetails.Designer.vb">
+      <DependentUpon>frmRecordDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecordDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchGazetteer.Designer.vb">
+      <DependentUpon>frmSearchGazetteer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchGazetteer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GridRef.vb" />
+    <Compile Include="KML.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="WaveIO.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmBTOBirdNameMatch.resx">
+      <DependentUpon>frmBTOBirdNameMatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConvertDB.resx">
+      <DependentUpon>frmConvertDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvernote.resx">
+      <DependentUpon>frmEvernote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExport.resx">
+      <DependentUpon>frmExport.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportManageRecipients.resx">
+      <DependentUpon>frmExportManageRecipients.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportsManage.resx">
+      <DependentUpon>frmExportsManage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHashCode.resx">
+      <DependentUpon>frmHashCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmImageProperties.resx">
+      <DependentUpon>frmImageProperties.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInitTracks.resx">
+      <DependentUpon>frmInitTracks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageLocations.resx">
+      <DependentUpon>frmManageLocations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageTaxonDictionary.resx">
+      <DependentUpon>frmManageTaxonDictionary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNBNTaxonSelection.resx">
+      <DependentUpon>frmNBNTaxonSelection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenByFilter.resx">
+      <DependentUpon>frmOpenByFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOptions.resx">
+      <DependentUpon>frmOptions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordDetails.resx">
+      <DependentUpon>frmRecordDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchGazetteer.resx">
+      <DependentUpon>frmSearchGazetteer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="g21resources.db3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Ding.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="Resources\ChangeMetadata.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="G21-32.ico" />
+    <Content Include="G21-48.ico" />
+    <Content Include="Resources\notify.wav" />
+    <Content Include="Resources\Windows Exclamation.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:desig="http://www.nbnws.net/Designation" xmlns:nbn="http://www.nbnws.net/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Designation" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:simpleType name="SpeciesDesignation">
+    <xsd:annotation>
+      <xsd:documentation>Defines a species designation that results will be restricted to.  Available designation values can be found on http://data.nbn.org.uk/library/webservices/resources.jsp</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="500" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Designation">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name" type="xsd:string" />
+        <xsd:element name="key" type="xsd:string" />
+        <xsd:element name="abbreviation" type="xsd:string" />
+        <xsd:element name="description" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DesignationList">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="desig:Designation" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DesignationCategory">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="desig:DesignationList" />
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DesignationListResponse">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" ref="desig:DesignationCategory" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DesignationFilter" type="xsd:string" />
+  <xsd:element name="DesignationFilters">
+    <xsd:annotation>
+      <xsd:documentation>If one or many Designation filters are specified then only those designations could be returned in the response. If no filters are specifed, all designations will be queried in the bounds of the DesignationCategoryFilters.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="desig:DesignationFilter" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DesignationListRequest">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:choice>
+              <xsd:element minOccurs="0" name="DesignationCategoryFilter" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:documentation>If one or many Designation Category filters are specified then only those categories will be queried and returned (Only if there are any designations within it, as bounded by the DesignationFilters). If no filters are specifed, all categories will be queried.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element minOccurs="0" ref="desig:DesignationFilters" />
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

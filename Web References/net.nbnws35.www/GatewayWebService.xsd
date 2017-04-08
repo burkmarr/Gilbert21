@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sb="http://www.nbnws.net/SiteBoundary" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:map="http://www.nbnws.net/Map" xmlns:taxon="http://www.nbnws.net/Taxon" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Spatial" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" namespace="http://www.nbnws.net/Taxon" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=5" namespace="http://www.nbnws.net/Map" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=8" namespace="http://www.nbnws.net/SiteBoundary" />
+  <xsd:element name="Ring">
+    <xsd:annotation>
+      <xsd:documentation>A ring of vertices (coordinates). Typically this will be part of a polygon.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="3" maxOccurs="unbounded" name="v" type="spatial:Coordinate">
+          <xsd:annotation>
+            <xsd:documentation>An individual polygon vertex. At least 3 of these are required to define a polygon.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Polygon" substitutionGroup="spatial:AbstractGeometryFeature">
+    <xsd:annotation>
+      <xsd:documentation>A simple polygon, with one outer boundary and possibly some holes in it.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:GeometryFeature">
+          <xsd:sequence>
+            <xsd:element name="Boundary">
+              <xsd:annotation>
+                <xsd:documentation>The outer boundary of the polygon. If the last vertex is not the same as the first vertex, it should be assumed that the polygon is closed by a straight line.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="spatial:Ring" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Hole">
+              <xsd:annotation>
+                <xsd:documentation>Any holes within the polygon. These must not cross the polygon boundary. If the last vertex is not the same as the first vertex, it should be assumed that a hole is closed by a straight line.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element ref="spatial:Ring" />
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="Box" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A box shape in 2D space.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="spatial:GeometryFeature">
+        <xsd:attribute name="minx" type="xsd:double" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The X coordinate of the lower left hand corner of the box.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="miny" type="xsd:double" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The Y coordinate of the lower left hand corner of the box.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="maxx" type="xsd:double" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The X coordinate of the upper right hand corner of the box.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="maxy" type="xsd:double" use="required">
+          <xsd:annotation>
+            <xsd:documentation>The Y coordinate of the upper right hand corner of the box.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="GridSquare" substitutionGroup="spatial:AbstractGeometryFeature">
+    <xsd:annotation>
+      <xsd:documentation>A special case of a box with a unique key (i.e. a National Grid 10km square).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:Box">
+          <xsd:attribute name="key" type="spatial:GridSquareKey" use="required" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="GridSquareKey">
+    <xsd:annotation>
+      <xsd:documentation>The key for a grid square. Grid squares are identified by a letter/number combination e.g. NT45.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:complexType name="GeographicalFeature" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Any geographical feature (whose geometry may or may not be known). This can include points, lines, polygons or known sites (e.g. regions, towns).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  <xsd:simpleType name="SpatialReferenceSystem">
+    <xsd:annotation>
+      <xsd:documentation>The Spatial Reference System (SRS) of a geometry object. Specified as {authority}:{code}. For example, British National Grid is EPSG:27700, decimal degrees on the WGS84 datum is EPSG:4326, Irish National Grid is EPSG:29903. A full list of codes can be obtained from http://www.epsg.org/ (not all of these will be supported by the NBN Gateway). </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="EPSG_27700">
+        <xsd:annotation>
+          <xsd:documentation>EPSG code for specifying British National Grid. The ':' character has been replaced with a '_' character to make it more palatable for .NET and Java code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="osgb_BNG">
+        <xsd:annotation>
+          <xsd:documentation>Alternate code for specifying British National Grid. The ':' character has been replaced with a '_' character to make it more palatable for .NET and Java code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EPSG_29903">
+        <xsd:annotation>
+          <xsd:documentation>EPSG code for specifying Irish National Grid. The ':' character has been replaced with a '_' character to make it more palatable for .NET and Java code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="osni_ING">
+        <xsd:annotation>
+          <xsd:documentation>Alternate code for specifying Irish National Grid. The ':' character has been replaced with a '_' character to make it more palatable for .NET and Java code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EPSG_4326">
+        <xsd:annotation>
+          <xsd:documentation>EPSG code for specifying decimal degress of latitude and longitude on the WGS84 datum. The ':' character has been replaced with a '_' character to make it more palatable for .NET and Java code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EPSG_4277">
+        <xsd:annotation>
+          <xsd:documentation>EPSG code for specifying decimal degress of latitude and longitude on the OSGB 1936 datum. The ':' character has been replaced with a '_' character to make it more palatable for .NET and Java code.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Point" substitutionGroup="spatial:AbstractGeometryFeature">
+    <xsd:annotation>
+      <xsd:documentation>An individual point in 2D space.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:Coordinate" />
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="Coordinate">
+    <xsd:annotation>
+      <xsd:documentation>A coordinate in 2D space defined by a x and y pair.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="spatial:GeometryFeature">
+        <xsd:attribute name="x" type="xsd:double" use="required" />
+        <xsd:attribute name="y" type="xsd:double" use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="BoundingBox" substitutionGroup="spatial:AbstractGeometryFeature">
+    <xsd:annotation>
+      <xsd:documentation>A bounding box defined by the corner coordinates.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:Box" />
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Buffer" substitutionGroup="spatial:SpatialFeature">
+    <xsd:annotation>
+      <xsd:documentation>A buffer around a geographical point.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:GeographicalFeature">
+          <xsd:sequence>
+            <xsd:element ref="spatial:Point" />
+            <xsd:element ref="spatial:Distance" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="MultiPartPolygon" substitutionGroup="spatial:AbstractGeometryFeature">
+    <xsd:annotation>
+      <xsd:documentation>A collection of single polygons that should be treated as one multi-part feature.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="spatial:GeometryFeature">
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" ref="spatial:Polygon" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Distance" type="xsd:float">
+    <xsd:annotation>
+      <xsd:documentation>The buffer distance in metres.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="SpatialFeature" type="spatial:GeographicalFeature">
+    <xsd:annotation>
+      <xsd:documentation>A spatial feature (a point, line or area) which is either known to the NBN Gateway by ID or name, or which has a defined boundary (a polygon, box etc.).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element abstract="true" name="AbstractGeometryFeature" substitutionGroup="spatial:SpatialFeature" type="spatial:GeometryFeature" />
+  <xsd:complexType name="GeometryFeature">
+    <xsd:annotation>
+      <xsd:documentation>A geographical feature whose geometry is known.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="spatial:GeographicalFeature">
+        <xsd:attribute default="EPSG_27700" name="srs" type="spatial:SpatialReferenceSystem" use="optional" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Filter">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element ref="spatial:BoundingBox" />
+        <xsd:element ref="spatial:Buffer" />
+        <xsd:element ref="spatial:Polygon" />
+        <xsd:element ref="spatial:MultiPartPolygon" />
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ClippedPolygon">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="spatial:GeometryFeature">
+        <xsd:sequence>
+          <xsd:element name="Clipped" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:documentation>States whether the current polygon feature lies inside the user input polygon as whole or clipped by the user input polygon and only the information of the part inside the input polygon is returned.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element ref="spatial:Polygon" />
+        </xsd:sequence>
+        <xsd:attribute name="PolygonSNo" type="xsd:integer" use="required">
+          <xsd:annotation>
+            <xsd:documentation>Sequentially generated sequence number to identify each polygon feature. </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AreaUnit">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">The units used in measuring the area of an admin boundary polygon.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SquareMetres" />
+      <xsd:enumeration value="SquareKilometres" />
+      <xsd:enumeration value="Acres" />
+      <xsd:enumeration value="Hectares" />
+      <xsd:enumeration value="Unknown" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AreaType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:double">
+        <xsd:attribute name="units" type="spatial:AreaUnit">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">The areal units used in this measurement.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:element name="Area" type="spatial:AreaType">
+    <xsd:annotation>
+      <xsd:documentation>The area of the site in a defined set of units.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:simpleType name="OverlayRule">
+    <xsd:annotation>
+      <xsd:documentation>The type of geographical filter - should any data that overlaps be included etc.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="overlaps">
+        <xsd:annotation>
+          <xsd:documentation>Any records that overlap the incoming geography should be returned.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="within">
+        <xsd:annotation>
+          <xsd:documentation>Only records that are completely within the incoming geography should be returned.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="GeographicalFilter">
+    <xsd:annotation>
+      <xsd:documentation>A geographical data filter based on either a named site or a user defined geographical area.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:choice>
+          <xsd:element ref="spatial:BoundingBox" />
+          <xsd:element ref="spatial:Buffer" />
+          <xsd:element ref="spatial:GridSquare" />
+          <xsd:element ref="sb:SiteBoundary" />
+          <xsd:element ref="spatial:Point" />
+          <xsd:element ref="spatial:Polygon" />
+          <xsd:element ref="spatial:MultiPartPolygon" />
+        </xsd:choice>
+        <xsd:element minOccurs="0" ref="map:MapSettings" />
+        <xsd:element minOccurs="0" name="OverlayRule" type="spatial:OverlayRule" />
+        <xsd:element minOccurs="0" name="MinimumResolution" type="taxon:Resolution" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

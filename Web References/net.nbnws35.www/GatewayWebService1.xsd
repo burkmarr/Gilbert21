@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.nbnws.net/Metadata" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ProviderMetadata">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="DatasetTitle" />
+        <xsd:element ref="DatasetProvider" />
+        <xsd:element ref="Abstract" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="Survey" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="OccurrenceAttribute" />
+        <xsd:element minOccurs="0" ref="AccessConstraints" />
+        <xsd:element minOccurs="0" ref="UseConstraints" />
+      </xsd:sequence>
+      <xsd:attribute name="exchangeFormatVersion" use="required">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="1.0" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:attribute name="datestamp" type="xsd:string" use="required" />
+      <xsd:attribute name="gatewayId" type="xsd:string" use="optional" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Abstract">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Description" />
+        <xsd:element minOccurs="0" ref="DataCaptureMethod" />
+        <xsd:element minOccurs="0" ref="DatasetPurpose" />
+        <xsd:element minOccurs="0" ref="GeographicalCoverage" />
+        <xsd:element minOccurs="0" ref="TemporalCoverage" />
+        <xsd:element minOccurs="0" ref="DataQuality" />
+        <xsd:element minOccurs="0" ref="AdditionalInformation" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatasetTitle" type="xsd:string" />
+  <xsd:element name="DatasetProvider" type="xsd:string" />
+  <xsd:element name="Survey">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Name" />
+        <xsd:element minOccurs="0" ref="Abstract" />
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:ID" use="required" />
+      <xsd:attribute name="providerId" type="xsd:string" use="optional" />
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="OccurrenceAttribute">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="Name" />
+        <xsd:element ref="Description" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Name" type="xsd:string" />
+  <xsd:element name="Description" type="xsd:string" />
+  <xsd:element name="AccessConstraints" type="xsd:string" />
+  <xsd:element name="UseConstraints" type="xsd:string" />
+  <xsd:element name="DataCaptureMethod" type="xsd:string" />
+  <xsd:element name="DatasetPurpose" type="xsd:string" />
+  <xsd:element name="GeographicalCoverage" type="xsd:string" />
+  <xsd:element name="TemporalCoverage" type="xsd:string" />
+  <xsd:element name="DataQuality" type="xsd:string" />
+  <xsd:element name="AdditionalInformation" type="xsd:string" />
+</xsd:schema>

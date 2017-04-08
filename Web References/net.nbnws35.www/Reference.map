@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=9" filename="GatewayWebService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?wsdl" filename="GatewayWebService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=7" filename="GatewayWebService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=6" filename="GatewayWebService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=3" filename="GatewayWebService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=8" filename="GatewayWebService3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=11" filename="GatewayWebService4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=2" filename="GatewayWebService5.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=1" filename="GatewayWebService6.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=12" filename="GatewayWebService7.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=4" filename="GatewayWebService8.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=10" filename="GatewayWebService9.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_5/GatewayWebService?xsd=5" filename="GatewayWebService10.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

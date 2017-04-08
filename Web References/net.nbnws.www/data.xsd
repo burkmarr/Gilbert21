@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://webservices.searchnbn.net/taxonomyData" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://webservices.searchnbn.net/taxonomyData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TaxonomySearchList">
+    <xs:annotation>
+      <xs:documentation>A list of matching taxon</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Taxon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TaxonName">
+    <xs:annotation>
+      <xs:documentation>The species name</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="wellFormed" type="xs:boolean" use="required" />
+          <xs:attribute name="isScientific" type="xs:boolean" use="required" />
+          <xs:attribute name="isPreferredName" type="xs:boolean" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Authority" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>The species naming authority</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TaxonReportingCategory" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>The species reporting category</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="TaxonList">
+    <xs:annotation>
+      <xs:documentation>A list of one or more taxon elements</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="Taxon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AggregateList" type="TaxonList">
+    <xs:annotation>
+      <xs:documentation>A list of species aggregates associated with a taxon</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LowerTaxaList" type="TaxonList">
+    <xs:annotation>
+      <xs:documentation>A list of lower taxa for a taxon, for example, subspecies</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SynonymList" type="TaxonList">
+    <xs:annotation>
+      <xs:documentation>A list of synonyms a taxon is known by</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Taxon">
+    <xs:annotation>
+      <xs:documentation>Information about a taxon</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="TaxonName" />
+        <xs:element minOccurs="0" ref="Authority" />
+        <xs:element ref="TaxonReportingCategory" />
+        <xs:element minOccurs="0" ref="AggregateList" />
+        <xs:element minOccurs="0" ref="LowerTaxaList" />
+        <xs:element minOccurs="0" ref="SynonymList" />
+      </xs:sequence>
+      <xs:attribute name="taxonVersionKey" type="xs:ID" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

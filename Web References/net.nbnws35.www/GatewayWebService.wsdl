@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:nbngwd="http://www.nbnws.net/Taxon/GatewayData" xmlns:nbntx="http://www.nbnws.net/Taxon/Taxonomy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:nbnhab="http://www.nbnws.net/Habitat" xmlns:nbntrc="http://www.nbnws.net/TaxonReportingCategory" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:nbnds="http://www.nbnws.net/Dataset" xmlns:nbndes="http://www.nbnws.net/Designation" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nbnmap="http://www.nbnws.net/Map" xmlns:nbnws="http://www.nbnws.net/service/ws_3_5" xmlns:nbnsp="http://www.nbnws.net/Taxon" xmlns:nbnsb="http://www.nbnws.net/SiteBoundary" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.nbnws.net/service/ws_3_5" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="http://www.nbnws.net/TaxonReportingCategory">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=12" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/SiteBoundary">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=8" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Habitat">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=4" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Dataset">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=1" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Designation">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=2" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Taxon/Taxonomy">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=11" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Taxon">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Taxon/GatewayData">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=3" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.nbnws.net/Map">
+      <xsd:include schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=5" />
+    </xsd:schema>
+  </types>
+  <message name="GetGatewayTaxonReportingCategoryNameSoapInput">
+    <part name="body" element="nbntrc:TaxonReportingCategoryNameRequest" />
+  </message>
+  <message name="GetGatewayTaxonReportingCategoryNameSoapOutput">
+    <part name="body" element="nbntrc:TaxonReportingCategoryNameResponse" />
+  </message>
+  <message name="GetGatewayTaxonReportingCategoryListSoapInput">
+    <part name="body" element="nbntrc:TaxonReportingCategoryListRequest" />
+  </message>
+  <message name="GetGatewayTaxonReportingCategoryListSoapOutput">
+    <part name="body" element="nbntrc:TaxonReportingCategoryListResponse" />
+  </message>
+  <message name="GetGatewaySiteBoundaryNameSoapInput">
+    <part name="body" element="nbnsb:SiteBoundaryNameRequest" />
+  </message>
+  <message name="GetGatewaySiteBoundaryNameSoapOutput">
+    <part name="body" element="nbnsb:SiteBoundaryNameResponse" />
+  </message>
+  <message name="GetGatewaySiteBoundaryListSoapInput">
+    <part name="body" element="nbnsb:SiteBoundaryListRequest" />
+  </message>
+  <message name="GetGatewaySiteBoundaryListSoapOutput">
+    <part name="body" element="nbnsb:SiteBoundaryListResponse" />
+  </message>
+  <message name="GetGatewaySiteBoundaryDiscoverySoapInput">
+    <part name="body" element="nbnsb:SiteBoundaryDiscoveryRequest" />
+  </message>
+  <message name="GetGatewaySiteBoundaryDiscoverySoapOutput">
+    <part name="body" element="nbnsb:SiteBoundaryDiscoveryResponse" />
+  </message>
+  <message name="GetGatewaySiteBoundaryQuerySoapInput">
+    <part name="body" element="nbnsb:SiteBoundaryQueryRequest" />
+  </message>
+  <message name="GetGatewaySiteBoundaryQuerySoapOutput">
+    <part name="body" element="nbnsb:SiteBoundaryQueryResponse" />
+  </message>
+  <message name="GetGatewayHabitatDiscoverySoapInput">
+    <part name="body" element="nbnhab:HabitatDiscoveryRequest" />
+  </message>
+  <message name="GetGatewayHabitatDiscoverySoapOutput">
+    <part name="body" element="nbnhab:HabitatDiscoveryResponse" />
+  </message>
+  <message name="GetGatewayHabitatQuerySoapInput">
+    <part name="body" element="nbnhab:HabitatQueryRequest" />
+  </message>
+  <message name="GetGatewayHabitatQuerySoapOutput">
+    <part name="body" element="nbnhab:HabitatQueryResponse" />
+  </message>
+  <message name="GetGatewayDatasetListSoapInput">
+    <part name="body" element="nbnds:DatasetListRequest" />
+  </message>
+  <message name="GetGatewayDatasetListSoapOutput">
+    <part name="body" element="nbnds:DatasetListResponse" />
+  </message>
+  <message name="GetGatewayDesignationListInput">
+    <part name="body" element="nbndes:DesignationListRequest" />
+  </message>
+  <message name="GetGatewayDesignationListOutput">
+    <part name="body" element="nbndes:DesignationListResponse" />
+  </message>
+  <message name="GetGatewayTaxonomySearchInput">
+    <part name="body" element="nbntx:TaxonomySearchRequest" />
+  </message>
+  <message name="GetGatewayTaxonomySearchOutput">
+    <part name="body" element="nbntx:TaxonomySearchResponse" />
+  </message>
+  <message name="GetGatewayDataOutput">
+    <part name="body" element="nbngwd:GatewayData" />
+  </message>
+  <message name="GetGatewayOneSpeciesDataInput">
+    <part name="body" element="nbnsp:OneSpeciesDataRequest" />
+  </message>
+  <message name="GetGatewayOneSiteDataInput">
+    <part name="body" element="nbnsp:OneSiteDataRequest" />
+  </message>
+  <message name="GetGatewayOneSpeciesLocationDataInput">
+    <part name="body" element="nbnsp:OneSpeciesLocationDataRequest" />
+  </message>
+  <message name="GetGatewayOneSpeciesLocationDataOutput">
+    <part name="body" element="nbnsp:OneSpeciesLocationDataResponse" />
+  </message>
+  <message name="GetGatewaySpeciesListInput">
+    <part name="body" element="nbnsp:SpeciesListRequest" />
+  </message>
+  <message name="GetGatewaySpeciesListOutput">
+    <part name="body" element="nbnsp:SpeciesListResponse" />
+  </message>
+  <message name="GetGatewayGridMapInput">
+    <part name="body" element="nbnmap:GridMapRequest" />
+  </message>
+  <message name="GetGatewayGridMapOutput">
+    <part name="body" element="nbnmap:GridMap" />
+  </message>
+  <message name="GetGatewaySpeciesDensityDataInput">
+    <part name="body" element="nbnsp:SpeciesDensityDataRequest" />
+  </message>
+  <message name="GetGatewaySpeciesDensityDataOutput">
+    <part name="body" element="nbnsp:SpeciesDensityDataResponse" />
+  </message>
+  <portType name="GatewaySoapPort">
+    <operation name="GetTaxonReportingCategoryName">
+      <input message="nbnws:GetGatewayTaxonReportingCategoryNameSoapInput" />
+      <output message="nbnws:GetGatewayTaxonReportingCategoryNameSoapOutput" />
+    </operation>
+    <operation name="GetTaxonReportingCategoryList">
+      <input message="nbnws:GetGatewayTaxonReportingCategoryListSoapInput" />
+      <output message="nbnws:GetGatewayTaxonReportingCategoryListSoapOutput" />
+    </operation>
+    <operation name="GetSiteBoundaryName">
+      <input message="nbnws:GetGatewaySiteBoundaryNameSoapInput" />
+      <output message="nbnws:GetGatewaySiteBoundaryNameSoapOutput" />
+    </operation>
+    <operation name="GetSiteBoundaryList">
+      <input message="nbnws:GetGatewaySiteBoundaryListSoapInput" />
+      <output message="nbnws:GetGatewaySiteBoundaryListSoapOutput" />
+    </operation>
+    <operation name="GetSiteBoundaryDiscovery">
+      <input message="nbnws:GetGatewaySiteBoundaryDiscoverySoapInput" />
+      <output message="nbnws:GetGatewaySiteBoundaryDiscoverySoapOutput" />
+    </operation>
+    <operation name="GetSiteBoundaryQuery">
+      <input message="nbnws:GetGatewaySiteBoundaryQuerySoapInput" />
+      <output message="nbnws:GetGatewaySiteBoundaryQuerySoapOutput" />
+    </operation>
+    <operation name="GetHabitatDiscovery">
+      <input message="nbnws:GetGatewayHabitatDiscoverySoapInput" />
+      <output message="nbnws:GetGatewayHabitatDiscoverySoapOutput" />
+    </operation>
+    <operation name="GetHabitatQuery">
+      <input message="nbnws:GetGatewayHabitatQuerySoapInput" />
+      <output message="nbnws:GetGatewayHabitatQuerySoapOutput" />
+    </operation>
+    <operation name="GetDatasetList">
+      <input message="nbnws:GetGatewayDatasetListSoapInput" />
+      <output message="nbnws:GetGatewayDatasetListSoapOutput" />
+    </operation>
+    <operation name="GetDesignationList">
+      <input message="nbnws:GetGatewayDesignationListInput" />
+      <output message="nbnws:GetGatewayDesignationListOutput" />
+    </operation>
+    <operation name="GetTaxonomySearch">
+      <input message="nbnws:GetGatewayTaxonomySearchInput" />
+      <output message="nbnws:GetGatewayTaxonomySearchOutput" />
+    </operation>
+    <operation name="GetOneSpeciesData">
+      <input message="nbnws:GetGatewayOneSpeciesDataInput" />
+      <output message="nbnws:GetGatewayDataOutput" />
+    </operation>
+    <operation name="GetOneSiteData">
+      <input message="nbnws:GetGatewayOneSiteDataInput" />
+      <output message="nbnws:GetGatewayDataOutput" />
+    </operation>
+    <operation name="GetOneSpeciesLocationData">
+      <input message="nbnws:GetGatewayOneSpeciesLocationDataInput" />
+      <output message="nbnws:GetGatewayOneSpeciesLocationDataOutput" />
+    </operation>
+    <operation name="GetGridMap">
+      <input message="nbnws:GetGatewayGridMapInput" />
+      <output message="nbnws:GetGatewayGridMapOutput" />
+    </operation>
+    <operation name="GetSpeciesList">
+      <input message="nbnws:GetGatewaySpeciesListInput" />
+      <output message="nbnws:GetGatewaySpeciesListOutput" />
+    </operation>
+    <operation name="GetSpeciesDensityData">
+      <input message="nbnws:GetGatewaySpeciesDensityDataInput" />
+      <output message="nbnws:GetGatewaySpeciesDensityDataOutput" />
+    </operation>
+  </portType>
+  <binding name="GatewaySoapBinding" type="nbnws:GatewaySoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetTaxonReportingCategoryName">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetTaxonReportingCategoryName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTaxonReportingCategoryList">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetTaxonReportingCategoryList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSiteBoundaryName">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetSiteBoundaryName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSiteBoundaryList">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetSiteBoundaryList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSiteBoundaryDiscovery">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetSiteBoundaryDiscovery" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSiteBoundaryQuery">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetSiteBoundaryQuery" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetHabitatDiscovery">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetHabitatDiscovery" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetHabitatQuery">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetHabitatQuery" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDatasetList">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetDatasetList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetDesignationList">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetDesignationList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTaxonomySearch">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetTaxonomySearch" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetOneSpeciesData">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetOneSpeciesData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetOneSiteData">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetOneSiteData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetOneSpeciesLocationData">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetOneSpeciesLocationData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetGridMap">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetGridMap" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSpeciesList">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetSpeciesList" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetSpeciesDensityData">
+      <soap:operation soapAction="http://www.nbnws.net/service/ws_3_5/GetSpeciesDensityData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GatewayWebService">
+    <documentation>NBN Gateway Web Service</documentation>
+    <port name="GatewaySoapPort" binding="nbnws:GatewaySoapBinding">
+      <soap:address location="http://www.nbnws.net:80/ws_3_5/GatewayWebService" />
+    </port>
+  </service>
+</definitions>

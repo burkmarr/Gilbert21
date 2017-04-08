@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:trc="http://www.nbnws.net/TaxonReportingCategory" xmlns:taxon="http://www.nbnws.net/Taxon" xmlns:metadata="http://www.nbnws.net/Metadata" xmlns:nbn="http://www.nbnws.net/" xmlns:dataset="http://www.nbnws.net/Dataset" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Dataset" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=6" namespace="http://www.nbnws.net/Metadata" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" namespace="http://www.nbnws.net/Taxon" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=12" namespace="http://www.nbnws.net/TaxonReportingCategory" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:element name="DatasetKey" type="xsd:string" />
+  <xsd:complexType name="DatasetFilter">
+    <xsd:annotation>
+      <xsd:documentation>A filter based on one or more of the range of datasets available on the Gateway.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence maxOccurs="unbounded">
+      <xsd:element ref="dataset:DatasetKey" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DatasetList" type="dataset:DatasetFilter">
+    <xsd:annotation>
+      <xsd:documentation>The list of datasets to use for the query. If omitted, all datasets available to the current user will be queried.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Privileges">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="DownloadRawData" type="xsd:boolean" />
+        <xsd:element name="SensitiveRecordsAccess" type="xsd:boolean" />
+        <xsd:element name="ViewAttributes" type="xsd:boolean" />
+        <xsd:element name="ViewRecorder" type="xsd:boolean" />
+        <xsd:element name="AccessResolution" type="taxon:Resolution" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatasetSummary">
+    <xsd:annotation>
+      <xsd:documentation>Summary information about a dataset. Includes ProviderMetadata, and users access to dataset</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="metadata:ProviderMetadata" />
+        <xsd:element ref="dataset:Privileges" />
+      </xsd:sequence>
+      <xsd:attribute name="id" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation source="The NBN Gateway dataset key" />
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatasetSummaryList">
+    <xsd:annotation>
+      <xsd:documentation>A list of summary information on datasets found on the NBN Gateway in reponse to a query.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="dataset:DatasetSummary" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatasetListResponse">
+    <xsd:annotation>
+      <xsd:documentation>A list of summary information on datasets found on the NBN Gateway in reponse to a query.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="dataset:DatasetSummaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="PrivilegesFilter">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" name="HasDownloadRawData" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>If set to TRUE, returns only datasets to which you have the download raw data privilege.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="HasSensitiveRecordsAccess" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>If set to TRUE, returns only datasets to which you have access to sensitive records.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="HasViewAttributes" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>If set to TRUE, returns only datasets to which you have access to record attributes.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="HasViewRecorder" type="xsd:boolean">
+          <xsd:annotation>
+            <xsd:documentation>If set to TRUE, returns only datasets to which you have access to recorder details.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="0" name="MinimumAccessResolution" type="taxon:Resolution">
+          <xsd:annotation>
+            <xsd:documentation>If set to TRUE, returns only datasets to which you have access to records of a certain resolution or better.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="DatasetListRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for a list of the datasets, and metadata which have data on the NBN Gateway, filtered by species, species group or dataset keys.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:choice>
+              <xsd:element minOccurs="0" ref="taxon:TaxonVersionKey" />
+              <xsd:element minOccurs="0" ref="trc:TaxonReportingCategoryKey" />
+              <xsd:element minOccurs="0" ref="dataset:DatasetList" />
+            </xsd:choice>
+            <xsd:element minOccurs="0" ref="dataset:PrivilegesFilter">
+              <xsd:annotation>
+                <xsd:documentation>A set of filters to apply resulting datasets.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

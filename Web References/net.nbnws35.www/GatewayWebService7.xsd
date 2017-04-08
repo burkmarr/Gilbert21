@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:dataset="http://www.nbnws.net/Dataset" xmlns:taxon="http://www.nbnws.net/Taxon" xmlns:map="http://www.nbnws.net/Map" xmlns:nbntrc="http://www.nbnws.net/TaxonReportingCategory" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:nbn="http://www.nbnws.net/" xmlns:desig="http://www.nbnws.net/Designation" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/TaxonReportingCategory" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=1" namespace="http://www.nbnws.net/Dataset" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=2" namespace="http://www.nbnws.net/Designation" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=9" namespace="http://www.nbnws.net/Spatial" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" namespace="http://www.nbnws.net/Taxon" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=5" namespace="http://www.nbnws.net/Map" />
+  <xsd:element name="TaxonReportingCategoryList">
+    <xsd:annotation>
+      <xsd:documentation>A list of all the taxon groups a species belongs to.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="nbntrc:TaxonReportingCategory" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonReportingCategoryListResponse">
+    <xsd:annotation>
+      <xsd:documentation>A response to a request for a list of taxon reporting categories.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="map:Map">
+              <xsd:annotation>
+                <xsd:documentation>A link to a map of the data represented in the document.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="nbntrc:TaxonReportingCategoryList" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetSummaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonReportingCategoryListRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for a list of the taxon groups which have data on the NBN Gateway, filtered by area, dataset etc.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="spatial:GeographicalFilter" />
+            <xsd:element minOccurs="0" ref="taxon:DateRange" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList">
+              <xsd:annotation>
+                <xsd:documentation>The range of datasets that should be included in the spceis list. If omitted, all datasets 			available to the current user will be queried.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+          <xsd:attribute default="NONE" name="designation" type="desig:SpeciesDesignation" use="optional" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonReportingCategoryKey" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The taxon group key to fetch data for.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TaxonReportingCategoryNameRequest">
+    <xsd:annotation>
+      <xsd:documentation>A lookup request for a taxon group name using a taxon group key</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbntrc:TaxonReportingCategoryKey" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonReportingCategory">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="taxonReportingCategoryKey" type="xsd:string" />
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonReportingCategoryNameResponse">
+    <xsd:annotation>
+      <xsd:documentation>Information for a taxon reporting category </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="nbntrc:TaxonReportingCategory" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

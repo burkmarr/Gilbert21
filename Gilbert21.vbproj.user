@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <PublishUrlHistory>ftp://ftp.gilbert21.org.uk/htdocs/version3/|ftp://ftp.gilbert21.org.uk/htdocs/version2/|ftp://ftp.gilbert21.org.uk/htdocs/test/|C:\Users\Rich\Dropbox\G21\Gilbert21\Published\Version2\|ftp://ftp.gilbert21.org.uk/htdocs/version1/</PublishUrlHistory>
+    <InstallUrlHistory>http://www.gilbert21.org.uk/version3/|http://www.gilbert21.org.uk/version2/|http://www.gilbert21.org.uk/version/|http://www.gilbert21.org.uk/test/|http://www.gilbert21.org.uk/version1/</InstallUrlHistory>
+    <SupportUrlHistory>http://www.gilbert21.org.uk</SupportUrlHistory>
+    <UpdateUrlHistory>
+    </UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <ErrorReportUrlHistory>
+    </ErrorReportUrlHistory>
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+</Project>

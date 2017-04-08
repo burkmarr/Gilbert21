@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.nbnws.net/ws_3_4/ws/taxonomy/WSDL" filename="WSDL.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_4/ws/taxonomy/schema/request" filename="request.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://www.nbnws.net/ws_3_4/ws/taxonomy/schema/data" filename="data.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:trc="http://www.nbnws.net/TaxonReportingCategory" xmlns:taxonomy="http://www.nbnws.net/Taxon/Taxonomy" xmlns:designation="http://www.nbnws.net/Designation" xmlns:nbn="http://www.nbnws.net/" xmlns:taxon="http://www.nbnws.net/Taxon" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Taxon/Taxonomy" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=10" namespace="http://www.nbnws.net/Taxon" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=12" namespace="http://www.nbnws.net/TaxonReportingCategory" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=2" namespace="http://www.nbnws.net/Designation" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:complexType name="TaxonList">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="taxonomy:Taxon" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AggregateList" type="taxonomy:TaxonList" />
+  <xsd:element name="LowerTaxaList" type="taxonomy:TaxonList" />
+  <xsd:element name="SynonymList" type="taxonomy:TaxonList" />
+  <xsd:element name="TaxonName">
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="wellFormed" type="xsd:boolean" use="required" />
+          <xsd:attribute name="isScientific" type="xsd:boolean" use="required" />
+          <xsd:attribute name="isPreferredName" type="xsd:boolean" use="required" />
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="Authority" type="xsd:string" />
+  <xsd:element name="Taxon">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="taxonomy:TaxonName" />
+        <xsd:element ref="taxon:TaxonVersionKey" />
+        <xsd:element minOccurs="0" ref="taxonomy:Authority" />
+        <xsd:element ref="trc:TaxonReportingCategory" />
+        <xsd:element minOccurs="0" ref="taxonomy:AggregateList" />
+        <xsd:element minOccurs="0" ref="taxonomy:LowerTaxaList" />
+        <xsd:element minOccurs="0" ref="taxonomy:SynonymList" />
+        <xsd:element minOccurs="0" ref="taxonomy:TaxonDesignations" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonDesignations">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="unbounded" ref="taxonomy:TaxonDesignation" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonDesignation">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="designation:Designation" />
+        <xsd:element name="startDate" type="xsd:date" />
+        <xsd:element minOccurs="0" name="endDate" type="xsd:date" />
+        <xsd:element name="source" type="xsd:string" />
+        <xsd:element minOccurs="0" name="statusConstraint" type="xsd:string" />
+        <xsd:element minOccurs="0" name="geographicalConstraint" type="xsd:string" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="TaxonomySearchResponse">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element name="Taxa" type="taxonomy:TaxonList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SearchTerm" type="xsd:string" />
+  <xsd:element name="TaxonomySearchRequest">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:choice>
+            <xsd:element ref="taxonomy:SearchTerm" />
+            <xsd:element ref="taxon:TaxonVersionKey" />
+          </xsd:choice>
+          <xsd:attribute default="false" name="includeDesignation" type="xsd:boolean" />
+          <xsd:attribute default="false" name="includeFormerDesignations" type="xsd:boolean" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

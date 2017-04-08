@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:nbnt="http://webservices.searchnbn.net/taxonomyData" xmlns:nbntws="http://webservices.searchnbn.net/taxonomyService" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:nbntq="http://webservices.searchnbn.net/taxonomyQuery" targetNamespace="http://webservices.searchnbn.net/taxonomyService" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="http://webservices.searchnbn.net/taxonomyData">
+      <xsd:include schemaLocation="http://www.nbnws.net/ws_3_4/ws/taxonomy/schema/data" />
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://webservices.searchnbn.net/taxonomyQuery">
+      <xsd:include schemaLocation="http://www.nbnws.net/ws_3_4/ws/taxonomy/schema/request" />
+    </xsd:schema>
+  </types>
+  <message name="GetTaxonomySearchInput">
+    <part name="body" element="nbntq:TaxonomySearchRequest" />
+  </message>
+  <message name="GetTaxonomySearchOutput">
+    <part name="body" element="nbnt:TaxonomySearchList" />
+  </message>
+  <portType name="NBNTaxonomySoapPort">
+    <operation name="GetTaxonomySearch">
+      <input message="nbntws:GetTaxonomySearchInput" />
+      <output message="nbntws:GetTaxonomySearchOutput" />
+    </operation>
+  </portType>
+  <binding name="NBNTaxonomySoapBinding" type="nbntws:NBNTaxonomySoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetTaxonomySearch">
+      <soap:operation soapAction="http://webservices.searchnbn.net/taxonomyService/GetTaxonomySearch" />
+      <input>
+        <soap:body use="literal" namespace="http://webservices.searchnbn.net/taxonomyQuery" />
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://webservices.searchnbn.net/taxonomyData" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GatewayWebService">
+    <documentation>NBN Gateway Taxonomy Search Web Service</documentation>
+    <port name="NBNTaxonomySoapPort" binding="nbntws:NBNTaxonomySoapBinding">
+      <soap:address location="http://www.nbnws.net/ws_3_4/ws/taxonomy/webservice" />
+    </port>
+  </service>
+</definitions>

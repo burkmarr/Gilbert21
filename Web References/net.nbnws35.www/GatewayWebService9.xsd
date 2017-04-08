@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:dataset="http://www.nbnws.net/Dataset" xmlns:taxon="http://www.nbnws.net/Taxon" xmlns:map="http://www.nbnws.net/Map" xmlns:desig="http://www.nbnws.net/Designation" xmlns:spatial="http://www.nbnws.net/Spatial" xmlns:gwd="http://www.nbnws.net/Taxon/GatewayData" xmlns:nbn="http://www.nbnws.net/" xmlns:trc="http://www.nbnws.net/TaxonReportingCategory" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/Taxon" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=12" namespace="http://www.nbnws.net/TaxonReportingCategory" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=1" namespace="http://www.nbnws.net/Dataset" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=2" namespace="http://www.nbnws.net/Designation" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=3" namespace="http://www.nbnws.net/Taxon/GatewayData" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=7" namespace="http://www.nbnws.net/" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=9" namespace="http://www.nbnws.net/Spatial" />
+  <xsd:import schemaLocation="http://www.nbnws.net:80/ws_3_5/GatewayWebService?xsd=5" namespace="http://www.nbnws.net/Map" />
+  <xsd:simpleType name="SpeciesSort">
+    <xsd:annotation>
+      <xsd:documentation>The type of sort to apply to any species lists returned by a query.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Scientific" />
+      <xsd:enumeration value="Common" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="Start" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The start year (inclusive).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="End" type="xsd:int">
+    <xsd:annotation>
+      <xsd:documentation>The end date (inclusive). </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="YearFilter">
+    <xsd:annotation>
+      <xsd:documentation>A year filter (only data recorded within a given data range should be returned).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" ref="taxon:Start" />
+      <xsd:element minOccurs="0" ref="taxon:End" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DateRange" type="taxon:YearFilter">
+    <xsd:annotation>
+      <xsd:documentation>The range of dates that should be included when finding the distinct species/dataset/species groups etc.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:simpleType name="Resolution">
+    <xsd:annotation>
+      <xsd:documentation>The resolution of a record. The NBN Gateway stores/delivers data at one of 4 resolutions.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Any" />
+      <xsd:enumeration value="_100m" />
+      <xsd:enumeration value="_1km" />
+      <xsd:enumeration value="_2km" />
+      <xsd:enumeration value="_10km" />
+      <xsd:enumeration value="None" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="TaxonVersionKey" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The taxon version key for the species to map.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TaxonVersionKeys" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A list of taxon version keys in a comma delimited list for the species to map.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ScientificName" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The full species name (also known as latin name).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CommonName" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The common name of the species (if one exists).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Authority" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>The authority for this species.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SpeciesAttributes" type="nbn:AttributeCollectionType">
+    <xsd:annotation>
+      <xsd:documentation>A set of attributes which belong to a particular species.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Species">
+    <xsd:annotation>
+      <xsd:documentation>A individual species with all the information that goes with it.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="taxon:ScientificName" />
+        <xsd:element minOccurs="0" ref="taxon:CommonName" />
+        <xsd:element minOccurs="0" ref="taxon:Authority" />
+        <xsd:element minOccurs="0" ref="trc:TaxonReportingCategory" />
+        <xsd:element minOccurs="0" ref="taxon:SpeciesAttributes" />
+      </xsd:sequence>
+      <xsd:attribute name="taxonVersionKey" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">The unique taxonVersionKey for this species.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SpeciesList">
+    <xsd:annotation>
+      <xsd:documentation>A list of individual species found by a query.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" ref="taxon:Species" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="OneSpeciesDataRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for data for one species.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="taxon:TaxonVersionKey" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList" />
+            <xsd:element minOccurs="0" ref="taxon:DateRange" />
+            <xsd:element minOccurs="0" name="Resolution" type="taxon:Resolution">
+              <xsd:annotation>
+                <xsd:documentation>The resolution at which the data should be downloaded.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ReturnRecordAttributes" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="OneSpeciesLocationDataResponse">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="gwd:Header" />
+            <xsd:element ref="taxon:Species" />
+            <xsd:element minOccurs="0" ref="gwd:AggregateSiteList" />
+            <xsd:element ref="dataset:DatasetSummaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="OneSpeciesLocationDataRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for location data for one species.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="taxon:TaxonVersionKey" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList" />
+            <xsd:element minOccurs="0" ref="taxon:DateRange" />
+            <xsd:choice>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="MinimumResolution" type="taxon:Resolution">
+                  <xsd:annotation>
+                    <xsd:documentation>Minimum resolution to use in this query. Data available only at lower resolutions will be omitted.</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="MaximumResolution" type="taxon:Resolution">
+                  <xsd:annotation>
+                    <xsd:documentation>Maximum resolution to use in this query. Data available at higher resolutions will be blurred to this resolution.</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+              <xsd:element minOccurs="0" name="AtResolution" type="taxon:Resolution">
+                <xsd:annotation>
+                  <xsd:documentation>Resolution at which all data should be returned. Data available only at lower resolutions will be omitted. Data available at higher resolutions will be blurred to this resolution.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="OneSiteDataRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for data for one site or geographical area.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element ref="spatial:GeographicalFilter" />
+            <xsd:element minOccurs="0" ref="taxon:DateRange" />
+            <xsd:element minOccurs="0" ref="taxon:TaxonVersionKeys">
+              <xsd:annotation>
+                <xsd:documentation>The species whose data should be queried/returned by this request.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="trc:TaxonReportingCategoryKey" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList" />
+            <xsd:element minOccurs="0" name="ReturnRecordAttributes" type="xsd:boolean" />
+          </xsd:sequence>
+          <xsd:attribute default="NONE" name="designation" type="desig:SpeciesDesignation" use="optional" />
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SpeciesListResponse">
+    <xsd:annotation>
+      <xsd:documentation>A response to a request for a species list.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="map:Map">
+              <xsd:annotation>
+                <xsd:documentation>A link to a map of the data represented in the document.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" ref="taxon:SpeciesList" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetSummaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SpeciesListRequest">
+    <xsd:annotation>
+      <xsd:documentation>A request for a list of the species which have data on the NBN Gateway, filtered by area, dataset etc.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="spatial:GeographicalFilter" />
+            <xsd:element minOccurs="0" ref="taxon:DateRange" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList" />
+            <xsd:element minOccurs="0" ref="trc:TaxonReportingCategoryKey" />
+            <xsd:element minOccurs="0" ref="taxon:TaxonVersionKeys" />
+          </xsd:sequence>
+          <xsd:attribute default="Scientific" name="sort" type="taxon:SpeciesSort" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">How the returned data should be sorted.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute default="NONE" name="designation" type="desig:SpeciesDesignation" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">What kind of species should be returned? All, or only BAP or SOCC species?</xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SpeciesDensityDataResponse">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:ResponseRequirements">
+          <xsd:sequence>
+            <xsd:element ref="gwd:Header" />
+            <xsd:element ref="taxon:SpeciesList" />
+            <xsd:element minOccurs="0" ref="gwd:AggregateSiteList" />
+            <xsd:element ref="dataset:DatasetSummaryList" />
+          </xsd:sequence>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SpeciesDensityDataRequest">
+    <xsd:complexType>
+      <xsd:complexContent mixed="false">
+        <xsd:extension base="nbn:RequestRequirements">
+          <xsd:sequence>
+            <xsd:element minOccurs="0" ref="spatial:GeographicalFilter" />
+            <xsd:element minOccurs="0" ref="taxon:DateRange" />
+            <xsd:element minOccurs="0" ref="dataset:DatasetList" />
+            <xsd:element minOccurs="0" ref="trc:TaxonReportingCategoryKey" />
+            <xsd:element minOccurs="0" ref="taxon:TaxonVersionKeys" />
+            <xsd:element minOccurs="0" name="AtResolution" type="taxon:Resolution">
+              <xsd:annotation>
+                <xsd:documentation>Resolution at which all data should be returned. Data available only at lower resolutions will be omitted. Data available at higher resolutions will be blurred to this resolution.</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+          <xsd:attribute default="NONE" name="designation" type="desig:SpeciesDesignation" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">What kind of species should be returned? All, or only BAP or SOCC species?</xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:complexContent>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

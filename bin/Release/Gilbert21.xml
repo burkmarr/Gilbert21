@@ -1,0 +1,1849 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Gilbert21
+</name>
+</assembly>
+<members>
+<member name="P:G21.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:G21.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:G21.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.#ctor">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryNameCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryListCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryNameCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryListCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryDiscoveryCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryQueryCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetHabitatDiscoveryCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetHabitatQueryCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetDatasetListCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetDesignationListCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetTaxonomySearchCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesDataCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetOneSiteDataCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesLocationDataCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetGridMapCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetSpeciesListCompleted">
+	<remarks/>
+</member><member name="E:G21.net.nbnws35.www.GatewayWebService.GetSpeciesDensityDataCompleted">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryName(G21.net.nbnws35.www.TaxonReportingCategoryNameRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryNameAsync(G21.net.nbnws35.www.TaxonReportingCategoryNameRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryNameAsync(G21.net.nbnws35.www.TaxonReportingCategoryNameRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryList(G21.net.nbnws35.www.TaxonReportingCategoryListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryListAsync(G21.net.nbnws35.www.TaxonReportingCategoryListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonReportingCategoryListAsync(G21.net.nbnws35.www.TaxonReportingCategoryListRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryName(G21.net.nbnws35.www.SiteBoundaryNameRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryNameAsync(G21.net.nbnws35.www.SiteBoundaryNameRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryNameAsync(G21.net.nbnws35.www.SiteBoundaryNameRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryList(G21.net.nbnws35.www.SiteBoundaryListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryListAsync(G21.net.nbnws35.www.SiteBoundaryListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryListAsync(G21.net.nbnws35.www.SiteBoundaryListRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryDiscovery(G21.net.nbnws35.www.SiteBoundaryDiscoveryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryDiscoveryAsync(G21.net.nbnws35.www.SiteBoundaryDiscoveryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryDiscoveryAsync(G21.net.nbnws35.www.SiteBoundaryDiscoveryRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryQuery(G21.net.nbnws35.www.SiteBoundaryQueryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryQueryAsync(G21.net.nbnws35.www.SiteBoundaryQueryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSiteBoundaryQueryAsync(G21.net.nbnws35.www.SiteBoundaryQueryRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetHabitatDiscovery(G21.net.nbnws35.www.HabitatDiscoveryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetHabitatDiscoveryAsync(G21.net.nbnws35.www.HabitatDiscoveryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetHabitatDiscoveryAsync(G21.net.nbnws35.www.HabitatDiscoveryRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetHabitatQuery(G21.net.nbnws35.www.HabitatQueryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetHabitatQueryAsync(G21.net.nbnws35.www.HabitatQueryRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetHabitatQueryAsync(G21.net.nbnws35.www.HabitatQueryRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetDatasetList(G21.net.nbnws35.www.DatasetListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetDatasetListAsync(G21.net.nbnws35.www.DatasetListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetDatasetListAsync(G21.net.nbnws35.www.DatasetListRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetDesignationList(G21.net.nbnws35.www.DesignationListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetDesignationListAsync(G21.net.nbnws35.www.DesignationListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetDesignationListAsync(G21.net.nbnws35.www.DesignationListRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonomySearch(G21.net.nbnws35.www.TaxonomySearchRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonomySearchAsync(G21.net.nbnws35.www.TaxonomySearchRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetTaxonomySearchAsync(G21.net.nbnws35.www.TaxonomySearchRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesData(G21.net.nbnws35.www.OneSpeciesDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesDataAsync(G21.net.nbnws35.www.OneSpeciesDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesDataAsync(G21.net.nbnws35.www.OneSpeciesDataRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSiteData(G21.net.nbnws35.www.OneSiteDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSiteDataAsync(G21.net.nbnws35.www.OneSiteDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSiteDataAsync(G21.net.nbnws35.www.OneSiteDataRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesLocationData(G21.net.nbnws35.www.OneSpeciesLocationDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesLocationDataAsync(G21.net.nbnws35.www.OneSpeciesLocationDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetOneSpeciesLocationDataAsync(G21.net.nbnws35.www.OneSpeciesLocationDataRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetGridMap(G21.net.nbnws35.www.GridMapRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetGridMapAsync(G21.net.nbnws35.www.GridMapRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetGridMapAsync(G21.net.nbnws35.www.GridMapRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSpeciesList(G21.net.nbnws35.www.SpeciesListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSpeciesListAsync(G21.net.nbnws35.www.SpeciesListRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSpeciesListAsync(G21.net.nbnws35.www.SpeciesListRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSpeciesDensityData(G21.net.nbnws35.www.SpeciesDensityDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSpeciesDensityDataAsync(G21.net.nbnws35.www.SpeciesDensityDataRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.GetSpeciesDensityDataAsync(G21.net.nbnws35.www.SpeciesDensityDataRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws35.www.GatewayWebService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GatewayWebService">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryNameRequest.TaxonReportingCategoryKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonReportingCategoryNameRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RequestRequirements.registrationKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RequestRequirements.username">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RequestRequirements.userPassKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.RequestRequirements">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AbstractRecordType.RecordDate">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AbstractRecordType.Determiner">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AbstractRecordType.Recorder">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AbstractRecordType.RecordAttributes">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AbstractRecordType.pid">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AbstractRecordType.isSensitive">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.AbstractRecordType">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RecordDate.accuracy">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RecordDate.from">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RecordDate.fromSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RecordDate.to">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.RecordDate.toSpecified">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.RecordDate">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.AfterYear">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.BeforeYear">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.Circa">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.DayRange">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.Day">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.MonthRange">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.Month">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.Nodate">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.PublicationDate">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.Unknown">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.YearRange">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.DateAccuracy.Year">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DateAccuracy">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AttributeType.Name">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AttributeType.Value">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.AttributeType">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AreaType.units">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AreaType.unitsSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AreaType.Value">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.AreaType">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.AreaUnit.SquareMetres">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.AreaUnit.SquareKilometres">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.AreaUnit.Acres">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.AreaUnit.Hectares">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.AreaUnit.Unknown">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.AreaUnit">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Filter.Item">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Filter">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.BoundingBox">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Box.minx">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Box.miny">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Box.maxx">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Box.maxy">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Box">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeometryFeature.srs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GeometryFeature">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpatialReferenceSystem.EPSG_27700">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpatialReferenceSystem.osgb_BNG">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpatialReferenceSystem.EPSG_29903">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpatialReferenceSystem.osni_ING">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpatialReferenceSystem.EPSG_4326">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpatialReferenceSystem.EPSG_4277">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpatialReferenceSystem">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GeographicalFeature">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ClippedPolygon.Clipped">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ClippedPolygon.Polygon">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ClippedPolygon.PolygonSNo">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.ClippedPolygon">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Polygon.Boundary">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Polygon.Hole">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Polygon">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PolygonBoundary.Ring">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.PolygonBoundary">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Coordinate.x">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Coordinate.y">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Coordinate">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PolygonHole.Ring">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.PolygonHole">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Buffer.Point">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Buffer.Distance">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Buffer">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Point">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MultiPartPolygon.Polygon">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.MultiPartPolygon">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapImage.Url">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapImage.Width">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapImage.Height">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapImage.Format">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapImage.BoundingBox">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.MapImage">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Format.imagegif">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Format.imagejpeg">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Format.imagepng">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Format">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetFilter.DatasetKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DatasetFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.YearFilter.Start">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.YearFilter.StartSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.YearFilter.End">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.YearFilter.EndSpecified">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.YearFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ResponseRequirements.TermsAndConditions">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ResponseRequirements.NBNLogo">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ResponseRequirements.RecordsFound">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.ResponseRequirements">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryNameResponse.TaxonReportingCategory">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonReportingCategoryNameResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategory.taxonReportingCategoryKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategory.Value">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonReportingCategory">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListRequest.GeographicalFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListRequest.DateRange">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListRequest.designation">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonReportingCategoryListRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeographicalFilter.Item">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeographicalFilter.MapSettings">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeographicalFilter.OverlayRule">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeographicalFilter.OverlayRuleSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeographicalFilter.MinimumResolution">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GeographicalFilter.MinimumResolutionSpecified">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GeographicalFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundary.SiteBoundaryName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundary.SiteBoundaryType">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundary.siteKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundary.providerKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundary">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridSquare.key">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GridSquare">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.height">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.heightSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.width">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.widthSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.outlineWidth">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.outlineWidthSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.outlineColour">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.fillColour">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.fillTransparency">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.fillTransparencySpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.mapOnly">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.MapSettings.mapOnlySpecified">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.MapSettings">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.OverlayRule.overlaps">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.OverlayRule.within">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.OverlayRule">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Resolution.Any">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Resolution._100m">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Resolution._1km">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Resolution._2km">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Resolution._10km">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Resolution.None">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Resolution">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListResponse.Map">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListResponse.TaxonReportingCategoryList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonReportingCategoryListResponse.DatasetSummaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonReportingCategoryListResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetSummary.ProviderMetadata">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetSummary.Privileges">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetSummary.id">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DatasetSummary">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.DatasetTitle">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.DatasetProvider">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.Abstract">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.Survey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.OccurrenceAttribute">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.AccessConstraints">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.UseConstraints">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.exchangeFormatVersion">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.datestamp">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.ProviderMetadata.gatewayId">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.ProviderMetadata">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.Description">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.DataCaptureMethod">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.DatasetPurpose">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.GeographicalCoverage">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.TemporalCoverage">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.DataQuality">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Abstract.AdditionalInformation">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Abstract">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Survey.Name">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Survey.Abstract">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Survey.id">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Survey.providerId">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Survey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OccurrenceAttribute.Name">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OccurrenceAttribute.Description">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.OccurrenceAttribute">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Privileges.DownloadRawData">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Privileges.SensitiveRecordsAccess">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Privileges.ViewAttributes">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Privileges.ViewRecorder">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Privileges.AccessResolution">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Privileges">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryNameRequest.SiteBoundary">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryNameRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryNameResponse.SiteBoundary">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryNameResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryListRequest.SiteBoundaryType">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryListRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryListResponse.SiteBoundaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryListResponse">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryDiscoveryRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryDiscoveryResponse.SiteBoundaryDatasetList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryDiscoveryResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryQueryRequest.SiteBoundaryLayerID">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryQueryRequest.RequiredPolygonVertices">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryQueryRequest.SiteBoundaryLayerFilter">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryQueryRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryQueryResponse.SummaryInformation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryQueryResponse.SiteBoundaryLayers">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryQueryResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SummaryInformation.NumberOfSiteBoundaryLayers">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SummaryInformation.NumberOfSiteBoundaryFeatures">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SummaryInformation.InputPolygonArea">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SummaryInformation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryLayer.ProviderMetadata">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryLayer.NumberOfSiteBoundaryFeatures">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryLayer.SiteBoundaryArea">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryLayer.SiteBoundaryCoveragePercentage">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryLayer.SiteBoundaryFeatures">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryLayer">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryFeature.SiteBoundary">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SiteBoundaryFeature.Polygons">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SiteBoundaryFeature">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.HabitatDiscoveryRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatDiscoveryResponse.HabitatDatasetList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.HabitatDiscoveryResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatQueryRequest.HabitatLayerID">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatQueryRequest.RequiredPolygonVertices">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatQueryRequest.HabitatLayerFilter">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.HabitatQueryRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatQueryResponse.SummaryInformation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatQueryResponse.HabitatLayers">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.HabitatQueryResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SummaryInformation1.NumberOfHabitatLayers">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SummaryInformation1.NumberOfHabitatFeatures">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SummaryInformation1.InputPolygonArea">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SummaryInformation1">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatLayer.ProviderMetadata">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatLayer.NumberOfHabitatFeatures">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatLayer.HabitatArea">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatLayer.HabitatCoveragePercentage">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatLayer.HabitatFeatures">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.HabitatLayer">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.HabitatFeature.Polygons">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.HabitatFeature">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetListRequest.Item">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetListRequest.ItemElementName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetListRequest.PrivilegesFilter">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DatasetListRequest">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemChoiceType.DatasetList">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemChoiceType.TaxonVersionKey">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemChoiceType.TaxonReportingCategoryKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.ItemChoiceType">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasDownloadRawData">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasDownloadRawDataSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasSensitiveRecordsAccess">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasSensitiveRecordsAccessSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasViewAttributes">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasViewAttributesSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasViewRecorder">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.HasViewRecorderSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.MinimumAccessResolution">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.PrivilegesFilter.MinimumAccessResolutionSpecified">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.PrivilegesFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DatasetListResponse.DatasetSummaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DatasetListResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DesignationListRequest.Item">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DesignationListRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DesignationFilters.DesignationFilter">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DesignationFilters">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DesignationListResponse.DesignationCategory">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DesignationListResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DesignationCategory.DesignationList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.DesignationCategory.name">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.DesignationCategory">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Designation.name">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Designation.key">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Designation.abbreviation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Designation.description">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Designation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonomySearchRequest.Item">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonomySearchRequest.ItemElementName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonomySearchRequest.includeDesignation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonomySearchRequest.includeFormerDesignations">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonomySearchRequest">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemChoiceType1.SearchTerm">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemChoiceType1.TaxonVersionKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.ItemChoiceType1">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonomySearchResponse.Taxa">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonomySearchResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.TaxonName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.TaxonVersionKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.Authority">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.TaxonReportingCategory">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.AggregateList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.LowerTaxaList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.SynonymList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Taxon.TaxonDesignations">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Taxon">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonName.wellFormed">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonName.isScientific">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonName.isPreferredName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonName.Value">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.Designation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.startDate">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.endDate">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.endDateSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.source">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.statusConstraint">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.TaxonDesignation.geographicalConstraint">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.TaxonDesignation">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.TaxonVersionKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.DateRange">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.Resolution">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.ResolutionSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.ReturnRecordAttributes">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesDataRequest.ReturnRecordAttributesSpecified">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.OneSpeciesDataRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GatewayData.Header">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GatewayData.Data">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GatewayData">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Header.Status">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Header.Summary">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Header">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Status.ErrorCode">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Status.ErrorDescription">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Status.ErrorTime">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Status.isError">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Status">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Summary.DatasetCount">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Summary.LocationCount">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Summary.RecordCount">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Summary">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Data.Map">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Data.SpeciesList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Data.SiteList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Data.Dataset">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Data">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Species.ScientificName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Species.CommonName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Species.Authority">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Species.TaxonReportingCategory">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Species.SpeciesAttributes">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Species.taxonVersionKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Species">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Site.Area">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Site.GridSquare">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Site.siteKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Site">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Dataset.ProviderMetadata">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Dataset.Privileges">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Dataset.Location">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Dataset.id">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Dataset">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Location.LocationName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Location.SpeciesRecord">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Location.siteKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Location.id">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Location.pid">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Location.blurred">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Location">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesRecord.id">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesRecord.taxonVersionKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpeciesRecord">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.GeographicalFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.DateRange">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.TaxonVersionKeys">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.TaxonReportingCategoryKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.ReturnRecordAttributes">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.ReturnRecordAttributesSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSiteDataRequest.designation">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.OneSiteDataRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataRequest.TaxonVersionKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataRequest.DateRange">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataRequest.Items">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataRequest.ItemsElementName">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.OneSpeciesLocationDataRequest">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemsChoiceType.AtResolution">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemsChoiceType.MaximumResolution">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.ItemsChoiceType.MinimumResolution">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.ItemsChoiceType">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataResponse.Header">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataResponse.Species">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataResponse.AggregateSiteList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.OneSpeciesLocationDataResponse.DatasetSummaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.OneSpeciesLocationDataResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.Site">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.RecordCount">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.SpeciesCount">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.HasSensitiveData">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.HasSensitiveDataSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.HasNonSensitiveData">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.HasNonSensitiveDataSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.EarliestRecord">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.AggregateSite.LatestRecord">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.AggregateSite">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapRequest.TaxonVersionKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapRequest.Resolution">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapRequest.ResolutionSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapRequest.GridMapSettings">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapRequest.Classification">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GridMapRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.Width">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.WidthSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.Height">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.HeightSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.Grid">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.GridSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.Background">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.BackgroundSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.ViceCounty">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.ViceCountySpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.Region">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.RegionSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.FillColour">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMapSettings.GeographicalFilter">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GridMapSettings">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Grid.None">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Grid.Grid_10km">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Grid.Grid_100km">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Grid.Grid_10km_100km">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Grid">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Background.None">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Background.OSMap">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Background.ViceCounty">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Background">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Region.GB">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Region.GBIreland">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.Region.Ireland">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Region">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Band.from">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Band.to">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Band.fill">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.Band.border">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.Band">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMap.Map">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMap.Species">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GridMap.DatasetSummaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GridMap">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.GeographicalFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.DateRange">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.TaxonReportingCategoryKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.TaxonVersionKeys">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.sort">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListRequest.designation">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpeciesListRequest">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpeciesSort.Scientific">
+	<remarks/>
+</member><member name="F:G21.net.nbnws35.www.SpeciesSort.Common">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpeciesSort">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListResponse.Map">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListResponse.SpeciesList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesListResponse.DatasetSummaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpeciesListResponse">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.GeographicalFilter">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.DateRange">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.DatasetList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.TaxonReportingCategoryKey">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.TaxonVersionKeys">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.AtResolution">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.AtResolutionSpecified">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataRequest.designation">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpeciesDensityDataRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataResponse.Header">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataResponse.SpeciesList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataResponse.AggregateSiteList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.SpeciesDensityDataResponse.DatasetSummaryList">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.SpeciesDensityDataResponse">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetTaxonReportingCategoryNameCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetTaxonReportingCategoryNameCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetTaxonReportingCategoryNameCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetTaxonReportingCategoryListCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetTaxonReportingCategoryListCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetTaxonReportingCategoryListCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryNameCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetSiteBoundaryNameCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryNameCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryListCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetSiteBoundaryListCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryListCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryDiscoveryCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetSiteBoundaryDiscoveryCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryDiscoveryCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryQueryCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetSiteBoundaryQueryCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSiteBoundaryQueryCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetHabitatDiscoveryCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetHabitatDiscoveryCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetHabitatDiscoveryCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetHabitatQueryCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetHabitatQueryCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetHabitatQueryCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetDatasetListCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetDatasetListCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetDatasetListCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetDesignationListCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetDesignationListCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetDesignationListCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetTaxonomySearchCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetTaxonomySearchCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetTaxonomySearchCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetOneSpeciesDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetOneSpeciesDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetOneSpeciesDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetOneSiteDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetOneSiteDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetOneSiteDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetOneSpeciesLocationDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetOneSpeciesLocationDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetOneSpeciesLocationDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetGridMapCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetGridMapCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetGridMapCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSpeciesListCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetSpeciesListCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSpeciesListCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSpeciesDensityDataCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws35.www.GetSpeciesDensityDataCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws35.www.GetSpeciesDensityDataCompletedEventArgs">
+	<remarks/>
+</member><member name="T:G21.clsExifWorks.TagNames">
+	<summary>
+ Contains possible values of EXIF tag names (ID)
+ </summary>
+	<remarks>See GdiPlusImaging.h</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.Orientations">
+	<summary>
+ Real position of 0th row and column of picture
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.ExposurePrograms">
+	<summary>
+ Exposure programs
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.ExposureMeteringModes">
+	<summary>
+ Exposure metering modes
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.FlashModes">
+	<summary>
+ Flash activity modes
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.LightSources">
+	<summary>
+ Possible light sources (white balance)
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.ExifDataTypes">
+	<summary>
+ EXIF data types
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.Rational.ToString(System.String)">
+	<summary>
+ Converts rational to string representation
+ </summary>
+	<param name="Delimiter">Optional, default "/". String to be used as delimiter of components.</param>
+	<returns>String representation of the rational.</returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.Rational.ToDouble">
+	<summary>
+ Converts rational to double precision real number
+ </summary>
+	<returns>The rational as double precision real number.</returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks.Rational">
+	<summary>
+ Represents rational which is type of some Exif properties
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.#ctor(System.Drawing.Bitmap@)">
+	<summary>
+ Initializes new instance of this class.
+ </summary>
+	<param name="Bitmap">Bitmap to read exif information from</param>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.#ctor(System.String)">
+	<summary>
+ Initializes new instance of this class.
+ </summary>
+	<param name="FileName">Name of file to be loaded</param>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Encoding">
+	<summary>
+ Get or set encoding used for string metadata
+ </summary>
+	<value>Encoding used for string metadata</value>
+	<remarks>Default encoding is UTF-8</remarks>
+	<history>
+ [altair] 11.07.2004 Created
+ [altair] 05.09.2005 Changed from shared to instance member
+ </history>
+</member><member name="M:G21.clsExifWorks.GetBitmap">
+	<summary>
+ Returns copy of bitmap this instance is working on
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.ToString">
+	<summary>
+ Returns all available data in formatted string form
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.EquipmentMaker">
+	<summary>
+ Brand of equipment (EXIF EquipMake)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.EquipmentModel">
+	<summary>
+ Model of equipment (EXIF EquipModel)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Software">
+	<summary>
+ Software used for processing (EXIF Software)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Orientation">
+	<summary>
+ Orientation of image (position of row 0, column 0) (EXIF Orientation)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.DateTimeLastModified">
+	<summary>
+ Time when image was last modified (EXIF DateTime).
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.DateTimeOriginal">
+	<summary>
+ Time when image was taken (EXIF DateTimeOriginal).
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.DateTimeDigitized">
+	<summary>
+ Time when image was digitized (EXIF DateTimeDigitized).
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Width">
+	<summary>
+ Image width
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 04.09.2005 Changed output to Int32, load from image instead of EXIF
+ </history>
+</member><member name="P:G21.clsExifWorks.Height">
+	<summary>
+ Image height
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 04.09.2005 Changed output to Int32, load from image instead of EXIF
+ </history>
+</member><member name="P:G21.clsExifWorks.ResolutionX">
+	<summary>
+ X resolution in dpi (EXIF XResolution/ResolutionUnit)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ResolutionY">
+	<summary>
+ Y resolution in dpi (EXIF YResolution/ResolutionUnit)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Title">
+	<summary>
+ Image title (EXIF ImageTitle)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.UserComment">
+	<summary>
+ User comment (EXIF UserComment)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Artist">
+	<summary>
+ Artist name (EXIF Artist)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Description">
+	<summary>
+ Image description (EXIF ImageDescription)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Copyright">
+	<summary>
+ Image copyright (EXIF Copyright)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ExposureTime">
+	<summary>
+ Exposure time in seconds (EXIF ExifExposureTime/ExifShutterSpeed)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.Aperture">
+	<summary>
+ Aperture value as F number (EXIF ExifFNumber/ExifApertureValue)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ExposureProgram">
+	<summary>
+ Exposure program used (EXIF ExifExposureProg)
+ </summary>
+	<value></value>
+	<remarks>If not specified, returns Normal (2)</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ISO">
+	<summary>
+ ISO sensitivity
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.SubjectDistance">
+	<summary>
+ Subject distance in meters (EXIF SubjectDistance)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.ExposureMeteringMode">
+	<summary>
+ Exposure method metering mode used (EXIF MeteringMode)
+ </summary>
+	<value></value>
+	<remarks>If not specified, returns Unknown (0)</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.FocalLength">
+	<summary>
+ Focal length of lenses in mm (EXIF FocalLength)
+ </summary>
+	<value></value>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.FlashMode">
+	<summary>
+ Flash mode (EXIF Flash)
+ </summary>
+	<value></value>
+	<remarks>If not present, value NotFired (0) is returned</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="P:G21.clsExifWorks.LightSource">
+	<summary>
+ Light source / white balance (EXIF LightSource)
+ </summary>
+	<value></value>
+	<remarks>If not specified, returns Unknown (0).</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.IsPropertyDefined(System.Int32)">
+	<summary>
+ Checks if current image has specified certain property
+ </summary>
+	<returns>True if image has specified property, False otherwise.</returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyInt32(System.Int32,System.Int32)">
+	<summary>
+ Gets specified Int32 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default 0. Default value returned if property is not present.</param>
+	<remarks>Value of property or DefaultValue if property is not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyInt16(System.Int32,System.Int16)">
+	<summary>
+ Gets specified Int16 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default 0. Default value returned if property is not present.</param>
+	<remarks>Value of property or DefaultValue if property is not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyString(System.Int32,System.String)">
+	<summary>
+ Gets specified string property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default String.Empty. Default value returned if property is not present.</param>
+	<returns></returns>
+	<remarks>Value of property or DefaultValue if property is not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetProperty(System.Int32,System.Byte[])">
+	<summary>
+ Gets specified property in raw form
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="DefaultValue">Optional, default Nothing. Default value returned if property is not present.</param>
+	<returns></returns>
+	<remarks>Is recommended to use typed methods (like <see cref="M:G21.clsExifWorks.GetPropertyString(System.Int32,System.String)"/> etc.) instead, when possible.</remarks>
+	<history>
+ [altair] 05.09.2005 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyRational(System.Int32)">
+	<summary>
+ Gets specified rational property
+ </summary>
+	<param name="PID">Property ID</param>
+	<returns></returns>
+	<remarks>Value of property or 0/1 if not present.</remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetPropertyString(System.Int32,System.String)">
+	<summary>
+ Sets specified string property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Value">Value to be set</param>
+	<remarks></remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetPropertyInt16(System.Int32,System.Int16)">
+	<summary>
+ Sets specified Int16 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Value">Value to be set</param>
+	<remarks></remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetPropertyInt32(System.Int32,System.Int32)">
+	<summary>
+ Sets specified Int32 property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Value">Value to be set</param>
+	<remarks></remarks>
+	<history>
+ [altair] 13.06.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.SetProperty(System.Int32,System.Byte[],G21.clsExifWorks.ExifDataTypes)">
+	<summary>
+ Sets specified propery in raw form
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="Data">Raw data</param>
+	<param name="Type">EXIF data type</param>
+	<remarks>Is recommended to use typed methods (like <see cref="M:G21.clsExifWorks.SetPropertyString(System.Int32,System.String)"/> etc.) instead, when possible.</remarks>
+	<history>
+ [altair] 12.6.2004 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.GetInt32(System.Byte[])">
+	<summary>
+ Read Int32 from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetInt16(System.Byte[])">
+	<summary>
+ Read Int16 from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetString(System.Byte[])">
+	<summary>
+ Read string from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetRational(System.Byte[])">
+	<summary>
+ Read rational from EXIF bytearray.
+ </summary>
+	<param name="B">EXIF bytearray to process</param>
+	<returns></returns>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 05.09.2005 Changed from public shared to private instance method
+ </history>
+</member><member name="M:G21.clsExifWorks.GetPropertyRational(G21.clsExifWorks.TagNames,System.Int32)">
+	<summary>
+ Get specified rational property
+ </summary>
+	<param name="PID">Property ID</param>
+	<param name="rank"></param>
+	<returns>Value of property or 0/1 if not present</returns>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="M:G21.clsExifWorks.DMStoDD(System.Double,System.Double,System.Double)">
+	<summary>
+ Degrees, Minutes, Seconds to Decimal Degrees
+ </summary>
+	<param name="Deg">Degrees</param>
+	<param name="Min">Minutes</param>
+	<param name="Sec">Seconds</param>
+	<returns>Decimal Degrees</returns>
+	<remarks>in EXIF, Deg is always positive, but added case for negative degrees in case this routine is reused</remarks>
+</member><member name="P:G21.clsExifWorks.Latitude">
+	<summary>
+ GPS Latitude
+ </summary>
+	<returns>Decimal degrees of latitude</returns>
+</member><member name="P:G21.clsExifWorks.Longitude">
+	<summary>
+ GPS Longitude
+ </summary>
+	<returns>Decimal degrees of longitude</returns>
+</member><member name="M:G21.clsExifWorks.Dispose">
+	<summary>
+ Disposes unmanaged resources of this class
+ </summary>
+	<remarks></remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ </history>
+</member><member name="T:G21.clsExifWorks">
+	<summary>
+ Utility class for working with EXIF data in images. Provides abstraction
+ for most common data and generic utilities for work with all other. 
+ </summary>
+	<remarks>
+ Copyright (c) Michal A. Valášek - Altair Communications, 2003-2005
+ Copmany: http://software.altaircom.net, E-mail: support@altaircom.net
+ Private: http://www.rider.cz, E-mail: rider@rider.cz
+ This is free software licensed under GNU Lesser General Public License
+ </remarks>
+	<history>
+ [altair] 10.09.2003 Created
+ [altair] 12.06.2004 Added capability to write EXIF data
+ [altair] 11.07.2004 Added option to change encoding
+ [altair] 04.09.2005 Changed source of Width and Height properties from EXIF to image
+ [altair] 05.09.2005 Code clean-up and minor changes
+ </history>
+</member><member name="M:G21.clsPolygon.#ctor(System.Drawing.PointF[])">
+	<summary>
+		Creates a new instance of the <see cref="T:G21.clsPolygon"/> class with the specified vertices.
+ </summary>
+	<param name="vertices">
+		An array of <see cref="T:System.Drawing.PointF"/> structures representing the points between the sides of the polygon.
+ </param>
+</member><member name="M:G21.clsPolygon.PointInPolygon(System.Drawing.PointF)">
+	<summary>
+		Determines if the specified <see cref="T:System.Drawing.PointF"/> if within this polygon.
+ </summary>
+	<remarks>
+		This algorithm is extremely fast, which makes it appropriate for use in brute force algorithms.
+ </remarks>
+	<param name="point">
+		The point containing the x,y coordinates to check.
+ </param>
+	<returns>
+		<c>true</c> if the point is within the polygon, otherwise <c>false</c>
+	</returns>
+</member><member name="M:G21.net.nbnws.www.GatewayWebService.#ctor">
+	<remarks/>
+</member><member name="E:G21.net.nbnws.www.GatewayWebService.GetTaxonomySearchCompleted">
+	<remarks/>
+</member><member name="M:G21.net.nbnws.www.GatewayWebService.GetTaxonomySearch(G21.net.nbnws.www.TaxonomySearchRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws.www.GatewayWebService.GetTaxonomySearchAsync(G21.net.nbnws.www.TaxonomySearchRequest)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws.www.GatewayWebService.GetTaxonomySearchAsync(G21.net.nbnws.www.TaxonomySearchRequest,System.Object)">
+	<remarks/>
+</member><member name="M:G21.net.nbnws.www.GatewayWebService.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.GatewayWebService">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.TaxonomySearchRequest.Item">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.TaxonomySearchRequest.ItemElementName">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.TaxonomySearchRequest">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.TaxonName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.Authority">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.TaxonReportingCategory">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.AggregateList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.LowerTaxaList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.SynonymList">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.Taxon.taxonVersionKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.Taxon">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.TaxonName.wellFormed">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.TaxonName.isScientific">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.TaxonName.isPreferredName">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.TaxonName.Value">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.TaxonName">
+	<remarks/>
+</member><member name="F:G21.net.nbnws.www.ItemChoiceType.SpeciesName">
+	<remarks/>
+</member><member name="F:G21.net.nbnws.www.ItemChoiceType.TaxonVersionKey">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.ItemChoiceType">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.GetTaxonomySearchCompletedEventHandler">
+	<remarks/>
+</member><member name="P:G21.net.nbnws.www.GetTaxonomySearchCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:G21.net.nbnws.www.GetTaxonomySearchCompletedEventArgs">
+	<remarks/>
+</member>
+</members>
+</doc>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:nbn="http://www.nbnws.net/" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nbnws.net/" version="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ResponseRequirements">
+    <xsd:attribute name="TermsAndConditions" type="xsd:string" use="required" />
+    <xsd:attribute name="NBNLogo" type="xsd:string" use="required" />
+    <xsd:attribute name="RecordsFound" type="xsd:string" use="optional" />
+  </xsd:complexType>
+  <xsd:complexType name="RequestRequirements">
+    <xsd:attribute name="registrationKey" type="xsd:string" use="required" />
+    <xsd:attribute name="username" type="xsd:string" use="optional" />
+    <xsd:attribute name="userPassKey" type="xsd:string" use="optional" />
+  </xsd:complexType>
+  <xsd:element name="Attribute" type="nbn:AttributeType">
+    <xsd:annotation>
+      <xsd:documentation>A key=value pair.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Value" type="xsd:string" />
+  <xsd:element name="Name" type="xsd:string" />
+  <xsd:complexType name="AttributeCollectionType">
+    <xsd:annotation>
+      <xsd:documentation>A set of attributes of a species, habitat or record </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" ref="nbn:Attribute" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AttributeType">
+    <xsd:annotation>
+      <xsd:documentation>A single attribute for a species, habitat or record </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="nbn:Name" />
+      <xsd:element ref="nbn:Value" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
