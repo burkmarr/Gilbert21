@@ -375,6 +375,7 @@ Partial Class frmRecordDetails
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TreeView1.ImageIndex = 0
         Me.TreeView1.ImageList = Me.imlTreeView
+        Me.TreeView1.Indent = 10
         Me.TreeView1.Location = New System.Drawing.Point(334, 6)
         Me.TreeView1.Name = "TreeView1"
         Me.TreeView1.SelectedImageIndex = 0
@@ -391,6 +392,7 @@ Partial Class frmRecordDetails
         Me.imlTreeView.Images.SetKeyName(2, "")
         Me.imlTreeView.Images.SetKeyName(3, "")
         Me.imlTreeView.Images.SetKeyName(4, "")
+        Me.imlTreeView.Images.SetKeyName(5, "taxonomy20x16.png")
         '
         'cboScientificName
         '
@@ -417,7 +419,7 @@ Partial Class frmRecordDetails
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 232)
+        Me.Label6.Location = New System.Drawing.Point(9, 204)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(90, 13)
         Me.Label6.TabIndex = 65
@@ -425,7 +427,7 @@ Partial Class frmRecordDetails
         '
         'txtAbundanceUnits
         '
-        Me.txtAbundanceUnits.Location = New System.Drawing.Point(105, 229)
+        Me.txtAbundanceUnits.Location = New System.Drawing.Point(105, 201)
         Me.txtAbundanceUnits.Name = "txtAbundanceUnits"
         Me.txtAbundanceUnits.Size = New System.Drawing.Size(223, 20)
         Me.txtAbundanceUnits.TabIndex = 47
@@ -433,7 +435,7 @@ Partial Class frmRecordDetails
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(34, 206)
+        Me.Label7.Location = New System.Drawing.Point(34, 178)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 13)
         Me.Label7.TabIndex = 64
@@ -441,7 +443,7 @@ Partial Class frmRecordDetails
         '
         'txtAbundance
         '
-        Me.txtAbundance.Location = New System.Drawing.Point(105, 203)
+        Me.txtAbundance.Location = New System.Drawing.Point(105, 175)
         Me.txtAbundance.Name = "txtAbundance"
         Me.txtAbundance.Size = New System.Drawing.Size(223, 20)
         Me.txtAbundance.TabIndex = 46
@@ -466,16 +468,17 @@ Partial Class frmRecordDetails
         'chkWellFormed
         '
         Me.chkWellFormed.Enabled = False
-        Me.chkWellFormed.Location = New System.Drawing.Point(254, 158)
+        Me.chkWellFormed.Location = New System.Drawing.Point(254, 152)
         Me.chkWellFormed.Name = "chkWellFormed"
         Me.chkWellFormed.Size = New System.Drawing.Size(87, 24)
         Me.chkWellFormed.TabIndex = 60
         Me.chkWellFormed.Text = "Well-formed"
+        Me.chkWellFormed.Visible = False
         '
         'chkScientific
         '
         Me.chkScientific.Enabled = False
-        Me.chkScientific.Location = New System.Drawing.Point(180, 158)
+        Me.chkScientific.Location = New System.Drawing.Point(180, 152)
         Me.chkScientific.Name = "chkScientific"
         Me.chkScientific.Size = New System.Drawing.Size(80, 24)
         Me.chkScientific.TabIndex = 59
@@ -485,11 +488,12 @@ Partial Class frmRecordDetails
         'chkPreferred
         '
         Me.chkPreferred.Enabled = False
-        Me.chkPreferred.Location = New System.Drawing.Point(105, 158)
+        Me.chkPreferred.Location = New System.Drawing.Point(105, 152)
         Me.chkPreferred.Name = "chkPreferred"
         Me.chkPreferred.Size = New System.Drawing.Size(72, 24)
         Me.chkPreferred.TabIndex = 58
         Me.chkPreferred.Text = "Preferred"
+        Me.chkPreferred.Visible = False
         '
         'lblAuthority
         '
@@ -608,9 +612,10 @@ Partial Class frmRecordDetails
         Me.butNBN.Size = New System.Drawing.Size(49, 23)
         Me.butNBN.TabIndex = 97
         Me.butNBN.Text = "NBN"
-        Me.tt.SetToolTip(Me.butNBN, "Download a grid map from the NBN showing the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "distribution of the currently selec" & _
+        Me.tt.SetToolTip(Me.butNBN, "Download a grid map from the NBN showing the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "distribution of the currently selec" &
         "ted taxon.")
         Me.butNBN.UseVisualStyleBackColor = True
+        Me.butNBN.Visible = False
         '
         'butSearchGaz
         '
@@ -657,7 +662,7 @@ Partial Class frmRecordDetails
         Me.butUse.Size = New System.Drawing.Size(35, 21)
         Me.butUse.TabIndex = 97
         Me.butUse.Text = "Use"
-        Me.tt.SetToolTip(Me.butUse, "Use this button use the grid reference selected from" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the map as the grid referen" & _
+        Me.tt.SetToolTip(Me.butUse, "Use this button use the grid reference selected from" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the map as the grid referen" &
         "ce for the record.")
         Me.butUse.UseVisualStyleBackColor = True
         '
@@ -670,7 +675,7 @@ Partial Class frmRecordDetails
         Me.cbPrecision.Name = "cbPrecision"
         Me.cbPrecision.Size = New System.Drawing.Size(60, 21)
         Me.cbPrecision.TabIndex = 96
-        Me.tt.SetToolTip(Me.cbPrecision, "Use this to set the precision of grid references" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "obtained by clicking on the map" & _
+        Me.tt.SetToolTip(Me.cbPrecision, "Use this to set the precision of grid references" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "obtained by clicking on the map" &
         ".")
         '
         'tbZoom
@@ -715,8 +720,8 @@ Partial Class frmRecordDetails
         Me.butMap.Size = New System.Drawing.Size(56, 23)
         Me.butMap.TabIndex = 90
         Me.butMap.Text = "Map"
-        Me.tt.SetToolTip(Me.butMap, "This will display a map of the current grid reference and," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "optionally, an offset" & _
-        " position for records generated with" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a GPS track (calculated from the parameter" & _
+        Me.tt.SetToolTip(Me.butMap, "This will display a map of the current grid reference and," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "optionally, an offset" &
+        " position for records generated with" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a GPS track (calculated from the parameter" &
         "s specified).")
         Me.butMap.UseVisualStyleBackColor = True
         '
@@ -728,7 +733,7 @@ Partial Class frmRecordDetails
         Me.but10fig.TabIndex = 87
         Me.but10fig.Tag = "You can use this button to..."
         Me.but10fig.Text = "10 fig"
-        Me.tt.SetToolTip(Me.but10fig, "This will reset an OS ten figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and l" & _
+        Me.tt.SetToolTip(Me.but10fig, "This will reset an OS ten figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and l" &
         "ongitude recorded by the GPS.")
         Me.but10fig.UseVisualStyleBackColor = True
         '
@@ -740,7 +745,7 @@ Partial Class frmRecordDetails
         Me.but8fig.TabIndex = 86
         Me.but8fig.Tag = "You can use this button to..."
         Me.but8fig.Text = "8 fig"
-        Me.tt.SetToolTip(Me.but8fig, "This will reset an OS eight figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and" & _
+        Me.tt.SetToolTip(Me.but8fig, "This will reset an OS eight figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and" &
         " longitude recorded by the GPS.")
         Me.but8fig.UseVisualStyleBackColor = True
         '
@@ -808,7 +813,7 @@ Partial Class frmRecordDetails
         Me.butTetrad.TabIndex = 85
         Me.butTetrad.Tag = "You can use this button to..."
         Me.butTetrad.Text = "2 km"
-        Me.tt.SetToolTip(Me.butTetrad, "This will reset an OS tetrad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longi" & _
+        Me.tt.SetToolTip(Me.butTetrad, "This will reset an OS tetrad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longi" &
         "tude recorded by the GPS.")
         Me.butTetrad.UseVisualStyleBackColor = True
         '
@@ -820,7 +825,7 @@ Partial Class frmRecordDetails
         Me.butHectad.TabIndex = 84
         Me.butHectad.Tag = "You can use this button to..."
         Me.butHectad.Text = "10 km"
-        Me.tt.SetToolTip(Me.butHectad, "This will reset an OS hectad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longi" & _
+        Me.tt.SetToolTip(Me.butHectad, "This will reset an OS hectad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longi" &
         "tude recorded by the GPS.")
         Me.butHectad.UseVisualStyleBackColor = True
         '
@@ -832,7 +837,7 @@ Partial Class frmRecordDetails
         Me.butMonad.TabIndex = 83
         Me.butMonad.Tag = "You can use this button to..."
         Me.butMonad.Text = "1 km"
-        Me.tt.SetToolTip(Me.butMonad, "This will reset an OS monad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longit" & _
+        Me.tt.SetToolTip(Me.butMonad, "This will reset an OS monad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longit" &
         "ude recorded by the GPS.")
         Me.butMonad.UseVisualStyleBackColor = True
         '
@@ -843,7 +848,7 @@ Partial Class frmRecordDetails
         Me.butGetLocation.Size = New System.Drawing.Size(103, 23)
         Me.butGetLocation.TabIndex = 66
         Me.butGetLocation.Text = "Location from GR"
-        Me.tt.SetToolTip(Me.butGetLocation, "This will reset the location and town names from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Gilbert gazetteer based on " & _
+        Me.tt.SetToolTip(Me.butGetLocation, "This will reset the location and town names from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Gilbert gazetteer based on " &
         "the current grid reference.")
         Me.butGetLocation.UseVisualStyleBackColor = True
         '
@@ -866,7 +871,7 @@ Partial Class frmRecordDetails
         Me.but6fig.TabIndex = 82
         Me.but6fig.Tag = "You can use this button to..."
         Me.but6fig.Text = "6 fig"
-        Me.tt.SetToolTip(Me.but6fig, "This will reset an OS six figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and l" & _
+        Me.tt.SetToolTip(Me.but6fig, "This will reset an OS six figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and l" &
         "ongitude recorded by the GPS.")
         Me.but6fig.UseVisualStyleBackColor = True
         '
@@ -907,7 +912,7 @@ Partial Class frmRecordDetails
         Me.radAutoBestFit.TabIndex = 12
         Me.radAutoBestFit.TabStop = True
         Me.radAutoBestFit.Text = "Automatic"
-        Me.tt.SetToolTip(Me.radAutoBestFit, "Use this option to let the software use the default number" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of track points to ca" & _
+        Me.tt.SetToolTip(Me.radAutoBestFit, "Use this option to let the software use the default number" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of track points to ca" &
         "lculate the track in order to find" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the offset location.")
         Me.radAutoBestFit.UseVisualStyleBackColor = True
         '
@@ -997,8 +1002,8 @@ Partial Class frmRecordDetails
         Me.lvTowns.Name = "lvTowns"
         Me.lvTowns.Size = New System.Drawing.Size(196, 85)
         Me.lvTowns.TabIndex = 76
-        Me.tt.SetToolTip(Me.lvTowns, "Shows the nearest towns to the specified grid reference " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "together with their dis" & _
-        "tances from that grid reference. Select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a town from this list to enter it in th" & _
+        Me.tt.SetToolTip(Me.lvTowns, "Shows the nearest towns to the specified grid reference " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "together with their dis" &
+        "tances from that grid reference. Select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a town from this list to enter it in th" &
         "e Town field.")
         Me.lvTowns.UseCompatibleStateImageBehavior = False
         Me.lvTowns.View = System.Windows.Forms.View.Details
@@ -1053,8 +1058,8 @@ Partial Class frmRecordDetails
         Me.lvLocations.Name = "lvLocations"
         Me.lvLocations.Size = New System.Drawing.Size(196, 96)
         Me.lvLocations.TabIndex = 75
-        Me.tt.SetToolTip(Me.lvLocations, "Shows the nearest locations to the specified grid reference " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "together with their" & _
-        " distances from that grid reference. Select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a location from this list to enter " & _
+        Me.tt.SetToolTip(Me.lvLocations, "Shows the nearest locations to the specified grid reference " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "together with their" &
+        " distances from that grid reference. Select" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a location from this list to enter " &
         "it in the Location field.")
         Me.lvLocations.UseCompatibleStateImageBehavior = False
         Me.lvLocations.View = System.Windows.Forms.View.Details
@@ -1178,8 +1183,8 @@ Partial Class frmRecordDetails
         Me.txtPersonalNotes.Name = "txtPersonalNotes"
         Me.txtPersonalNotes.Size = New System.Drawing.Size(539, 81)
         Me.txtPersonalNotes.TabIndex = 82
-        Me.tt.SetToolTip(Me.txtPersonalNotes, "Personal notes can be used for comments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "that you do not want to be part of the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & _
-        "public record when you export records." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You can use [ctrl] and Enter together to" & _
+        Me.tt.SetToolTip(Me.txtPersonalNotes, "Personal notes can be used for comments" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "that you do not want to be part of the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+        "public record when you export records." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You can use [ctrl] and Enter together to" &
         " " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "enter a newline.")
         '
         'Label10
@@ -1441,7 +1446,7 @@ Partial Class frmRecordDetails
         Me.butOkayMonad.Size = New System.Drawing.Size(63, 24)
         Me.butOkayMonad.TabIndex = 5
         Me.butOkayMonad.Text = "1 km GR"
-        Me.tt.SetToolTip(Me.butOkayMonad, "This will reset an OS monad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longit" & _
+        Me.tt.SetToolTip(Me.butOkayMonad, "This will reset an OS monad grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and longit" &
         "ude recorded by the GPS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and commit all changes you've made.")
         Me.butOkayMonad.UseVisualStyleBackColor = True
         '
@@ -1453,7 +1458,7 @@ Partial Class frmRecordDetails
         Me.butOkay6fig.Size = New System.Drawing.Size(63, 24)
         Me.butOkay6fig.TabIndex = 4
         Me.butOkay6fig.Text = "6 fig GR"
-        Me.tt.SetToolTip(Me.butOkay6fig, "This will reset an OS six figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and l" & _
+        Me.tt.SetToolTip(Me.butOkay6fig, "This will reset an OS six figure grid reference from the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "original latitude and l" &
         "ongitude recorded by the GPS" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and commit all changes you've made.")
         Me.butOkay6fig.UseVisualStyleBackColor = True
         '
@@ -1486,7 +1491,7 @@ Partial Class frmRecordDetails
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmRecordDetails"
         Me.Text = "Record Details"
-        Me.tt.SetToolTip(Me, "This will reset an OS six figure grid reference from the original latitude and lo" & _
+        Me.tt.SetToolTip(Me, "This will reset an OS six figure grid reference from the original latitude and lo" &
         "ngitude recorded by the GPS.")
         Me.tcMain.ResumeLayout(False)
         Me.tabWho.ResumeLayout(False)

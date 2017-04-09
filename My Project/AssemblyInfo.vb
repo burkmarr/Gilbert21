@@ -11,8 +11,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("The Gilbert 21 Project")> 
 <Assembly: AssemblyDescription("Personal biological recording software for the 21st centuray")> 
 <Assembly: AssemblyCompany("The Gilbert 21 Project")> 
-<Assembly: AssemblyProduct("Gilbert 21")> 
-<Assembly: AssemblyCopyright("Copyright ©  2010-2015 Richard Burkmar")> 
+<Assembly: AssemblyProduct("Gilbert 21")>
+<Assembly: AssemblyCopyright("GNU GENERAL PUBLIC LICENSE")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

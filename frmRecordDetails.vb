@@ -100,9 +100,11 @@ Public Class frmRecordDetails
         Dim baseURL As String
 
         If bSearch Then
-            baseURL = "https://data.nbn.org.uk/api/search/taxa?q={0}"
+            'baseURL = "https://data.nbn.org.uk/api/search/taxa?q={0}"
+            baseURL = "https://species-ws.nbnatlas.org/search?q={0}&pageSize=50&fq=taxonomicStatus:accepted"
         Else
-            baseURL = "https://data.nbn.org.uk/api/taxa/{0}"
+            'No longer required after conversion to Atlas since all required information for taxon is retrieved in search
+            'baseURL = "https://data.nbn.org.uk/api/taxa/{0}"
         End If
 
         Dim url As String = String.Format(baseURL, strSearchString)
@@ -124,64 +126,140 @@ Public Class frmRecordDetails
         MessageBox.Show(msg, "Bad Request!")
     End Sub
 
-    Private Sub NBNSearchJSON(ByVal strSearchString As String)
+    Private Sub NBNAtlasSearchJSON(ByVal strSearchString As String)
 
         Cursor = Cursors.WaitCursor
         TreeView1.Nodes.Clear()
         Application.DoEvents()
 
+        Dim url As String = GetURL(strSearchString, True)
+        Dim request As WebRequest = WebRequest.Create(url)
+        Dim jsonSerializer As DataContractJsonSerializer = New DataContractJsonSerializer(GetType(clsAtlasTaxonSearch))
+        Dim ws As WebResponse
+        Dim search As clsAtlasTaxonSearch
+
         Try
-            Dim url As String = GetURL(strSearchString, True)
+            ws = request.GetResponse()
+            search = CType(jsonSerializer.ReadObject(ws.GetResponseStream()), clsAtlasTaxonSearch)
+        Catch wex As WebException
+            'exceptions from the server are communicated with a 4xx status code
+            HandleWebException(wex)
+            Cursor = Cursors.Arrow
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString(), "Rest call problem")
+            Cursor = Cursors.Arrow
+        End Try
 
-            Dim request As WebRequest = WebRequest.Create(url)
-            Dim ws As WebResponse = request.GetResponse()
+        Dim tnHigherTaxon As TreeNode
+        Dim tnTaxon As TreeNode
+        Dim sHigherTaxon As String
+        Dim ranks() As String = {"kingdom", "phylum", "tClass", "order", "family", "genus"}
+        Dim tnNodes As TreeNodeCollection
 
-            Dim jsonSerializer As DataContractJsonSerializer = New DataContractJsonSerializer(GetType(clsTaxonRest))
-            Dim matchingTaxa As clsTaxonRest = CType(jsonSerializer.ReadObject(ws.GetResponseStream()), clsTaxonRest)
+        For Each t In search.searchResults.results
 
-            Dim tnCat As TreeNode
-            Dim tnTaxon As TreeNode
+            tnNodes = TreeView1.Nodes
 
-            For Each t In matchingTaxa.results
+            For Each rank As String In ranks
 
-                tnCat = Nothing
-                For Each tn In TreeView1.Nodes
+                tnHigherTaxon = Nothing
+                Try
+                    sHigherTaxon = CallByName(t, rank, CallType.Get)
+                Catch
+                    sHigherTaxon = ""
+                End Try
 
-                    If tn.Text = StrConv(t.taxonOutputGroupName, VbStrConv.ProperCase) Then
+                If sHigherTaxon = "" Then
+                    Exit For
+                End If
 
-                        tnCat = tn
+                For Each tn In tnNodes
+                    If tn.Text = sHigherTaxon Then
+                        tnHigherTaxon = tn
                         Exit For
                     End If
                 Next
 
-                If tnCat Is Nothing Then
-
-                    tnCat = TreeView1.Nodes.Add(StrConv(t.taxonOutputGroupName, VbStrConv.ProperCase))
-                    tnCat.ImageIndex = 0
-                    tnCat.SelectedImageIndex = 0
+                If tnHigherTaxon Is Nothing Then
+                    tnHigherTaxon = tnNodes.Add(sHigherTaxon)
+                    tnHigherTaxon.ImageIndex = 5
+                    tnHigherTaxon.SelectedImageIndex = 5
                 End If
 
-                'authority field is not always present so can't concatennate that with the name field.
-                'But authority always seems to be included in pExtendedName field, so use that, but trim 
-                'off last bit which just restates output group.
+                tnNodes = tnHigherTaxon.Nodes
+            Next
 
-                Dim i As Integer = t.pExtendedName.LastIndexOf(",")
-
-                tnTaxon = tnCat.Nodes.Add(t.pExtendedName.Substring(0, i))
+            If Not tnHigherTaxon Is Nothing Then
+                tnTaxon = tnHigherTaxon.Nodes.Add(t.name)
                 tnTaxon.Tag = t
                 tnTaxon.ImageIndex = 3
                 tnTaxon.SelectedImageIndex = 3
-            Next
+            End If
 
-        Catch wex As WebException
-            'exceptions from the server are communicated with a 4xx status code
-            HandleWebException(wex)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString(), "Rest call problem")
-        End Try
+        Next
 
+        TreeView1.ExpandAll()
         Cursor = Cursors.Arrow
     End Sub
+
+    'Private Sub NBNSearchJSON(ByVal strSearchString As String)
+
+    '    Cursor = Cursors.WaitCursor
+    '    TreeView1.Nodes.Clear()
+    '    Application.DoEvents()
+
+    '    Try
+    '        Dim url As String = GetURL(strSearchString, True)
+
+    '        Dim request As WebRequest = WebRequest.Create(url)
+    '        Dim ws As WebResponse = request.GetResponse()
+
+    '        Dim jsonSerializer As DataContractJsonSerializer = New DataContractJsonSerializer(GetType(clsTaxonRest))
+    '        Dim matchingTaxa As clsTaxonRest = CType(jsonSerializer.ReadObject(ws.GetResponseStream()), clsTaxonRest)
+
+    '        Dim tnCat As TreeNode
+    '        Dim tnTaxon As TreeNode
+
+    '        For Each t In matchingTaxa.results
+
+    '            tnCat = Nothing
+    '            For Each tn In TreeView1.Nodes
+
+    '                If tn.Text = StrConv(t.taxonOutputGroupName, VbStrConv.ProperCase) Then
+
+    '                    tnCat = tn
+    '                    Exit For
+    '                End If
+    '            Next
+
+    '            If tnCat Is Nothing Then
+
+    '                tnCat = TreeView1.Nodes.Add(StrConv(t.taxonOutputGroupName, VbStrConv.ProperCase))
+    '                tnCat.ImageIndex = 0
+    '                tnCat.SelectedImageIndex = 0
+    '            End If
+
+    '            'authority field is not always present so can't concatennate that with the name field.
+    '            'But authority always seems to be included in pExtendedName field, so use that, but trim 
+    '            'off last bit which just restates output group.
+
+    '            Dim i As Integer = t.pExtendedName.LastIndexOf(",")
+
+    '            tnTaxon = tnCat.Nodes.Add(t.pExtendedName.Substring(0, i))
+    '            tnTaxon.Tag = t
+    '            tnTaxon.ImageIndex = 3
+    '            tnTaxon.SelectedImageIndex = 3
+    '        Next
+
+    '    Catch wex As WebException
+    '        'exceptions from the server are communicated with a 4xx status code
+    '        HandleWebException(wex)
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.ToString(), "Rest call problem")
+    '    End Try
+
+    '    Cursor = Cursors.Arrow
+    'End Sub
 
     'Private Sub NBNSearch(ByVal strSearchString As String)
 
@@ -546,49 +624,49 @@ Public Class frmRecordDetails
     Private Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect
 
         Dim ndeSelected As TreeNode = TreeView1.SelectedNode
+        Dim sCommonName As String
+        Dim sAuthority As String
+        Dim sTVK As String
 
         ClearTaxonControls()
 
         If ndeSelected Is Nothing Then Exit Sub
 
-        Dim t As taxon = ndeSelected.Tag
+        Dim t As atlasSearchTaxon = ndeSelected.Tag
 
         If t Is Nothing Then Exit Sub
 
+        cboScientificName.Text = t.name
         Try
-            'MessageBox.Show("tvk: " & t.ptaxonVersionKey)
-
-            Dim url As String = GetURL(t.ptaxonVersionKey, False)
-            Dim request As WebRequest = WebRequest.Create(url)
-            Dim ws As WebResponse = request.GetResponse()
-            Dim jsonSerializer As DataContractJsonSerializer = New DataContractJsonSerializer(GetType(clsTVK))
-            Dim fullTaxon As clsTVK = CType(jsonSerializer.ReadObject(ws.GetResponseStream()), clsTVK)
-
-            cboScientificName.Text = fullTaxon.name
-
-            If fullTaxon.commonName <> "" Then
-                'Otherwise scientific names gets sent to blank too
-                cboCommonName.Text = fullTaxon.commonName
-            End If
-
-            txtVersionKey.Text = fullTaxon.taxonVersionKey
-            txtAuthority.Text = fullTaxon.authority
-
-            cboTaxonGroup.Text = fullTaxon.taxonOutputGroupName
-            'chkScientific.Checked = t.TaxonName.isScientific
-            chkPreferred.Checked = (fullTaxon.nameStatus = "Recommended")
-            chkWellFormed.Checked = (fullTaxon.versionForm = "Well-formed")
-
-        Catch wex As WebException
-            'exceptions from the server are communicated with a 4xx status code
-            HandleWebException(wex)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString(), "Rest call problem")
+            sCommonName = t.commonNameSingle
+        Catch
+            sCommonName = ""
+        End Try
+        Try
+            sAuthority = t.author
+        Catch
+            sAuthority = ""
+        End Try
+        Try
+            sTVK = t.guid
+        Catch
+            sTVK = ""
         End Try
 
+        If sCommonName <> "" Then
+            'Otherwise scientific names gets sent to blank too
+            cboCommonName.Text = sCommonName
+        End If
+
+        txtVersionKey.Text = sTVK
+        txtAuthority.Text = sAuthority
+
+        'cboTaxonGroup.Text = fullTaxon.taxonOutputGroupName
+        ''chkScientific.Checked = t.TaxonName.isScientific
+        'chkPreferred.Checked = (fullTaxon.nameStatus = "Recommended")
+        'chkWellFormed.Checked = (fullTaxon.versionForm = "Well-formed")
 
         txtAbundance.Focus() 'Doesn't seem to work
-
 
         'Dim ndeSelected As TreeNode = TreeView1.SelectedNode
 
@@ -596,37 +674,41 @@ Public Class frmRecordDetails
 
         'If ndeSelected Is Nothing Then Exit Sub
 
-        'Dim t As nbn35.Taxon = ndeSelected.Tag
-        'Dim t2 As nbn35.Taxon
+        'Dim t As taxon = ndeSelected.Tag
 
         'If t Is Nothing Then Exit Sub
 
-        'If t.TaxonName.isScientific Then
+        'Try
+        '    'MessageBox.Show("tvk: " & t.ptaxonVersionKey)
 
-        '    cboScientificName.Text = t.TaxonName.Value
-        '    txtVersionKey.Text = t.TaxonVersionKey
-        '    txtAuthority.Text = t.Authority
+        '    Dim url As String = GetURL(t.ptaxonVersionKey, False)
+        '    Dim request As WebRequest = WebRequest.Create(url)
+        '    Dim ws As WebResponse = request.GetResponse()
+        '    Dim jsonSerializer As DataContractJsonSerializer = New DataContractJsonSerializer(GetType(clsTVK))
+        '    Dim fullTaxon As clsTVK = CType(jsonSerializer.ReadObject(ws.GetResponseStream()), clsTVK)
 
-        '    If Not t.SynonymList Is Nothing Then
-        '        For Each t2 In t.SynonymList
-        '            If Not t2.TaxonName.isScientific Then
-        '                cboCommonName.Text = t2.TaxonName.Value
-        '                Exit For
-        '            End If
-        '        Next
+        '    cboScientificName.Text = fullTaxon.name
+
+        '    If fullTaxon.commonName <> "" Then
+        '        'Otherwise scientific names gets sent to blank too
+        '        cboCommonName.Text = fullTaxon.commonName
         '    End If
-        'Else
-        '    cboCommonName.Text = t.TaxonName.Value
-        '    t2 = ndeSelected.Parent.Tag
-        '    cboScientificName.Text = t2.TaxonName.Value
-        '    txtVersionKey.Text = t2.TaxonVersionKey
-        '    txtAuthority.Text = t2.Authority
-        'End If
 
-        'cboTaxonGroup.Text = t.TaxonReportingCategory.Value
-        'chkScientific.Checked = t.TaxonName.isScientific
-        'chkPreferred.Checked = t.TaxonName.isPreferredName
-        'chkWellFormed.Checked = t.TaxonName.wellFormed
+        '    txtVersionKey.Text = fullTaxon.taxonVersionKey
+        '    txtAuthority.Text = fullTaxon.authority
+
+        '    cboTaxonGroup.Text = fullTaxon.taxonOutputGroupName
+        '    'chkScientific.Checked = t.TaxonName.isScientific
+        '    chkPreferred.Checked = (fullTaxon.nameStatus = "Recommended")
+        '    chkWellFormed.Checked = (fullTaxon.versionForm = "Well-formed")
+
+        'Catch wex As WebException
+        '    'exceptions from the server are communicated with a 4xx status code
+        '    HandleWebException(wex)
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.ToString(), "Rest call problem")
+        'End Try
+
 
         'txtAbundance.Focus() 'Doesn't seem to work
 
@@ -773,7 +855,7 @@ Public Class frmRecordDetails
 
                 'If MessageBox.Show("Do you want to search the NBN taxon dictionary for '" & cboCommonName.Text & "'?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
                 'cboCommonName.Text = ""
-                NBNSearchJSON(cboScientificName.Text)
+                NBNAtlasSearchJSON(cboScientificName.Text)
                 'End If
             Else 'ElseIf cboScientificName.Text = "" Then
                 'Shift focus to abundance
@@ -818,7 +900,7 @@ Public Class frmRecordDetails
             ElseIf cboCommonName.SelectedIndex = -1 And cboCommonName.Text <> "" Then
                 'User has entered a taxon which is not in list and then hit return - do
                 'a search.
-                NBNSearchJSON(cboCommonName.Text)
+                NBNAtlasSearchJSON(cboCommonName.Text)
             ElseIf cboCommonName.Text = "" Then
                 'Shift focus to scientific name 
                 cboScientificName.Focus()
@@ -1515,12 +1597,12 @@ Public Class frmRecordDetails
 
     Private Sub butSearchCommonName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butSearchCommonName.Click
 
-        NBNSearchJSON(cboCommonName.Text)
+        NBNAtlasSearchJSON(cboCommonName.Text)
     End Sub
 
     Private Sub butSearchScientificName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butSearchScientificName.Click
 
-        NBNSearchJSON(cboScientificName.Text)
+        NBNAtlasSearchJSON(cboScientificName.Text)
     End Sub
 
     Private Sub timDebug_Tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles timDebug.Tick
@@ -3015,6 +3097,7 @@ Public Class frmRecordDetails
 
     Private Sub butNBN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles butNBN.Click
 
+        'Button disabled after move to Atlas
         If frmNBNTaxonSelection.txtVersionKey.Text = "" Then
             frmNBNTaxonSelection.SetName(cboScientificName.Text)
         End If
