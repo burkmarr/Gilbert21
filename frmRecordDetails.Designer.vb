@@ -373,7 +373,7 @@ Partial Class frmRecordDetails
         Me.TreeView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TreeView1.ImageIndex = 0
+        Me.TreeView1.ImageIndex = 4
         Me.TreeView1.ImageList = Me.imlTreeView
         Me.TreeView1.Indent = 10
         Me.TreeView1.Location = New System.Drawing.Point(334, 6)

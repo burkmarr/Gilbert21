@@ -94,6 +94,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <DefineDebug>true</DefineDebug>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

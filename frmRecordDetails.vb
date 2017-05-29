@@ -150,6 +150,13 @@ Public Class frmRecordDetails
             Cursor = Cursors.Arrow
         End Try
 
+        Dim tnExact As TreeNode = TreeView1.Nodes.Add("Exact matches")
+        Dim tnFuzzy As TreeNode = TreeView1.Nodes.Add("Fuzzy matches")
+        tnExact.ImageIndex = 4
+        tnExact.SelectedImageIndex = 4
+        tnFuzzy.ImageIndex = 4
+        tnFuzzy.SelectedImageIndex = 4
+
         Dim tnHigherTaxon As TreeNode
         Dim tnTaxon As TreeNode
         Dim sHigherTaxon As String
@@ -158,7 +165,11 @@ Public Class frmRecordDetails
 
         For Each t In search.searchResults.results
 
-            tnNodes = TreeView1.Nodes
+            If t.commonNameSingle.ToLower() = strSearchString.ToLower() Or t.name.ToLower() = strSearchString.ToLower() Then
+                tnNodes = tnExact.Nodes
+            Else
+                tnNodes = tnFuzzy.Nodes
+            End If
 
             For Each rank As String In ranks
 
@@ -169,36 +180,35 @@ Public Class frmRecordDetails
                     sHigherTaxon = ""
                 End Try
 
-                If sHigherTaxon = "" Then
-                    Exit For
-                End If
+                If sHigherTaxon <> "" Then
+                    For Each tn In tnNodes
+                        If tn.Text = sHigherTaxon Then
+                            tnHigherTaxon = tn
+                            Exit For
+                        End If
+                    Next
 
-                For Each tn In tnNodes
-                    If tn.Text = sHigherTaxon Then
-                        tnHigherTaxon = tn
-                        Exit For
+                    If tnHigherTaxon Is Nothing Then
+                        tnHigherTaxon = tnNodes.Add(sHigherTaxon)
+                        tnHigherTaxon.ImageIndex = 5
+                        tnHigherTaxon.SelectedImageIndex = 5
                     End If
-                Next
 
-                If tnHigherTaxon Is Nothing Then
-                    tnHigherTaxon = tnNodes.Add(sHigherTaxon)
-                    tnHigherTaxon.ImageIndex = 5
-                    tnHigherTaxon.SelectedImageIndex = 5
+                    tnNodes = tnHigherTaxon.Nodes
                 End If
-
-                tnNodes = tnHigherTaxon.Nodes
             Next
 
-            If Not tnHigherTaxon Is Nothing Then
-                tnTaxon = tnHigherTaxon.Nodes.Add(t.name)
-                tnTaxon.Tag = t
-                tnTaxon.ImageIndex = 3
-                tnTaxon.SelectedImageIndex = 3
-            End If
-
+            tnTaxon = tnNodes.Add(t.name)
+            tnTaxon.Tag = t
+            tnTaxon.ImageIndex = 3
+            tnTaxon.SelectedImageIndex = 3
         Next
 
         TreeView1.ExpandAll()
+        If tnExact.Nodes.Count > 0 Then
+            tnFuzzy.Collapse(True)
+        End If
+        tnExact.EnsureVisible()
         Cursor = Cursors.Arrow
     End Sub
 
@@ -634,32 +644,37 @@ Public Class frmRecordDetails
 
         Dim t As atlasSearchTaxon = ndeSelected.Tag
 
-        If t Is Nothing Then Exit Sub
+        If Not t Is Nothing Then
 
-        cboScientificName.Text = t.name
-        Try
-            sCommonName = t.commonNameSingle
-        Catch
-            sCommonName = ""
-        End Try
-        Try
-            sAuthority = t.author
-        Catch
-            sAuthority = ""
-        End Try
-        Try
-            sTVK = t.guid
-        Catch
-            sTVK = ""
-        End Try
+            cboScientificName.Text = t.name
+            Try
+                sCommonName = t.commonNameSingle
+            Catch
+                sCommonName = ""
+            End Try
+            Try
+                sAuthority = t.author
+            Catch
+                sAuthority = ""
+            End Try
+            Try
+                sTVK = t.guid
+            Catch
+                sTVK = ""
+            End Try
 
-        If sCommonName <> "" Then
-            'Otherwise scientific names gets sent to blank too
-            cboCommonName.Text = sCommonName
+            If sCommonName <> "" Then
+                'Otherwise scientific names gets sent to blank too
+                cboCommonName.Text = sCommonName
+            End If
+
+            txtVersionKey.Text = sTVK
+            txtAuthority.Text = sAuthority
+        Else
+            If Not ndeSelected.Text = "Exact matches" And Not ndeSelected.Text = "Fuzzy matches" Then
+                cboScientificName.Text = ndeSelected.Text
+            End If
         End If
-
-        txtVersionKey.Text = sTVK
-        txtAuthority.Text = sAuthority
 
         'cboTaxonGroup.Text = fullTaxon.taxonOutputGroupName
         ''chkScientific.Checked = t.TaxonName.isScientific

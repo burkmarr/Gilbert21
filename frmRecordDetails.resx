@@ -117,22 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="tt.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>127, 38</value>
-  </metadata>
-  <data name="butSearchGaz.ToolTip" xml:space="preserve">
-    <value>Use this button to invoke a dialog from which
-you can search the OS 1:50,000 gazetteer
-for place names and get corresponding grid 
-references. Useful if you are entering a record
-without a GPS grid reference.</value>
-  </data>
-  <data name="chkNewLocation.ToolTip" xml:space="preserve">
-    <value>A convenience method for adding a new location to the locations
-gazetteer: if this box is checked with the Commit button is clicked 
-then a new location entry is created with the specified name
-at the mid-point of the specified grid reference.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="butSearchScientificName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -150,6 +134,9 @@ at the mid-point of the specified grid reference.</value>
         4JAA+X4B+jLA9BfnzUeoif22hQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="tt.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 38</value>
+  </metadata>
   <data name="butSearchCommonName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -173,8 +160,8 @@ at the mid-point of the specified grid reference.</value>
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABG
-        DAAAAk1TRnQBSQFMAgEBBgEAASQBAAEkAQABFAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABE
+        DAAAAk1TRnQBSQFMAgEBBgEAASwBAAEsAQABFAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABUAMAASADAAEBAQABCAYAAQoYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -207,26 +194,26 @@ at the mid-point of the specified grid reference.</value>
         AfYBGgJzAUsCUQhLAUQBcwH2Ff8oAAH2AcMBUQF6AVEBoAF6AXkBmgV6AXkBmgEpAUsB9gn/AfEB8wr/
         KAAB9gHDAVIBegFSAaAIegFSAZoBKgFLAfYJ/wGdAQIBTwGYAfEH/ygAAf8BwwFSAXoBUgGaAqACmgSg
         AVIBoAEqAUsBwwH2Av8LAgFPAZcBCAT/KAAB/wHDAVIBegFSBKACwwGaAqABeQGgAioBwwH2Av8OAgFO
-        AZcBCAH1KAAB/wH2AVIBegFSAZoDwwEaAsMCoAF5AaABKgFLAcMB9gL/DgIBTwGXAQgB9SgAAf8B9gFS
+        AZcBCAH/KAAB/wH2AVIBegFSAZoDwwEaAsMCoAF5AaABKgFLAcMB9gL/DgIBTwGXAQgB/ygAAf8B9gFS
         AXoBUgKgB8MCmgEqAVIBwwP/CwIBTwGYAfAE/ygAAf8BGwFSAnoBUgJRAXMHUQFSAZoB9gn/AZ0BAgFP
-        AZgB8wf/KAAB/wH2AXQCoAF6AeUDoAHDAaABwwGgAlEBmgHDAfYJ/wHzAfUK/ygAAv8BcwHDAZoDoAHD
-        AXMBUQRzAZoBwwL2Ff8oAAL/AfYBcwTDAXMBGgLDAvYBwwL2AfMB/wH2FP8oAAL2AsMBcwEcAXMBHAEa
-        A/YC/wH2ARsB/wH0AvYU/ygABPYEwwL/AfYD/wH0Af8B9AH/AvYU/ygADvwBoQL8AaEC/BT+FPsU/g38
-        BaEC/BT+FPsBvhP+DfwB9AL/AfQBoQL8CP4B3wHaAbkB3wj+FPsL/gHfCP4C/AahAvwDoQGFAv8BBAGF
-        AqEG/gG4Ad8EDQHaAd8C/gHfA/4U+wX+Ad8D2gLfAdkB3wG+At8E/gH8AqEBhQL0Af8BXwGhAvMB/wH0
-        AQQD/wH0AoUG/gPfAQ0BDgG6AdsB2gL+AdoB3wL+DvsBNwX7Bf4CDQEOAQ0B2wINAb8DDQHfA/4B/AGh
-        AvQBhQEEAfQB/wKFAf8B9AIEAv8BBAL0AV8D/gFlAd8CDQK5AQ0BIQEAAQ4BugHfAg0B2gLfBvsDXgH7
-        BF4G+wX+Ab8CDgG6AegBuQEGAWsCDQG5Ad8D/gH8AfQB/wFlAaEB9AH/AvQBBAL/AoUC/wGFAvQBDQP+
-        Ag0BugIOAb8BDQEhAe8BAAEOAd8CDQHaAd8B/gX7AV4IDgFeBfsE/gG+Ab8CDgHfAb4C3wENAQ4BlgG/
-        BP4B/AH0Af8BZQOhAoUBBAL/AYUC9AH/AaEB9AH/AQ0D/gHfAboBuwEAAQ4BuQENAQAB7wEAAQ4BuQH+
-        AdoC3wH+BfsBXgjlAV4F+wX+AbkCDgG5Av4BBgINAbkBvwT+AfwB9AH/AV8BoQL8AqEF9AHzAf8C9AKh
-        A/4B3wEOAgABDgG6AQ0BAAEHAQABDgG5Bf4F+wFeCOUBXgX7Bf4BvwIOAd8B/gEGAg0BugENAWsE/gH8
-        AfQB/wFfA6EB9AL8AqEFhQKhAfwD/gENAQ4BAAEOAboDDQEKAQ4BugHfBf4F+wFeCA4BXgX7BP4B3wG6
-        Ag4BuQLfArkB6AK5BP4B/AGhAvQBBAGFAfQB8wP8BaEB/AGhAvwD/gENAQ4BuwG5At8BuALfAbkBvwb+
-        BvsDXgH7AV4B+wJeBvsD/gHfAQ0BuwEAAQ4BugENAd8B/gK+Af4B3wT+AvwBoQP0AYUB9AGhC/wD/gEN
-        AQ4BugG/AUgM/hT7A/4B3wENAQoCDgINCv4E/AOhDfwE/gINAd8BZQz+FPsD/gTfAdoB3wHaCv4U/AT+
-        Ad8BuQHfDf4U+wj+Ad8L/hT8Bf4B3w7+FPsU/hT8Ab4T/hT7CP4Cvgr+AUIBTQE+BwABPgMAASgDAAFQ
-        AwABIAMAAQEBAAEBBQABgAEBFgAD//8AggAL
+        AZgB8wf/KAAB/wH2AXQCoAF6AeUDoAHDAaABwwGgAlEBmgHDAfYJ/wHzC/8oAAL/AXMBwwGaA6ABwwFz
+        AVEEcwGaAcMC9hX/KAAC/wH2AXMEwwFzARoCwwL2AcMC9gHzAf8B9hT/KAAC9gLDAXMBHAFzARwBGgP2
+        Av8B9gEbAf8B9AL2FP8oAAT2BMMC/wH2A/8B9AH/AfQB/wL2FP8oAA78AaEC/AGhAvwU/hT7FP4N/AWh
+        AvwU/hT7Ab4T/g38AfQC/wH0AaEC/Aj+Ad8B2gG5Ad8I/hT7C/4B3wj+AvwGoQL8A6EBhQL/AQQBhQKh
+        Bv4BuAHfBA0B2gHfAv4B3wP+FPsF/gHfA9oC3wHZAd8BvgLfBP4B/AKhAYUC9AH/AV8BoQLzAf8B9AEE
+        A/8B9AKFBv4D3wENAQ4BugHbAdoC/gHaAd8C/g77ATcF+wX+Ag0BDgENAdsCDQG/Aw0B3wP+AfwBoQL0
+        AYUBBAH0Af8ChQH/AfQCBAL/AQQC9AFfA/4BZQHfAg0CuQENASEBAAEOAboB3wINAdoC3wb7A14B+wRe
+        BvsF/gG/Ag4BugHoAbkBBgFrAg0BuQHfA/4B/AH0Af8BZQGhAfQB/wL0AQQC/wKFAv8BhQL0AQ0D/gIN
+        AboCDgG/AQ0BIQHvAQABDgHfAg0B2gHfAf4F+wFeCA4BXgX7BP4BvgG/Ag4B3wG+At8BDQEOAZYBvwT+
+        AfwB9AH/AWUDoQKFAQQC/wGFAvQB/wGhAfQB/wENA/4B3wG6AbsBAAEOAbkBDQEAAe8BAAEOAbkB/gHa
+        At8B/gX7AV4I5QFeBfsF/gG5Ag4BuQL+AQYCDQG5Ab8E/gH8AfQB/wFfAaEC/AKhBfQB8wH/AvQCoQP+
+        Ad8BDgIAAQ4BugENAQABBwEAAQ4BuQX+BfsBXgjlAV4F+wX+Ab8CDgHfAf4BBgINAboBDQFrBP4B/AH0
+        Af8BXwOhAfQC/AKhBYUCoQH8A/4BDQEOAQABDgG6Aw0BCgEOAboB3wX+BfsBXggOAV4F+wT+Ad8BugIO
+        AbkC3wK5AegCuQT+AfwBoQL0AQQBhQH0AfMD/AWhAfwBoQL8A/4BDQEOAbsBuQLfAbgC3wG5Ab8G/gb7
+        A14B+wFeAfsCXgb7A/4B3wENAbsBAAEOAboBDQHfAf4CvgH+Ad8E/gL8AaED9AGFAfQBoQv8A/4BDQEO
+        AboBvwFIDP4U+wP+Ad8BDQEKAg4CDQr+BPwDoQ38BP4CDQHfAWUM/hT7A/4E3wHaAd8B2gr+FPwE/gHf
+        AbkB3w3+FPsI/gHfC/4U/AX+Ad8O/hT7FP4U/AG+E/4U+wj+Ar4K/gFCAU0BPgcAAT4DAAEoAwABUAMA
+        ASADAAEBAQABAQUAAYABARYAA///AIIACw==
 </value>
   </data>
   <data name="TreeView1.ToolTip" xml:space="preserve">
@@ -259,6 +246,19 @@ purposes. They idincate metadata stored against taxa
 in the NBN taxon dictionary. The most important one
 is the taxon group which is also saved to the Gilbert 21
 convenience taxon dictionary.</value>
+  </data>
+  <data name="butSearchGaz.ToolTip" xml:space="preserve">
+    <value>Use this button to invoke a dialog from which
+you can search the OS 1:50,000 gazetteer
+for place names and get corresponding grid 
+references. Useful if you are entering a record
+without a GPS grid reference.</value>
+  </data>
+  <data name="chkNewLocation.ToolTip" xml:space="preserve">
+    <value>A convenience method for adding a new location to the locations
+gazetteer: if this box is checked with the Commit button is clicked 
+then a new location entry is created with the specified name
+at the mid-point of the specified grid reference.</value>
   </data>
   <data name="radSpecifyBestFit.ToolTip" xml:space="preserve">
     <value>Use this option to specify the number of points the software

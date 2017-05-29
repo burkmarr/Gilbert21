@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports Microsoft.VisualBasic.FileIO
+Imports System.Drawing.Imaging
 
 Public Class clsInputFileImage
     Inherits clsInputFile
@@ -32,6 +33,10 @@ Public Class clsInputFileImage
 
             Dim dblLon As Double = exif.Longitude
             Dim dblLat As Double = exif.Latitude
+
+            'Debug.Print("longitude is: " & dblLon)
+
+
             If Not dblLon = Nothing Then
                 row("FileLon") = dblLon
                 row("FileLat") = dblLat

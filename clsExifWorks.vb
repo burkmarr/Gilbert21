@@ -1307,10 +1307,11 @@ Public Class clsExifWorks
     ''' <remarks>in EXIF, Deg is always positive, but added case for negative degrees in case this routine is reused</remarks>
     Private Shared Function DMStoDD(ByVal Deg As Double, ByVal Min As Double, ByVal Sec As Double) As Double
         Dim lFraction As Double = (Min / 60) + (Sec / 3600)
-        If Deg > 0 Then
-            Return Deg + lFraction
-        Else
-            Return Deg - lFraction
+        'If Deg > 0 Then - RBJ 29/05/2017. This is an error in original code, must be greater than or equal to zero!
+        If Deg >= 0 Then
+                Return Deg + lFraction
+            Else
+                Return Deg - lFraction
         End If
     End Function
 
@@ -1349,6 +1350,13 @@ Public Class clsExifWorks
                 Dim sec As Rational = GetPropertyRational(TagNames.GpsLongitude, 2)
                 Dim res As [Double] = DMStoDD(deg.ToDouble(), min.ToDouble(), sec.ToDouble())
                 Dim Ref As [String] = GetPropertyString(TagNames.GpsLongitudeRef)
+
+                Debug.Print("deg is: " & deg.ToDouble().ToString())
+                Debug.Print("min is: " & min.ToDouble().ToString())
+                Debug.Print("sec is: " & sec.ToDouble().ToString())
+                Debug.Print("Res is: " & res)
+                Debug.Print("Ref is: " & Ref)
+
                 If Ref <> "E" Then
                     res = -res
                 End If

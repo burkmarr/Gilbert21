@@ -26,4 +26,5 @@ End Class
     <DataMember(Name:="order")> Public order As String
     <DataMember(Name:="family")> Public family As String
     <DataMember(Name:="genus")> Public genus As String
+    <DataMember(Name:="rank")> Public rank As String
 End Class
