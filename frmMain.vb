@@ -1820,7 +1820,8 @@ Public Class frmMain
         Dim colDelete As Collection = New Collection
         Dim dgvRow As DataGridViewRow = dgvRecords.Rows(dgvRecords.Rows.Add())
 
-        For Each dtRow As DataRow In dtInput.Rows
+        Dim dtRow As DataRow
+        For Each dtRow In dtInput.Rows
             For Each rm In rms
 
                 If rm.DBType = OleDb.OleDbType.Date Then
@@ -1887,7 +1888,8 @@ Public Class frmMain
         Next
         dtMerge = dtMerge.DefaultView.ToTable(True)
 
-        For Each dtRow As DataRow In dtInput.Rows
+        Dim dtRow As DataRow
+        For Each dtRow In dtInput.Rows
 
             foundRows = dtMerge.Select("RecordID = " & dtRow("ID"))
 
@@ -1964,7 +1966,8 @@ Public Class frmMain
 
         Dim bExportedTo As Boolean = (frmOpenByFilter.cbRecipientFilterType.Text = "Records exported to")
 
-        For Each dtRow As DataRow In dtInput.Rows
+        Dim dtRow As DataRow
+        For Each dtRow In dtInput.Rows
 
             foundRows = dtMerge.Select("RecordID = " & dtRow("ID"))
             If foundRows.Length = 0 And bExportedTo Then

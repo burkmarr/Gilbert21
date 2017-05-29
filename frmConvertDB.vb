@@ -62,9 +62,9 @@ Public Class frmConvertDB
                 Cursor = Cursors.Arrow
                 Exit Sub
             ElseIf response = Windows.Forms.DialogResult.Yes Then
-                Dim strFile As String
-                For Each strFile In Directory.GetFiles(txtDBFolder.Text, "*.db3")
-                    File.Delete(strFile)
+                Dim strFile2 As String
+                For Each strFile2 In Directory.GetFiles(txtDBFolder.Text, "*.db3")
+                    File.Delete(strFile2)
                 Next
             Else
                 'Windows.Forms.DialogResult.No - just carry on
