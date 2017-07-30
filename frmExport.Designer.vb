@@ -129,7 +129,7 @@ Partial Class frmExport
         Me.cbInvalidRecords.Size = New System.Drawing.Size(309, 17)
         Me.cbInvalidRecords.TabIndex = 6
         Me.cbInvalidRecords.Text = "Include all modified or unsaved records, whether valid or not"
-        Me.tt.SetToolTip(Me.cbInvalidRecords, "Check this box to include all modified" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or unsaved records, whether or not" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "they " & _
+        Me.tt.SetToolTip(Me.cbInvalidRecords, "Check this box to include all modified" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "or unsaved records, whether or not" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "they " &
         "are valid, in the export.")
         Me.cbInvalidRecords.UseVisualStyleBackColor = True
         '
@@ -160,7 +160,7 @@ Partial Class frmExport
         Me.nudTrackInterval.Name = "nudTrackInterval"
         Me.nudTrackInterval.Size = New System.Drawing.Size(39, 20)
         Me.nudTrackInterval.TabIndex = 9
-        Me.tt.SetToolTip(Me.nudTrackInterval, "This is useful for thining out the number" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of points shown on a track - the highe" & _
+        Me.tt.SetToolTip(Me.nudTrackInterval, "This is useful for thining out the number" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of points shown on a track - the highe" &
         "r" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the number, the fewer points are shown.")
         '
         'cbEastingNorthing
@@ -173,7 +173,7 @@ Partial Class frmExport
         Me.cbEastingNorthing.Size = New System.Drawing.Size(170, 17)
         Me.cbEastingNorthing.TabIndex = 5
         Me.cbEastingNorthing.Text = "Include eastings and northings"
-        Me.tt.SetToolTip(Me.cbEastingNorthing, "This can be useful if you are exporting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a CSV to someone who wants to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "import in" & _
+        Me.tt.SetToolTip(Me.cbEastingNorthing, "This can be useful if you are exporting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a CSV to someone who wants to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "import in" &
         "to GIS.")
         Me.cbEastingNorthing.UseVisualStyleBackColor = True
         '
@@ -185,7 +185,7 @@ Partial Class frmExport
         Me.chkBoxAppendGUID.Size = New System.Drawing.Size(151, 17)
         Me.chkBoxAppendGUID.TabIndex = 3
         Me.chkBoxAppendGUID.Text = "Append GUID to comment"
-        Me.tt.SetToolTip(Me.chkBoxAppendGUID, "This can be useful if you are exporting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a CSV to someone who wants to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "import in" & _
+        Me.tt.SetToolTip(Me.chkBoxAppendGUID, "This can be useful if you are exporting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a CSV to someone who wants to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "import in" &
         "to GIS.")
         Me.chkBoxAppendGUID.UseVisualStyleBackColor = True
         '
@@ -199,7 +199,7 @@ Partial Class frmExport
         Me.chkIncludeGUID.Size = New System.Drawing.Size(91, 17)
         Me.chkIncludeGUID.TabIndex = 2
         Me.chkIncludeGUID.Text = "Include GUID"
-        Me.tt.SetToolTip(Me.chkIncludeGUID, "This can be useful if you are exporting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a CSV to someone who wants to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "import in" & _
+        Me.tt.SetToolTip(Me.chkIncludeGUID, "This can be useful if you are exporting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a CSV to someone who wants to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "import in" &
         "to GIS.")
         Me.chkIncludeGUID.UseVisualStyleBackColor = True
         '
@@ -213,7 +213,7 @@ Partial Class frmExport
         Me.rbNoGPSTracks.TabIndex = 7
         Me.rbNoGPSTracks.TabStop = True
         Me.rbNoGPSTracks.Text = "No GPS tracks"
-        Me.tt.SetToolTip(Me.rbNoGPSTracks, "Select this option if you do not want to include" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tracks in the Google Earth KML " & _
+        Me.tt.SetToolTip(Me.rbNoGPSTracks, "Select this option if you do not want to include" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "tracks in the Google Earth KML " &
         "file.")
         Me.rbNoGPSTracks.UseVisualStyleBackColor = True
         '
@@ -236,7 +236,7 @@ Partial Class frmExport
         Me.cbIncludeExcluded.Size = New System.Drawing.Size(234, 17)
         Me.cbIncludeExcluded.TabIndex = 12
         Me.cbIncludeExcluded.Text = "Include records even if marked for exclusion"
-        Me.tt.SetToolTip(Me.cbIncludeExcluded, "Check this box to override the 'exclude record from" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "export' option if set on ind" & _
+        Me.tt.SetToolTip(Me.cbIncludeExcluded, "Check this box to override the 'exclude record from" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "export' option if set on ind" &
         "ividual records in those" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "which are candidates for export.")
         Me.cbIncludeExcluded.UseVisualStyleBackColor = True
         '
@@ -301,7 +301,7 @@ Partial Class frmExport
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ddlExportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlExportType.FormattingEnabled = True
-        Me.ddlExportType.Items.AddRange(New Object() {"CSV", "MapMate", "Google Earth", "MapInfo", "RODIS", "BirdTrack Casual", "None"})
+        Me.ddlExportType.Items.AddRange(New Object() {"CSV", "iRecord", "MapMate", "Google Earth", "MapInfo", "RODIS", "BirdTrack Casual", "None"})
         Me.ddlExportType.Location = New System.Drawing.Point(81, 6)
         Me.ddlExportType.Name = "ddlExportType"
         Me.ddlExportType.Size = New System.Drawing.Size(421, 21)
@@ -329,7 +329,7 @@ Partial Class frmExport
         Me.cbAtlasLayers.Size = New System.Drawing.Size(116, 17)
         Me.cbAtlasLayers.TabIndex = 12
         Me.cbAtlasLayers.Text = "Include atlas layers"
-        Me.tt.SetToolTip(Me.cbAtlasLayers, "If this box is checked, then your Google Earth file" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will include distribution of" & _
+        Me.tt.SetToolTip(Me.cbAtlasLayers, "If this box is checked, then your Google Earth file" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will include distribution of" &
         " your exported records" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "summarised at hectad, tetrad and monad levels.")
         Me.cbAtlasLayers.UseVisualStyleBackColor = True
         '

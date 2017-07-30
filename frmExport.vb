@@ -10,6 +10,7 @@ Public Class frmExport
 
     Public Enum ExportType
         CSV
+        iRecord
         MapMate
         GE
         MapInfo
@@ -105,6 +106,8 @@ Public Class frmExport
         Select Case ddlExportType.Text
             Case "CSV"
                 bFileProduced = ExportToCSV()
+            Case "iRecord"
+                bFileProduced = ExportToIRecord()
             Case "MapMate"
                 bFileProduced = ExportToMapMate()
             Case "Google Earth"
@@ -162,7 +165,7 @@ Public Class frmExport
                 Next
             Else
                 'Export record already exists, so records will be appended. Just update export date.
-                comExport.CommandText = "Update exports set ExportDate=? where ExportID=?"
+                comExport.CommandText = "Update exports Set ExportDate=? where ExportID=?"
                 comExport.Parameters.AddWithValue("ExportDate", Date.Today)
                 comExport.Parameters.AddWithValue("ExportID", intExportID)
                 comExport.ExecuteNonQuery()
@@ -194,11 +197,11 @@ Public Class frmExport
 
                     'Check for presence of this ExportID/RecordID already - can happen if appending to
                     'export of type 'None'
-                    comExport.CommandText = "Select count(*) from RecordExport where ExportID=? and RecordID=?"
+                    comExport.CommandText = "Select count(*) from RecordExport where ExportID=? And RecordID=?"
                     If comExport.ExecuteScalar > 0 Then
                         'Record is present - so delete. Therefore when record is inserted, the record modified
                         'date will be updated if that has changed.
-                        comExport.CommandText = "Delete from RecordExport where ExportID=? and RecordID=?"
+                        comExport.CommandText = "Delete from RecordExport where ExportID=? And RecordID=?"
                         comExport.ExecuteNonQuery()
                     End If
                     comExport.CommandText = "Insert into RecordExport(ExportID, RecordID, RecDateMod) values(?,?, ?)"
@@ -210,13 +213,13 @@ Public Class frmExport
             comExport.ExecuteNonQuery()
 
             If ddlExportType.Text <> "None" Then
-                If MessageBox.Show("Export complete. Do you want to view the exported file?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("Export complete. Do you want To view the exported file?", "", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
 
                     'Open the exported with the default program
                     Try
                         System.Diagnostics.Process.Start(SaveFileDialog.FileName)
                     Catch ex As Exception
-                        MessageBox.Show("Unable to open file '" & SaveFileDialog.FileName & "' directly from Gilbert. " & ex.Message)
+                        MessageBox.Show("Unable To open file '" & SaveFileDialog.FileName & "' directly from Gilbert. " & ex.Message)
                     End Try
                 End If
             End If
@@ -391,6 +394,8 @@ Public Class frmExport
                 Select Case expType
                     Case ExportType.CSV
                         ExportCSVRow(row, sw, objGridRef, bEastingNorthing)
+                    Case ExportType.iRecord
+                        ExportIRecordRow(row, sw, objGridRef, bEastingNorthing)
                     Case ExportType.MapMate
                         ExportMapMateRow(row, sw, objGridRef, bEastingNorthing)
                     Case ExportType.GE
@@ -550,6 +555,48 @@ Public Class frmExport
 
             'Records
             ExportRows(ExportType.MapMate, sw, Nothing)
+            sw.Close()
+
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Function ExportToIRecord() As Boolean
+
+        SaveFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+        SaveFileDialog.FilterIndex = 1
+        SaveFileDialog.InitialDirectory = frmOptions.txtExportFolder.Text
+
+        If SaveFileDialog.ShowDialog() = DialogResult.OK Then
+
+            'Set export folder option if not already set
+            If frmOptions.txtExportFolder.Text = "" Then
+                frmOptions.txtExportFolder.Text = Path.GetDirectoryName(SaveFileDialog.FileName)
+            End If
+
+            Dim sw As StreamWriter = New StreamWriter(SaveFileDialog.FileName)
+            Dim strLine As String = ""
+
+            'Species name, Recorder name, Certainty, Identified by, Quantity, Site name, Grid ref, Date, Habitat, Sample comment
+            'Species name, Recorder name, Certainty, Identified by, Quantity, Site name, Grid ref, Date, Occurrence comment
+
+            'Header
+            strLine = "Species name"
+            strLine = strLine & "," & "Recorder name"
+            strLine = strLine & "," & "Certainty"
+            strLine = strLine & "," & "Identified by"
+            strLine = strLine & "," & "Quantity"
+            strLine = strLine & "," & "Site name"
+            strLine = strLine & "," & "Grid ref"
+            strLine = strLine & "," & "Date"
+            strLine = strLine & "," & "Occurrence comment"
+
+            sw.WriteLine(strLine)
+
+            'Records
+            ExportRows(ExportType.iRecord, sw, Nothing)
             sw.Close()
 
             Return True
@@ -995,6 +1042,77 @@ Public Class frmExport
         'Symbol(33, 255, 18)
     End Sub
 
+
+    Private Sub ExportIRecordRow(ByVal row As DataGridViewRow, ByVal sw As StreamWriter, ByVal objGridRef As GridRef, ByVal bEastingNorthing As Boolean)
+
+        Dim strColName As String
+        Dim strLine As String = ""
+
+        If row.Cells("GridRef").Value.ToString = "" Then
+
+            'Could happen for a personal note
+            Exit Sub
+        End If
+
+        'iRecord columns:
+        'Species name, Recorder name, Certainty, Identified by, Quantity, Site name, Grid ref, Date, Occurrence comment
+
+        Dim alCols As ArrayList = New ArrayList
+        alCols.Add("ScientificName") 'Species name
+        alCols.Add("Recorder") 'Recorder name
+        alCols.Add("Certainty") 'Certainty
+        alCols.Add("Determiner") 'Identified by
+        alCols.Add("Quantity") 'Quantity
+        alCols.Add("Site name") 'Site name
+        alCols.Add("GridRef") 'Grid ref
+        alCols.Add("Date") 'Date
+        alCols.Add("Comment") 'Occurrence comment
+
+        Dim strSiteName As String
+        Dim strLocation As String = cfun.NullToEmpty(row.Cells("Location").Value).ToString()
+        Dim strTown As String = cfun.NullToEmpty(row.Cells("Town").Value).ToString()
+
+        If strLocation.Length > 0 And strTown.Length > 0 Then
+            strSiteName = strLocation & ", " & strTown
+        ElseIf strLocation.Length > 0 Then
+            strSiteName = strLocation
+        Else
+            strSiteName = strTown
+        End If
+
+        Dim strQuantity As String
+        Dim strAbundance As String = cfun.NullToEmpty(row.Cells("Abundance").Value).ToString()
+        Dim strUnits As String = cfun.NullToEmpty(row.Cells("Units").Value).ToString()
+
+        If strAbundance.Length > 0 And strUnits.Length > 0 Then
+            strQuantity = strAbundance & " " & strUnits
+        ElseIf strAbundance.Length > 0 Then
+            strQuantity = strAbundance
+        Else
+            strQuantity = ""
+        End If
+
+        'Values
+        For Each strColName In alCols
+
+            If strLine.Length > 0 Then
+                strLine = strLine & ","
+            End If
+
+            If strColName = "Certainty" Then
+                strLine = strLine & """Certain"""
+            ElseIf strColName = "Quantity" Then
+                strLine = strLine & """" & strQuantity.Replace("""", """""") & """"
+            ElseIf strColName = "Site name" Then
+                strLine = strLine & """" & strSiteName.Replace("""", """""") & """"
+            Else
+                strLine = strLine & """" & cfun.NullToEmpty(row.Cells(strColName).Value).ToString().Replace("""", """""") & """"
+            End If
+        Next
+
+        sw.WriteLine(strLine)
+    End Sub
+
     Private Sub ExportMapMateRow(ByVal row As DataGridViewRow, ByVal sw As StreamWriter, ByVal objGridRef As GridRef, ByVal bEastingNorthing As Boolean)
 
         Dim strColName As String
@@ -1129,7 +1247,7 @@ Public Class frmExport
         Dim colFileID As Collection = New Collection
         Dim db As clsDB = New clsDB
         Dim comTracks As SQLiteCommand = New SQLiteCommand(db.conTracks)
-        comTracks.CommandText = "select FileID from RecordTracks where RecordID = ?;"
+        comTracks.CommandText = "Select FileID from RecordTracks where RecordID = ?;"
         Dim paramRecordID As SQLiteParameter = New SQLiteParameter
         comTracks.Parameters.Add(paramRecordID)
         For Each rowDGV In frmMain.dgvRecords.Rows
@@ -1141,7 +1259,7 @@ Public Class frmExport
         Next
 
         'Now for each of the identified track, get the filename and read in the file
-        comTracks.CommandText = "select CurrentPath, FileType from Tracks where FileID = ?;"
+        comTracks.CommandText = "Select CurrentPath, FileType from Tracks where FileID = ?;"
         comTracks.Parameters.Clear()
         Dim paramFileID As SQLiteParameter = New SQLiteParameter
         comTracks.Parameters.Add(paramFileID)
@@ -1149,7 +1267,7 @@ Public Class frmExport
         Dim dtTrackFile As DataTable = New DataTable
 
         If colFileID.Count > 10 Then
-            If MessageBox.Show(colFileID.Count.ToString & " tracks are referenced. Are you sure you want to export all of them (it could take some time)?", "Export track warning", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
+            If MessageBox.Show(colFileID.Count.ToString & " tracks are referenced. Are you sure you want To export all Of them (it could take some time)?", "Export track warning", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
                 Exit Sub
             End If
         End If
@@ -1248,7 +1366,7 @@ Public Class frmExport
         Dim colFileID As Collection = New Collection
         Dim db As clsDB = New clsDB
         Dim comTracks As SQLiteCommand = New SQLiteCommand(db.conTracks)
-        comTracks.CommandText = "select FileID from RecordTracks where RecordID = ?;"
+        comTracks.CommandText = "Select FileID from RecordTracks where RecordID = ?;"
         Dim paramRecordID As SQLiteParameter = New SQLiteParameter
         comTracks.Parameters.Add(paramRecordID)
         For Each rowDGV In frmMain.dgvRecords.Rows
@@ -1260,7 +1378,7 @@ Public Class frmExport
         Next
 
         'Now for each of the identified track, get the filename and read in the file
-        comTracks.CommandText = "select CurrentPath, FileType, DateCreated from Tracks where FileID = ?;"
+        comTracks.CommandText = "Select CurrentPath, FileType, DateCreated from Tracks where FileID = ?;"
         comTracks.Parameters.Clear()
         Dim paramFileID As SQLiteParameter = New SQLiteParameter
         comTracks.Parameters.Add(paramFileID)
@@ -1269,7 +1387,7 @@ Public Class frmExport
         Dim strTrackTitle As String = ""
 
         If colFileID.Count > 1 Then
-            If MessageBox.Show(colFileID.Count.ToString & " tracks are referenced. Are you sure you want to export all of them (if there are many it could take some time)?", "Export track warning", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
+            If MessageBox.Show(colFileID.Count.ToString & " tracks are referenced. Are you sure you want To export all Of them (If there are many it could take some time)?", "Export track warning", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
                 Exit Sub
             End If
         End If

@@ -106,7 +106,7 @@ Partial Class frmExportsManage
         Me.txtExportTitle.Name = "txtExportTitle"
         Me.txtExportTitle.Size = New System.Drawing.Size(438, 20)
         Me.txtExportTitle.TabIndex = 80
-        Me.tt.SetToolTip(Me.txtExportTitle, "You can use this text box to change the short title of the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "selected export if yo" & _
+        Me.tt.SetToolTip(Me.txtExportTitle, "You can use this text box to change the short title of the" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "selected export if yo" &
         "u wish.")
         '
         'Label4
@@ -154,7 +154,7 @@ Partial Class frmExportsManage
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ddlExportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlExportType.FormattingEnabled = True
-        Me.ddlExportType.Items.AddRange(New Object() {"CSV", "MapMate", "Google Earth", "MapInfo", "RODIS", "BirdTrack Casual", "None"})
+        Me.ddlExportType.Items.AddRange(New Object() {"CSV", "iRecord", "MapMate", "Google Earth", "MapInfo", "RODIS", "BirdTrack Casual", "None"})
         Me.ddlExportType.Location = New System.Drawing.Point(91, 84)
         Me.ddlExportType.Name = "ddlExportType"
         Me.ddlExportType.Size = New System.Drawing.Size(252, 21)
@@ -230,7 +230,7 @@ Partial Class frmExportsManage
         Me.txtExportTitleFilter.Name = "txtExportTitleFilter"
         Me.txtExportTitleFilter.Size = New System.Drawing.Size(374, 20)
         Me.txtExportTitleFilter.TabIndex = 30
-        Me.tt.SetToolTip(Me.txtExportTitleFilter, "Filter the exports that appear in the short title drop-down" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "based on them matchi" & _
+        Me.tt.SetToolTip(Me.txtExportTitleFilter, "Filter the exports that appear in the short title drop-down" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "based on them matchi" &
         "ng (partially) a string you specify here.")
         '
         'Label8
@@ -293,7 +293,7 @@ Partial Class frmExportsManage
         Me.cbRecipient.Name = "cbRecipient"
         Me.cbRecipient.Size = New System.Drawing.Size(374, 21)
         Me.cbRecipient.TabIndex = 10
-        Me.tt.SetToolTip(Me.cbRecipient, "Filter the exports that appear in the short title drop-down" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "based on them having" & _
+        Me.tt.SetToolTip(Me.cbRecipient, "Filter the exports that appear in the short title drop-down" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "based on them having" &
         " recipients which match (partially)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a string you specify here.")
         '
         'butRecipientFilterClear
@@ -324,7 +324,7 @@ Partial Class frmExportsManage
         Me.butImport.Size = New System.Drawing.Size(87, 23)
         Me.butImport.TabIndex = 160
         Me.butImport.Text = "New from CSV"
-        Me.tt.SetToolTip(Me.butImport, "Create a new export record from a CSV file containing" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the Gilbert21 RecIDs in th" & _
+        Me.tt.SetToolTip(Me.butImport, "Create a new export record from a CSV file containing" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the Gilbert21 RecIDs in th" &
         "e first column.")
         Me.butImport.UseVisualStyleBackColor = True
         '
