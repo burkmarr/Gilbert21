@@ -11,6 +11,7 @@ Public Class frmExport
     Public Enum ExportType
         CSV
         iRecord
+        iNaturalist
         MapMate
         GE
         MapInfo
@@ -108,6 +109,8 @@ Public Class frmExport
                 bFileProduced = ExportToCSV()
             Case "iRecord"
                 bFileProduced = ExportToIRecord()
+            Case "iNaturalist"
+                bFileProduced = ExportToINaturalist()
             Case "MapMate"
                 bFileProduced = ExportToMapMate()
             Case "Google Earth"
@@ -404,6 +407,8 @@ Public Class frmExport
                         ExportMIRow(row, sw, sw2, objGridRef, bEastingNorthing)
                     Case ExportType.RODIS
                         ExportRODISRow(row, sw, objGridRef)
+                    Case ExportType.iNaturalist
+                        ExportINaturalistRow(row, sw, objGridRef)
                     Case ExportType.BirdTrackCasual
                         ExportBirdTrackCasualRow(row, sw, objGridRef, comSQLiteResources, htBTOMatches)
                 End Select
@@ -597,6 +602,51 @@ Public Class frmExport
 
             'Records
             ExportRows(ExportType.iRecord, sw, Nothing)
+            sw.Close()
+
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Function ExportToINaturalist() As Boolean
+
+        SaveFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*"
+        SaveFileDialog.FilterIndex = 1
+        SaveFileDialog.InitialDirectory = frmOptions.txtExportFolder.Text
+
+        If SaveFileDialog.ShowDialog() = DialogResult.OK Then
+
+            'Set export folder option if not already set
+            If frmOptions.txtExportFolder.Text = "" Then
+                frmOptions.txtExportFolder.Text = Path.GetDirectoryName(SaveFileDialog.FileName)
+            End If
+
+            Dim sw As StreamWriter = New StreamWriter(SaveFileDialog.FileName)
+            Dim strLine As String = ""
+
+            'https://www.inaturalist.org/observations/import#csv_import
+            'Taxon name, Date observed, Description, Place name, Latitude / y coord / northing, Longitude / x coord / easting, Tags, Geoprivacy
+            'Here are 3 examples of well-formed data:
+            'Anna's Hummingbird,2008-03-03 2:54pm,"An aggressive male dive-bombed my head, so I took cover.","Tilden Regional Park, Berkeley, CA, USA",37.8953,-122.249,"attack, danger",obscured
+            'Sharp-tailed Snake,2007-08-20,"Beautiful little creature","Leona Canyon Regional Park, Oakland, CA, USA",37.7454,-122.111,"cute, snakes"
+            'Golden Eagle,,"I'm not really sure when or where this was",,,,"mysterious",private
+
+            'Header
+            strLine = "Taxon name"
+            strLine = strLine & "," & "Date observed"
+            strLine = strLine & "," & "Description"
+            strLine = strLine & "," & "Place name"
+            strLine = strLine & "," & "Latitude / y coord / northing"
+            strLine = strLine & "," & "Longitude / x coord / easting"
+            strLine = strLine & "," & "Tags"
+            strLine = strLine & "," & "Geoprivacy"
+
+            sw.WriteLine(strLine)
+
+            'Records
+            ExportRows(ExportType.iNaturalist, sw, Nothing)
             sw.Close()
 
             Return True
@@ -1005,6 +1055,77 @@ Public Class frmExport
                 If strVal.ToLower = "p" And strCol = "Abundance" Then
                     strVal = "Present"
                 End If
+                strLine = strLine & """" & strVal & """"
+            End If
+        Next
+
+        sw.WriteLine(strLine)
+    End Sub
+
+    Private Sub ExportINaturalistRow(ByVal row As DataGridViewRow, ByVal sw As StreamWriter, ByVal objGridRef As GridRef)
+
+        Dim strCol As String
+        Dim strLine As String = ""
+        Dim strVal As String
+        Dim lat As Double
+        Dim lng As Double
+
+        'Scientific Name,Date,Location,Grid-Ref,Observer,Determiner,Sex/Stage,Abundance,Record type,Comments
+        'Values
+
+        Dim colsINaturalist As Collection = New Collection
+        colsINaturalist.Add("ScientificName") 'Taxon name
+        colsINaturalist.Add("Date") 'Date observed
+        colsINaturalist.Add("Comment") 'Description
+        colsINaturalist.Add("Location") 'Place name
+        colsINaturalist.Add("Lat") 'Latitude / y coord / northing 
+        colsINaturalist.Add("Lng") 'Longitude / x coord / easting 
+        colsINaturalist.Add("Blank") 'Tags
+        colsINaturalist.Add("Blank") 'Geoprivacy
+
+        'sw.WriteLine(objGridRef.Easting2LongWGS84(objGridRef.East, objGridRef.North, 0).ToString() & "," & objGridRef.Northing2LatWGS84(objGridRef.East, objGridRef.North, 0).ToString() & ",0")
+
+        objGridRef.GridRef = row.Cells("GridRef").Value.ToString
+        objGridRef.ParseGridRef(True)
+        objGridRef.ParseInput(False)
+
+        Dim strSiteName As String
+        Dim strLocation As String = cfun.NullToEmpty(row.Cells("Location").Value).ToString()
+        Dim strTown As String = cfun.NullToEmpty(row.Cells("Town").Value).ToString()
+
+        If strLocation.Length > 0 And strTown.Length > 0 Then
+            strSiteName = strLocation & ", " & strTown
+        ElseIf strLocation.Length > 0 Then
+            strSiteName = strLocation
+        Else
+            strSiteName = strTown
+        End If
+
+        For Each strCol In colsINaturalist
+
+            If strLine.Length > 0 Then
+                strLine = strLine & ","
+            End If
+            If strCol = "Blank" Then
+                'Leave blank
+            ElseIf strCol = "ScientificName" Then
+                strLine = strLine & cfun.NullToEmpty(row.Cells(strCol).Value).ToString()
+            ElseIf strCol = "Location" Then
+                strLine = strLine & """" & strSiteName.Replace("""", "") & """"
+            ElseIf strCol = "Lat" Then
+                If cfun.NullToEmpty(row.Cells("GridRef").Value) <> "" Then
+                    lat = Round(objGridRef.Northing2LatWGS84(objGridRef.East, objGridRef.North, 0), 4)
+                    strLine = strLine & lat.ToString()
+                End If
+            ElseIf strCol = "Lng" Then
+                If cfun.NullToEmpty(row.Cells("GridRef").Value) <> "" Then
+                    lng = Round(objGridRef.Easting2LongWGS84(objGridRef.East, objGridRef.North, 0), 4)
+                    strLine = strLine & lng.ToString()
+                End If
+            ElseIf strCol = "Date" Then
+                strLine = strLine & Convert.ToDateTime(row.Cells("Date").Value).ToString("yyyy-MM-dd")
+            Else
+                strVal = cfun.NullToEmpty(row.Cells(strCol).Value).ToString().Replace("""", "")
                 strLine = strLine & """" & strVal & """"
             End If
         Next

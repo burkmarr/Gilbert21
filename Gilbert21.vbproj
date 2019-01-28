@@ -23,7 +23,7 @@
     </ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <TargetZone>Internet</TargetZone>
     <SignAssembly>false</SignAssembly>
@@ -32,24 +32,22 @@
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
-    <PublishUrl>ftp://ftp.gilbert21.org.uk/htdocs/version3/</PublishUrl>
+    <PublishUrl>C:\Users\richardb\Documents\Work\G21\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.gilbert21.org.uk/version3/</InstallUrl>
     <SupportUrl>http://www.gilbert21.org.uk</SupportUrl>
     <ProductName>Gilbert 21</ProductName>
     <PublisherName>The Gilbert 21 Project</PublisherName>
     <SuiteName>The Gilbert 21 Project</SuiteName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>3.3.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
