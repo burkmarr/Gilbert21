@@ -2365,6 +2365,7 @@ Public Class frmRecordDetails
         sb.Append(pbMap.Height.ToString)
         sb.Append("&zoom=")
         sb.Append(tbZoom.Value)
+        sb.Append("&key=AIzaSyDfBV4J74j3bX81U5MKQzkv9P-eSkC55U4")
 
         sb.Append("&maptype=")
         Select Case cbMapType.Text
