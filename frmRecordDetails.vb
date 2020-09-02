@@ -2354,6 +2354,7 @@ Public Class frmRecordDetails
         End If
 
         Dim sb As StringBuilder = New StringBuilder("http://maps.googleapis.com/maps/api/staticmap?sensor=false&")
+        Dim strkey As String = "AIzaSyDfBV4J74j3bX81U5MKQzkv9P-eSkC55U4"
 
         sb.Append("center=")
         sb.Append(dblLat.ToString)
@@ -2365,7 +2366,8 @@ Public Class frmRecordDetails
         sb.Append(pbMap.Height.ToString)
         sb.Append("&zoom=")
         sb.Append(tbZoom.Value)
-        sb.Append("&key=AIzaSyDfBV4J74j3bX81U5MKQzkv9P-eSkC55U4")
+        sb.Append("&key=")
+        sb.Append(strKey)
 
         sb.Append("&maptype=")
         Select Case cbMapType.Text
