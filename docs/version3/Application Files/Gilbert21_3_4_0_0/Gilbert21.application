@@ -8,7 +8,7 @@
         <beforeApplicationStartup />
       </update>
     </subscription>
-    <deploymentProvider codebase="http://www.gilbert21.org.uk/Version3/Publish.htm/Gilbert21.application" />
+    <deploymentProvider codebase="http://www.gilbert21.org.uk/Version3/publish.htm/Gilbert21.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
