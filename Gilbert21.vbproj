@@ -42,7 +42,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <SupportUrl>http://www.gilbert21.org.uk</SupportUrl>
+    <SupportUrl>https://burkmarr.github.io/Gilbert21/</SupportUrl>
     <ProductName>Gilbert 21</ProductName>
     <PublisherName>The Gilbert 21 Project</PublisherName>
     <SuiteName>The Gilbert 21 Project</SuiteName>

@@ -1612,9 +1612,9 @@ Public Class frmMain
         'If MessageBox.Show("Help is available from the Giblert 21 website. Do you want to " & _
         '                   "open it?", "Help", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
         Try
-            System.Diagnostics.Process.Start("http://www.gilbert21.org.uk/HelpHTML/Gilbert 21.html")
+            System.Diagnostics.Process.Start("https://burkmarr.github.io/Gilbert21/HelpHTML/Gilbert 21.html")
         Catch ex As Exception
-            MessageBox.Show("Could not open 'http://www.gilbert21.org.uk/HelpHTML/Gilbert 21.html' from Gilbert. Try navigating directly to this web page from your browser.")
+            MessageBox.Show("Could not open 'https://burkmarr.github.io/Gilbert21/HelpHTML/Gilbert 21.html' from Gilbert. Try navigating directly to this web page from your browser.")
         End Try
         'End If
     End Sub
@@ -1690,9 +1690,9 @@ Public Class frmMain
             If MessageBox.Show("You are running a new version of Gilbert 21. Do you want to " & _
                                "check out what's new?", "New version", MessageBoxButtons.YesNo) = DialogResult.Yes Then
                 Try
-                    System.Diagnostics.Process.Start("http://www.gilbert21.org.uk/WhatsNew.aspx")
+                    System.Diagnostics.Process.Start("https://burkmarr.github.io/Gilbert21/WhatsNew.aspx")
                 Catch ex As Exception
-                    MessageBox.Show("Could not open 'http://www.gilbert21.org.uk/WhatsNew.aspx' from Gilbert. Try browsing to this page from your Browser.")
+                    MessageBox.Show("Could not open 'https://burkmarr.github.io/Gilbert21/WhatsNew.aspx' from Gilbert. Try browsing to this page from your Browser.")
                 End Try
             End If
 
