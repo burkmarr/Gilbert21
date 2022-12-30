@@ -1,0 +1,146 @@
+﻿<html>
+	
+<head>
+	<title>Opening records</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.8.0.560">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Gilbert 21.html?" + sTopicUrl;
+			}
+			else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			{
+				top.FrameTOC.SelectTocItem("Openingrecords");
+			}
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Opening records</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Theexportrecipientdialog.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Phenologygraphs.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><a class="rvts9" href="http://www.gilbert21.org.uk" target="_blank">Gilbert 21</a><span class="rvts7"> - opening records</span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Open records</span><span class="rvts6"> dialog is invoked by selecting the </span><span class="rvts15">Open records</span><span class="rvts6"> item from the </span><span class="rvts15">File</span><span class="rvts6"> menu. Use this dialog to indicate which records you want to open (i.e. populate the record list on the Main Gilbert 21 form).</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">At the top of the you must specify whether you want to filter records (the default) or retrieve all records. If the </span><span class="rvts15">Filter records</span><span class="rvts6"> option is selected then only the records which match the selection criteria you specify will be retrieved, otherwise, if you select </span><span class="rvts15">All records</span><span class="rvts6">, then all records will be retrieved. In actual fact, whichever option you select, these records are subject to further filters as indicated by the two check-boxes below these options. Unless you check the</span><span class="rvts15"> Include invalid records</span><span class="rvts6"> check-box, then only valid biological records will be retrieved and unless you check the</span><span class="rvts15"> Include records marked 'exclude from export'</span><span class="rvts6"> check-box, then records marked as 'exclude from export' will not be retrieved. Both of these check-boxes are unchecked by default which means that only valid biological records not marked to be excluded from exports will be retrieved.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Clear</span><span class="rvts6"> button at the foot of the dialog clears all selection criteria and filters. The </span><span class="rvts15">Cancel</span><span class="rvts6"> button removes the dialog without carrying out a selection. The </span><span class="rvts15">Commit</span><span class="rvts6"> button removes the dialog and carries out the selection.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The Easy select tab</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem35.png"/></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The Easy select tab is the place where records can be very quickly specified using the most frequently required selection (search) criteria. The example above shows how to select all Buzzard records. The </span><span class="rvts15">Common name, Scientific name, Taxon group, Comment</span><span class="rvts6"> and </span><span class="rvts15">Personal notes</span><span class="rvts6">, text fields accept search terms against which records are filtered. These are not case sensitive. Partial matches are carried out so, for example, the search term cuckoo against Common name will bring back records of Cuckoo (the bird) as well as Cuckoo-flower. You can specify as many search patterns as you like, only records which match them all will be selected.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The record date fields are self explanatory. You can use these to limit records to those made on and/or after a given date or on and/or before a given date. By using both of these date selection controls you can specify records that only occur between two dates.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The SQL select tab</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem36.png"/></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">SQL select</span><span class="rvts6"> tab allows you to specify complex queries using Structured Query Language. This allows much more complex queries than the </span><span class="rvts15">Easy select</span><span class="rvts6"> tab, but it requires you to understand a little about SQL syntax. You can find examples and tutorials for this on the web. Alternatively you can right-click the mouse anywhere in the text area to pop-up a menu that helps you to build queries. You can type straight into the SQL text area if you prefer. In the example shown above, all records that have a determiner with the text 'smith' included anywhere in the name will be returned (the % symbol is known as a 'wildcard' and matches zero of more characters of any type).</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">You can save SQL queries by giving them a name in the text edit/drop-down list field where it says 'New query' and clicking the </span><span class="rvts15">Add/Modify</span><span class="rvts6"> button. Queries saved in this way can later be selected from the drop-down list. When the name of a query is selected from the drop-down list, the associated SQL is pasted into the SQL text area. If you modify SQL from a query selected in this way, just click the </span><span class="rvts15">Add/Modify</span><span class="rvts6"> button to update the saved query. You can delete a saved query by selecting it and then clicking the </span><span class="rvts15">Delete</span><span class="rvts6"> button.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The Geographic filter tab</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem37.png"/></p>
+<p class="rvps3"><span class="rvts12"><br/></span></p>
+<p class="rvps2"><span class="rvts6">You can filter selected records based on whether or not they fall within a specified polygon. To do this, your polygon must be specified in a simple text file with one easting/northing pair of the polygon vertices on each line of the file as shown, for example, below:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">366357.14 412590</span></p>
+<p class="rvps2"><span class="rvts6">366354.69 412568.54</span></p>
+<p class="rvps2"><span class="rvts6">366353.87 412546.23</span></p>
+<p class="rvps2"><span class="rvts6">366351.69 412524.55</span></p>
+<p class="rvps2"><span class="rvts6">366341.26 412506.53</span></p>
+<p class="rvps2"><span class="rvts6">366334.52 412485.18</span></p>
+<p class="rvps2"><span class="rvts6">366330.04 412464.6</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The easting comes first, then a space and then the northing. Most GIS packages are capable of exporting polygons in a text format which can easily be edited to get this format (for example MapInfo's MIF format).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Alternatively, you can select a KML file that you have exported from Google Earth, which specifies a polygon.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">When you have a file, select it from the </span><span class="rvts15">Geographic filter</span><span class="rvts6"> tab using the </span><span class="rvts15">Browse</span><span class="rvts6"> button. Gilbert 21 will test each grid reference square associated with each candidate record you select and, if it doesn't overlap the polygon, it will not be returned in the results.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The Export filters tab</span></p>
+<p class="rvps5"><span class="rvts12"><br/></span></p>
+<p class="rvps5"><img alt="" style="padding : 1px;" src="lib/NewItem38.png"/></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The </span><span class="rvts15">Export filters</span><span class="rvts6"> tab allows you to select records based either on their membership (or non-membership) of selected exports, or on whether or not they have ever been exported to specified recipients. You can specify either an export or recipient filter, but not both at once. To use a filter, select the filter operation (see below) and then check the boxes associated with one or more export or recipients (as appropriate) from the corresponding lists.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The export filter drop-down list includes the following operations:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps2"><span class="rvts6">Records included in</span></li>
+<li class="rvps2"><span class="rvts6">Records not included in</span></li>
+<li class="rvps2"><span class="rvts6">Records created since</span></li>
+<li class="rvps2"><span class="rvts6">Records included but since modified</span></li>
+<li class="rvps2"><span class="rvts6">Records created or modified since</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">For the first two options, you can select more than one export in the list, but for the other three options, you can only select a single option. Be careful with the three created/modified since options - these compare dates associated with the records to the date on which the selected export was made. But the dates it compares - the created date and modified date - are </span><span class="rvts15">not the same as the record date. </span><span class="rvts6">For example a record could be entered after the date of an export but with a record date that is earlier than the date on which the export was made. Such a record would still be selected by the operations </span><span class="rvts15">Records created since</span><span class="rvts6"> and </span><span class="rvts15">Records created or modified since</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The recipients filter drop-down list includes the following operations:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps2"><span class="rvts6">Records exported to</span></li>
+<li class="rvps2"><span class="rvts6">Records not exported to</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">For either of these options you can specify one or more recipients.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">Putting it all together</span></p>
+<p class="rvps2"><span class="rvts6">All of the different selection methods described above can be used singly or in conjunction with one another. So that it is clear when any of the four tabs has selection criteria specified they each have an indicator associated with them. When the indicator is red, then no criteria has been specified on that tab. When the indicator is green, then selection criteria are specified on that tab.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note that all the criteria specified on the </span><span class="rvts15">Easy select</span><span class="rvts6"> tab are joined by implicit SQL 'and' operators. If you specify criteria on both the Easy select tab and the SQL select tab, then the entire query you specify on the SQL tab is enclosed by parentheses and joined to those on the Easy select tab with an SQL 'and' operator.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note that you can quickly clear all the selection criteria on all tabs by clicking the </span><span class="rvts15">Clear</span><span class="rvts6"> button.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts10">Created with the Personal Edition of HelpNDoc: </span><a class="rvts11" href="http://www.helpndoc.com/help-authoring-tool">Free help authoring tool</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2010-2013 by Richard Burkmar. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

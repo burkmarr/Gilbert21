@@ -1,0 +1,101 @@
+﻿<html>
+	
+<head>
+	<title>Records from a CSV file</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.8.0.560">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Gilbert 21.html?" + sTopicUrl;
+			}
+			else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			{
+				top.FrameTOC.SelectTocItem("RecordsfromaCSVfile");
+			}
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>Records from a CSV file</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Creatingnewrecords.html">Creating new records</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Creatingnewrecords.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="RecordsfromEvernote.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Recordsfromdigitalphotos.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><a class="rvts9" href="http://www.gilbert21.org.uk" target="_blank">Gilbert 21</a><span class="rvts7"> - initialising records from a CSV file</span></p>
+<p class="rvps2"><span class="rvts6">Gilbert 21 is software has been designed primarily to manage a database of </span><span class="rvts15">personal biological records</span><span class="rvts6">. So it doesn't boast sophisticated interfaces for importing, collating and managing records from diverse sources. Nevertheless, it is sometimes the case that new users of Gilbert 21 want a facility to import personal records that they have previously stored in another digital format. The facility described here was developed to enable that.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The facility enables new records to be initialised from a comma separated values (CSV) file with any of the following fields (which must be specified on the first row):</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps2"><span class="rvts6">Recorder</span></li>
+<li class="rvps2"><span class="rvts6">Determiner</span></li>
+<li class="rvps2"><span class="rvts6">Confirmer</span></li>
+<li class="rvps2"><span class="rvts6">ScientificName</span></li>
+<li class="rvps2"><span class="rvts6">CommonName</span></li>
+<li class="rvps2"><span class="rvts6">TaxonGroup</span></li>
+<li class="rvps2"><span class="rvts6">Abundance</span></li>
+<li class="rvps2"><span class="rvts6">Units</span></li>
+<li class="rvps2"><span class="rvts6">GridRef</span></li>
+<li class="rvps2"><span class="rvts6">Location</span></li>
+<li class="rvps2"><span class="rvts6">Town</span></li>
+<li class="rvps2"><span class="rvts6">Date</span></li>
+<li class="rvps2"><span class="rvts6">Time</span></li>
+<li class="rvps2"><span class="rvts6">Comment</span></li>
+<li class="rvps2"><span class="rvts6">PersonalNotes</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These fields correspond to the record fields in Gilbert 21. Not all of them need to be included - </span><span class="rvts15">none are compulsory</span><span class="rvts6">. Extra fields with unrecognised names will be ignored.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once you have prepared a CSV file, select the 'Open files' item from the Gilbert 21 File menu. This should open the folder set as your </span><span class="rvts15">Default import folder</span><span class="rvts6">. If your prepared file is in this folder, you will be able to see and select it at this point - otherwise navigate to the folder where you saved it and select it from there.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Opening your file does not import records directly to the database. Instead it produces a number of 'candidate records' corresponding to each row in the file you prepared - in just the same way as it does for Visiontac / Columbus files or Evernote notes. As with other input methods Gilbert 21 will, where it can, fill in missing values. So if, for example, your import file has grid references but no location names, Gilbert 21 will match the grid references against its gazetteer database to come up with the names of the nearest locations. Similarly, if no determiner is specified, Gilbert 21 will use the default determiner name specified in the Gilbert 21 options.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once you have opened your input file, you can change any of the candidate record properties or even remove some of them before saving the records to the database with the 'Save records' item of the File menu.</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts10">Created with the Personal Edition of HelpNDoc: </span><a class="rvts11" href="http://www.helpndoc.com">Free CHM Help documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2010-2013 by Richard Burkmar. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,131 @@
+﻿<html>
+	
+<head>
+	<title>The export dialog</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.8.0.560">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "Gilbert 21.html?" + sTopicUrl;
+			}
+			else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			{
+				top.FrameTOC.SelectTocItem("Theexportdialog");
+			}
+		});
+	</script>
+</head>
+
+<body>
+
+	<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>The export dialog</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Exportingrecords.html">Exporting records</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Exportingrecords.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Exportingrecords.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Themanageexportsdialog.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><a class="rvts9" href="http://www.gilbert21.org.uk" target="_blank">Gilbert 21</a><span class="rvts7"> - the export records dialog</span></p>
+<p class="rvps3"><span class="rvts6">It is important to realise that any export you make will only operate on the records that are actually displayed in Gilbert 21 at the time you make the export. So exporting records starts first, with opening the records that will be exported from the Gilbert 21 database. You use the </span><a class="rvts19" href="Openingrecords.html">Open records</a><span class="rvts6"> dialog to do this. It is also important to remember that</span><span class="rvts15"> only the fields that are displayed in Gilbert will be exported</span><span class="rvts6">. So, for example, if you are not displaying the </span><span class="rvts15">Determiner</span><span class="rvts6"> field, then it will not be exported. You use the Gilbert 21 </span><span class="rvts15">Options</span><span class="rvts6"> dialog to indicate which fields are displayed.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Export records</span><span class="rvts6"> dialog is reached from the </span><span class="rvts15">Export records</span><span class="rvts6"> item of the </span><span class="rvts15">File</span><span class="rvts6"> menu. There are three tabs on this dialog and each is described below.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The Details tab</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem29.png"/></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">Use this tab to specify some metadata about the export and specify some of its characteristics. The most important characteristic that you have to specify is the export format. The export format is set from a drop-down list and can take any of the following values:</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;">
+<li class="rvps3"><span class="rvts17">CSV</span><span class="rvts6">. This format is a general export format that can be accepted by many biological recording software packages. CSV stands for Comma Separated Values. CSV files are text files which can be read with any text reader like a Notepad. More conveniently, Microsoft Excel recognises this files of this format and opens then just like it would a spreadsheet.</span></li>
+<li class="rvps3"><span class="rvts17">MapMate</span><span class="rvts6">. If you select this format option, Gilbert 21 creates a CSV file with the column names correctly specified for a MapMate import.</span></li>
+<li class="rvps3"><span class="rvts17">Google Earth</span><span class="rvts6">. Creates an export in KML file format which is a map that can be displayed in Google Earth.</span></li>
+<li class="rvps3"><span class="rvts17">MapInfo</span><span class="rvts6">. Creates a pair of files - MIF/MID - which is the MapInfo Interchange Format. These can be imported by MapInfo to create a MapInfo table.</span></li>
+<li class="rvps3"><span class="rvts17">RODIS</span><span class="rvts6">. If you select this format option, Gilbert 21 creates a CSV file with the column names correctly specified for a RODIS import.</span></li>
+<li class="rvps3"><span class="rvts17">BirdTrack Casual</span><span class="rvts6">. If you select this format option, Gilbert 21 creates a CSV file with the column names and data correctly formatted for import into the BTO's BirdTrack facility for bulk uploading casual/roving records. See relevant section below.</span></li>
+<li class="rvps3"><span class="rvts17">None</span><span class="rvts6">. Select this format if you want to create a Gilbert 21 export record (and assign records to it) without actually creating an output file. This can be useful in a number of circumstances, for example if you have entered some records via an online system as well as entering them into Gilbert 21: you may want to know that these records have been 'exported' - or used - elsewhere and this option enables you to do that. This is the one export 'format' where you can specify and existing 'Short title' - so long as it is the name of another export of type 'none' - and the records will be appended to that export.</span></li>
+</ul>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Short title</span><span class="rvts6"> is the only item of metadata that you </span><span class="rvts15">must</span><span class="rvts6"> specify for an export - the others are optional. The </span><span class="rvts15">Short title</span><span class="rvts6"> you specify must be unique in the database and this is what will will presented to you whenever the export is referred to by Gilbert 21.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Notes</span><span class="rvts6"> metadata item allows you to specify any information that you wish to accompany your record of the export. The date that the export was created is automatically recorded, so you needn't record that here, but anything else that you wish to record can go it.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Recipients</span><span class="rvts6"> metadata item is where you can specify who the export file was sent to you. You can specify zero, one or more recipients here. It is not a free-text input field, but a list. To add a recipient to the list, you must click the </span><span class="rvts15">Add</span><span class="rvts6"> button which will invoke the </span><a class="rvts19" href="Theexportrecipientdialog.html">Export recipients</a><a class="rvts8" href="Theexportrecipientdialog.html"> dialog</a><span class="rvts6">. You can use that dialog to select recipients that you have already created records for, or set up a new recipient and select that. To remove a recipient from the list of recipients for an export, just select it in the list and then click the </span><span class="rvts15">Remove</span><span class="rvts6"> button.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The Filters tab</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem31.png"/></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">Remember that only those records shown on the main Gilbert 21 form will be exported. But you can use this tab to restrict the export further. Firstly you can restrict the export to only those actually selected on the main Gilbert 21 form. To do this select the </span><span class="rvts15">Selected record only</span><span class="rvts6"> option. Otherwise, if the </span><span class="rvts15">All records</span><span class="rvts6"> option is selected, the all the records shown on the main Gilbert 21 form are candidates for export.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">If the </span><span class="rvts15">Include valid saved biological records</span><span class="rvts6"> check-box is checked (which it is by default) then valid saved biological records are exported (coloured green by default). These are normally the records that you want to export to another organisation. Note that records which are explicitly marked by you to be excluded from export will not be included in the export (even if they are valid biological records) unless you check the box</span><span class="rvts15"> Include records even if marked for exclusion</span><span class="rvts6">. If you want to include all records in the export, regardless of whether or not they are valid biological records, then check the check-box which says</span><span class="rvts15"> Include all modified or unsaved records, whether valid or not</span><span class="rvts6">.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts12">The options tab</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem39.png"/></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The</span><span class="rvts15"> All formats</span><span class="rvts6"> section of the </span><span class="rvts15">Options</span><span class="rvts6"> tab contains a couple of options pertaining to the Gilbert 21 record Global Unique Identifiers (GUID). Global Unique Identifiers uniquely identify a biological record and should help avoid record duplication in the biological records network if all biological recording packages used them and honoured those produced by other packages. It is good practice to export the GUIDs with your records and therefore, even if you do not have them displayed on the Gilbert 21 main form, they will be exported unless you un-check the</span><span class="rvts15"> Include GUID</span><span class="rvts6"> check-box. Of course, even if you export them, there's no guaranteed that they will be imported by whoever you send your records to. Therefore you can also append the GUID to your comment field - which is more likely to be imported by record recipients - by checking the </span><span class="rvts15">Append GUID to comment</span><span class="rvts6"> check-box.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">There is a CSV-specific option -</span><span class="rvts15"> Include eastings and northings</span><span class="rvts6"> - enables you to append the Easting and Northing of the centre-point of each record as extra columns to the exported CSV. This can be useful, particularly if the recipient is going to import the CSV into a GIS system, for example ArcGIS.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">The </span><span class="rvts15">Google Earth export options</span><span class="rvts6"> section includes options specific to Google Earth. You can specify that tracks - if available - are to be exported or not, how frequently intermediate track nodes (vertices) are to be marked and the track thickness in Google Earth. If you check the</span><span class="rvts15"> Include atlas layers</span><span class="rvts6"> box, then Gilbert 21 will generate 'atlas' style dot maps in your KML to show the distribution of the selected records at 10 km, 2 km and 1 km levels.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps8"><span class="rvts21">Cancel or OK</span></p>
+<p class="rvps3"><span class="rvts6">Click the </span><span class="rvts15">OK</span><span class="rvts6"> button to actually carry out the export. Unless you have selected the </span><span class="rvts15">None</span><span class="rvts6"> option for the export format, you will be required to specify a location and name for the exported file. The filepath you specify will be recorded as part of the metadata for the export. To cancel the export, use the </span><span class="rvts15">Cancel</span><span class="rvts6"> button.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps8"><span class="rvts21">BirdTrack Casual</span></p>
+<p class="rvps3"><span class="rvts6">If you select this export type, you first need to specify on the </span><span class="rvts15">Data options</span><span class="rvts6"> tab of the options dialog your BTO BirdTrack user name. That's because it is used to populate one of the fields in the export file. The BTO only accepts records of birds with certain names. Sometimes these might not match the scientific names you have used to store the record in Gilbert 21. If any record is found with a scientific name which is not in the BTO list, you are presented with a dialog where you can match the name. An example is shown below:</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><img alt="" style="padding : 1px;" src="lib/NewItem57.png"/></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">When this dialog first appears, the</span><span class="rvts15"> BTO Common Name</span><span class="rvts6"> field is blank, but as soon as you start typing, possible matching options are presented to you and you can hit enter (if there's only one) or click to select the one you want. Then select the </span><span class="rvts15">OK</span><span class="rvts6"> button to remember the match. Once you've matched the name, it will be remembered for that export. So in the example above, you would only need to match </span><span class="rvts15">Motacilla alba</span><span class="rvts6"> subsp. </span><span class="rvts15">yarrellii</span><span class="rvts6"> to </span><span class="rvts15">Motacilla alba yarrellii</span><span class="rvts6"> once and all occurrences of Pied Wagtail would be converted to the BTO preferred name in the export file.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">In cases where you do not want to match and would prefer to remove all cases of a given G21 name from the export, use the </span><span class="rvts15">Cancel</span><span class="rvts6"> button on the dialog.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6">A CSV file is generated as a result of this export. To import it into BirdTrack, you first need to open it in Excel and save it as an Excel 97-2003 workbook.</span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p class="rvps3"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts10">Created with the Personal Edition of HelpNDoc: </span><a class="rvts11" href="http://www.helpndoc.com">Free HTML Help documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2010-2013 by Richard Burkmar. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

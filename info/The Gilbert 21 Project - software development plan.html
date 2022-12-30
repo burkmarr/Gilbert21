@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0042)http://www.gilbert21.org.uk/DevelPlan.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script type="text/javascript" async="" src="./The Gilbert 21 Project - software development plan_files/ga.js.download"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	The Gilbert 21 Project - software development plan
+</title><meta name="description" content="The Gilbert 21 software development plan."><link rel="Stylesheet" href="./The Gilbert 21 Project - software development plan_files/StyleSheet.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21719985-1']);
+      _gaq.push(['_trackPageview']);
+     
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+
+    <form name="form1" method="post" action="http://www.gilbert21.org.uk/DevelPlan.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTMxMDA0NTM5ZGQWzmZtFUUL8hRjicNdabhUvPvabA==">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8C1ED5F4">
+</div>
+    <div class="main">
+        
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><img id="Gilbert21Banner1_visiontac" src="./The Gilbert 21 Project - software development plan_files/Visiontac2.gif" style="border-width:0px;"></td>
+<td style="vertical-align:bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height:100%">
+     <td>
+     <span style="font-size:xx-large; font-weight:bold;">The&nbsp;Gilbert&nbsp;21&nbsp;Project</span><br>
+     <span style="font-size:large">Personal&nbsp;Biological&nbsp;Recording&nbsp;Software</span>
+     </td>
+     <td style="padding-left:20px;"><a id="Gilbert21Banner1_HyperLink1" href="http://www.gilbert21.org.uk/default.aspx" style="padding:5px;">Home</a>
+        <a id="Gilbert21Banner1_HyperLink2" href="http://www.gilbert21.org.uk/DataLogger.aspx" style="padding:5px;">Datalogger</a>
+        <a id="Gilbert21Banner1_HyperLink7" href="http://www.gilbert21.org.uk/G21App.aspx" style="padding:5px;">G21App</a>
+        <a id="Gilbert21Banner1_HyperLink3" href="http://www.gilbert21.org.uk/Software.aspx" style="padding:5px;">Software</a>
+        <a id="Gilbert21Banner1_Hyperlink6" href="http://www.gilbert21.org.uk/Downloads.aspx" style="padding:5px;">Downloads</a>
+        <a id="Gilbert21Banner1_Hyperlink5" href="http://www.gilbert21.org.uk/Blog.aspx" style="padding:5px;">Blog</a>
+        <a id="Gilbert21Banner1_Hyperlink4" href="http://www.gilbert21.org.uk/HelpHTML/Gilbert%2021.html" style="padding:5px;">Help</a>
+        <a id="Gilbert21Banner1_Hyperlink9" href="http://www.gilbert21.org.uk/Contact.aspx" style="padding:5px;">Contact</a>
+     </td>
+</tr>
+<tr><td colspan="3"><img src="./The Gilbert 21 Project - software development plan_files/RedPencil2.gif" alt="Pencil"></td>
+</tr></tbody></table></td>
+<td><img id="Gilbert21Banner1_Image1" src="./The Gilbert 21 Project - software development plan_files/GilbertWhiteTransH110.gif" style="border-width:0px;"></td>
+</tr>
+<tr><td colspan="3" align="right"><div id="Gilbert21Banner1_PageLinks">
+	<a href="http://www.gilbert21.org.uk/Software.aspx">Software index</a>
+</div></td></tr>
+</tbody></table>
+
+
+    
+        <div class="page-header">Development plan</div>
+        
+        <span class="ImageRight"><img alt="Garden Spider by Stephen Pardue" src="./The Gilbert 21 Project - software development plan_files/GardenSpider.gif" style="width: 200px;">
+            <br>Garden Spider © <a href="http://www.wildlifeillustration.com/">Stephen Pardue</a>
+            </span>
+            
+        <p>
+        The aim of this page is o give an 
+            indication of what developments are under consideration for the software. This 
+            doesn't necessarily represent a commitment to undertake them, but where 
+            implementation is planned, this will be indicated.</p>
+            
+        <div class="sub-header">Recorder 6 export type</div>
+        <p>
+            A Recorder 6 export type will be added very soon. This will enable users to 
+            export records in a format that can be imported very eaily into a Recoder 6 database 
+            often used by Local Record Centres).</p>
+            
+        <div class="sub-header">Export history log</div>
+        <p>
+            Add a facility for user to log individual export operations. Intention is that meta-data about the
+            export can be logged, e.g. the purpose of the export and the intended recipient.
+            The facility will also record which individual records were included in a given export as
+            well as their 'last modified' date. By this means it will be possible to see which records
+            included in a given export have been modified since it was performed.</p>
+        <p>
+            This facility should also enable the development of more sophisticated export capabilities,
+            for example creating a new export for a given area, but limiting it to records not included
+            in a previous export (and/or those that have been modified since that export.</p>
+            
+            
+       <div class="sub-header">Automatically populate a VC number field</div>
+        <p>
+            Consider adding a new 'VC number' field to the main records table and automatically updating its value
+            whenever a grid reference is set/changed for the record. This could be done by using point
+            in polygon algorithms in conjunction with VC boundaries developed by the NBN and publically
+            available. Performance testing will be required to see if it is feasible.</p>
+            
+       <div class="sub-header">Cope with records made abroad</div>
+        <p>Although the GPS data logger will work anywhere in the world - recording locations in 
+        WGS84 Lat/Long - Gilbert 21 converts all locations to Ordnance Survey grid references. 
+        Currently it assumes that all locations can be converted to a meaningful OS grid reference
+         and therefore will not deal with records made outside the country. I want to fix 
+            this so that Gilbert 21 will deal with records made anywhere in the world. 
+            Realistically this is most likely to happen the next time I plan to holiday 
+            abroad! (That might not be for a while.)</p>
+            
+        <div class="sub-header">Work with other GPS units</div>
+        <p>
+            When more GPS data loggers that offer voice tagging come along, I would like 
+            Gilbert 21 to be able to work with them. At the moment the software design and 
+            database structures are quite tightly coupled to the Visiontac VGPS-900 file 
+            format. Changing this would require some effort but may be worth doing 
+            eventually.</p>
+    
+    </div>
+    </form>
+
+
+</body></html>

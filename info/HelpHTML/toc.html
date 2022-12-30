@@ -1,0 +1,635 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>Gilbert 21- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 3.8.0.560">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		var bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = '';
+			try { sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length); }
+			catch(err) { sAnchorName = ''; }
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			if ($("#tab-toc").length) {
+				$("#tab-toc").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#tab-keywords").length && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+							$("#tab-keywords").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-toc").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				// Select the active help id
+				if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			}
+			
+			// Keywords
+			
+			if ($("#tab-keywords").length) {
+				$("#tab-keywords").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onClick: function(node, event){
+						HideKwPopup();
+						if (node.data && node.data.click)
+						{
+							var aRefList = null;
+							eval('aRefList=' + node.data.click);
+							if (ShowKwPopup(node.li, aRefList))
+							{
+								if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+									$("#tab-toc").dynatree("getTree").activateKey(null);
+								if(node.data.href && node.data.href != '#'){
+									window.open(node.data.href, node.data.target);
+								}
+							}
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-keywords").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				}
+			
+			// Load search data
+			$.getScript("js/searchdata.js",	function() {
+				bSearchDataLoaded = true;
+			});
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc").length && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				$("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId).activateSilently();
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt]][1]) + "</a></li>");
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+			</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				<li class="folder" id="Introduction" data="">
+							<a
+							href="Introduction.html"
+							target="FrameMain">
+								Introduction</a>
+
+				<ul><li class="" id="Documentationupdates" data="">
+							<a
+							href="Documentationupdates.html"
+							target="FrameMain">
+								Documentation updates</a>
+
+				</li><li class="" id="QuickstartGuide" data="">
+							<a
+							href="QuickstartGuide.html"
+							target="FrameMain">
+								Quick-start Guide</a>
+
+				</li></ul></li><li class="folder" id="Creatingnewrecords" data="">
+							<a
+							href="Creatingnewrecords.html"
+							target="FrameMain">
+								Creating new records</a>
+
+				<ul><li class="" id="RecordsfromVisiontacorColumbus" data="">
+							<a
+							href="RecordsfromVisiontacorColumbus.html"
+							target="FrameMain">
+								Records from Visiontac or Columbus</a>
+
+				</li><li class="" id="RecordsfromEvernote" data="">
+							<a
+							href="RecordsfromEvernote.html"
+							target="FrameMain">
+								Records from Evernote</a>
+
+				</li><li class="" id="RecordsfromaCSVfile" data="">
+							<a
+							href="RecordsfromaCSVfile.html"
+							target="FrameMain">
+								Records from a CSV file</a>
+
+				</li><li class="" id="Recordsfromdigitalphotos" data="">
+							<a
+							href="Recordsfromdigitalphotos.html"
+							target="FrameMain">
+								Records from digital photos</a>
+
+				</li><li class="" id="Recordsfromyournotebook" data="">
+							<a
+							href="Recordsfromyournotebook.html"
+							target="FrameMain">
+								Records from your notebook</a>
+
+				</li><li class="" id="Managingandusingshortcuts" data="">
+							<a
+							href="Managingandusingshortcuts.html"
+							target="FrameMain">
+								Managing and using short-cuts</a>
+
+				</li></ul></li><li class="folder" id="Fieldrecordingdevices" data="">
+							<a
+							href="Fieldrecordingdevices.html"
+							target="FrameMain">
+								Field recording devices</a>
+
+				<ul><li class="" id="TheVisiontacColumbusdatalogger" data="">
+							<a
+							href="TheVisiontacColumbusdatalogger.html"
+							target="FrameMain">
+								The Visiontac / Columbus data logger</a>
+
+				</li><li class="" id="Evernotesmartphoneapps" data="">
+							<a
+							href="Evernotesmartphoneapps.html"
+							target="FrameMain">
+								Evernote smart-phone apps</a>
+
+				</li></ul></li><li class="folder" id="RecordPropetiesform" data="">
+							<a
+							href="RecordPropetiesform.html"
+							target="FrameMain">
+								Record Propeties form</a>
+
+				<ul><li class="" id="Whotab" data="">
+							<a
+							href="Whotab.html"
+							target="FrameMain">
+								Who tab</a>
+
+				</li><li class="" id="Whattab" data="">
+							<a
+							href="Whattab.html"
+							target="FrameMain">
+								What tab</a>
+
+				</li><li class="folder" id="Wheretab" data="">
+							<a
+							href="Wheretab.html"
+							target="FrameMain">
+								Where tab</a>
+
+				<ul><li class="" id="NBNmapping" data="">
+							<a
+							href="NBNmapping.html"
+							target="FrameMain">
+								NBN mapping</a>
+
+				</li></ul></li><li class="" id="Whentab" data="">
+							<a
+							href="Whentab.html"
+							target="FrameMain">
+								When tab</a>
+
+				</li><li class="" id="Commentarytab" data="">
+							<a
+							href="Commentarytab.html"
+							target="FrameMain">
+								Commentary tab</a>
+
+				</li><li class="" id="Mediatab" data="">
+							<a
+							href="Mediatab.html"
+							target="FrameMain">
+								Media tab</a>
+
+				</li></ul></li><li class="folder" id="Exportingrecords" data="">
+							<a
+							href="Exportingrecords.html"
+							target="FrameMain">
+								Exporting records</a>
+
+				<ul><li class="" id="Theexportdialog" data="">
+							<a
+							href="Theexportdialog.html"
+							target="FrameMain">
+								The export dialog</a>
+
+				</li><li class="" id="Themanageexportsdialog" data="">
+							<a
+							href="Themanageexportsdialog.html"
+							target="FrameMain">
+								The manage exports dialog</a>
+
+				</li><li class="" id="Theexportrecipientdialog" data="">
+							<a
+							href="Theexportrecipientdialog.html"
+							target="FrameMain">
+								The export recipient dialog</a>
+
+				</li></ul></li><li class="" id="Openingrecords" data="">
+							<a
+							href="Openingrecords.html"
+							target="FrameMain">
+								Opening records</a>
+
+				</li><li class="" id="Phenologygraphs" data="">
+							<a
+							href="Phenologygraphs.html"
+							target="FrameMain">
+								Phenology graphs</a>
+
+				</li></ul>
+		</div>
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				<li class="file" data="click:'[[\'Evernote smart-phone apps\',\'Evernotesmartphoneapps.html\'],[\'Documentation updates\',\'Documentationupdates.html\']]'">
+							<a
+								href="Evernotesmartphoneapps.html"
+								target="FrameMain"
+								onClick="[['Evernote smart-phone apps','Evernotesmartphoneapps.html'],['Documentation updates','Documentationupdates.html']]"
+								>
+								app</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Bing</a>
+
+				</li><li class="file" data="click:'[[\'Records from Visiontac or Columbus\',\'RecordsfromVisiontacorColumbus.html\'],[\'The Visiontac / Columbus data logger\',\'TheVisiontacColumbusdatalogger.html\']]'">
+							<a
+								href="RecordsfromVisiontacorColumbus.html"
+								target="FrameMain"
+								onClick="[['Records from Visiontac or Columbus','RecordsfromVisiontacorColumbus.html'],['The Visiontac / Columbus data logger','TheVisiontacColumbusdatalogger.html']]"
+								>
+								Columbus</a>
+
+				</li><li class="file" data="click:'[[\'Creating new records\',\'Creatingnewrecords.html\'],[\'Records from Evernote\',\'RecordsfromEvernote.html\'],[\'Evernote smart-phone apps\',\'Evernotesmartphoneapps.html\'],[\'Records from digital photos\',\'Recordsfromdigitalphotos.html\'],[\'Records from a CSV file\',\'RecordsfromaCSVfile.html\'],[\'Records from your notebook\',\'Recordsfromyournotebook.html\'],[\'Managing and using short-cuts\',\'Managingandusingshortcuts.html\']]'">
+							<a
+								href="Creatingnewrecords.html"
+								target="FrameMain"
+								onClick="[['Creating new records','Creatingnewrecords.html'],['Records from Evernote','RecordsfromEvernote.html'],['Evernote smart-phone apps','Evernotesmartphoneapps.html'],['Records from digital photos','Recordsfromdigitalphotos.html'],['Records from a CSV file','RecordsfromaCSVfile.html'],['Records from your notebook','Recordsfromyournotebook.html'],['Managing and using short-cuts','Managingandusingshortcuts.html']]"
+								>
+								Creating records</a>
+
+				</li><li class="file" data="click:'[[\'Records from a CSV file\',\'RecordsfromaCSVfile.html\']]'">
+							<a
+								href="RecordsfromaCSVfile.html"
+								target="FrameMain"
+								onClick="[['Records from a CSV file','RecordsfromaCSVfile.html']]"
+								>
+								csv</a>
+
+				</li><li class="file" data="click:'[[\'Records from Visiontac or Columbus\',\'RecordsfromVisiontacorColumbus.html\'],[\'The Visiontac / Columbus data logger\',\'TheVisiontacColumbusdatalogger.html\']]'">
+							<a
+								href="RecordsfromVisiontacorColumbus.html"
+								target="FrameMain"
+								onClick="[['Records from Visiontac or Columbus','RecordsfromVisiontacorColumbus.html'],['The Visiontac / Columbus data logger','TheVisiontacColumbusdatalogger.html']]"
+								>
+								data logger</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\'],[\'NBN mapping\',\'NBNmapping.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html'],['NBN mapping','NBNmapping.html']]"
+								>
+								Distribution</a>
+
+				</li><li class="file" data="click:'[[\'Records from Evernote\',\'RecordsfromEvernote.html\'],[\'Evernote smart-phone apps\',\'Evernotesmartphoneapps.html\']]'">
+							<a
+								href="RecordsfromEvernote.html"
+								target="FrameMain"
+								onClick="[['Records from Evernote','RecordsfromEvernote.html'],['Evernote smart-phone apps','Evernotesmartphoneapps.html']]"
+								>
+								Evernote</a>
+
+				</li><li class="file" data="click:'[[\'Records from Evernote\',\'RecordsfromEvernote.html\']]'">
+							<a
+								href="RecordsfromEvernote.html"
+								target="FrameMain"
+								onClick="[['Records from Evernote','RecordsfromEvernote.html']]"
+								>
+								ffplay</a>
+
+				</li><li class="file" data="click:'[[\'Quick-start Guide\',\'QuickstartGuide.html\']]'">
+							<a
+								href="QuickstartGuide.html"
+								target="FrameMain"
+								onClick="[['Quick-start Guide','QuickstartGuide.html']]"
+								>
+								First time</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Gazetteer</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Google</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Grid reference</a>
+
+				</li><li class="file" data="click:'[[\'Records from digital photos\',\'Recordsfromdigitalphotos.html\']]'">
+							<a
+								href="Recordsfromdigitalphotos.html"
+								target="FrameMain"
+								onClick="[['Records from digital photos','Recordsfromdigitalphotos.html']]"
+								>
+								image</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Location</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Map</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\'],[\'NBN mapping\',\'NBNmapping.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html'],['NBN mapping','NBNmapping.html']]"
+								>
+								Mapping</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\'],[\'NBN mapping\',\'NBNmapping.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html'],['NBN mapping','NBNmapping.html']]"
+								>
+								NBN</a>
+
+				</li><li class="file" data="click:'[[\'Records from your notebook\',\'Recordsfromyournotebook.html\']]'">
+							<a
+								href="Recordsfromyournotebook.html"
+								target="FrameMain"
+								onClick="[['Records from your notebook','Recordsfromyournotebook.html']]"
+								>
+								notebook</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Offset</a>
+
+				</li><li class="file" data="click:'[[\'Records from digital photos\',\'Recordsfromdigitalphotos.html\']]'">
+							<a
+								href="Recordsfromdigitalphotos.html"
+								target="FrameMain"
+								onClick="[['Records from digital photos','Recordsfromdigitalphotos.html']]"
+								>
+								photo</a>
+
+				</li><li class="file" data="click:'[[\'Quick-start Guide\',\'QuickstartGuide.html\']]'">
+							<a
+								href="QuickstartGuide.html"
+								target="FrameMain"
+								onClick="[['Quick-start Guide','QuickstartGuide.html']]"
+								>
+								Quick-start</a>
+
+				</li><li class="file" data="click:'[[\'Record Propeties form\',\'RecordPropetiesform.html\']]'">
+							<a
+								href="RecordPropetiesform.html"
+								target="FrameMain"
+								onClick="[['Record Propeties form','RecordPropetiesform.html']]"
+								>
+								record properties</a>
+
+				</li><li class="file" data="click:'[[\'Managing and using short-cuts\',\'Managingandusingshortcuts.html\']]'">
+							<a
+								href="Managingandusingshortcuts.html"
+								target="FrameMain"
+								onClick="[['Managing and using short-cuts','Managingandusingshortcuts.html']]"
+								>
+								short-cut</a>
+
+				</li><li class="file" data="click:'[[\'Evernote smart-phone apps\',\'Evernotesmartphoneapps.html\']]'">
+							<a
+								href="Evernotesmartphoneapps.html"
+								target="FrameMain"
+								onClick="[['Evernote smart-phone apps','Evernotesmartphoneapps.html']]"
+								>
+								Smart-phone</a>
+
+				</li><li class="file" data="click:'[[\'Quick-start Guide\',\'QuickstartGuide.html\']]'">
+							<a
+								href="QuickstartGuide.html"
+								target="FrameMain"
+								onClick="[['Quick-start Guide','QuickstartGuide.html']]"
+								>
+								Starting</a>
+
+				</li><li class="file" data="click:'[[\'Managing and using short-cuts\',\'Managingandusingshortcuts.html\']]'">
+							<a
+								href="Managingandusingshortcuts.html"
+								target="FrameMain"
+								onClick="[['Managing and using short-cuts','Managingandusingshortcuts.html']]"
+								>
+								template</a>
+
+				</li><li class="file" data="click:'[[\'Where tab\',\'Wheretab.html\']]'">
+							<a
+								href="Wheretab.html"
+								target="FrameMain"
+								onClick="[['Where tab','Wheretab.html']]"
+								>
+								Town</a>
+
+				</li><li class="file" data="click:'[[\'Documentation updates\',\'Documentationupdates.html\']]'">
+							<a
+								href="Documentationupdates.html"
+								target="FrameMain"
+								onClick="[['Documentation updates','Documentationupdates.html']]"
+								>
+								Updates</a>
+
+				</li><li class="file" data="click:'[[\'Records from Visiontac or Columbus\',\'RecordsfromVisiontacorColumbus.html\'],[\'The Visiontac / Columbus data logger\',\'TheVisiontacColumbusdatalogger.html\']]'">
+							<a
+								href="RecordsfromVisiontacorColumbus.html"
+								target="FrameMain"
+								onClick="[['Records from Visiontac or Columbus','RecordsfromVisiontacorColumbus.html'],['The Visiontac / Columbus data logger','TheVisiontacColumbusdatalogger.html']]"
+								>
+								Visiontac</a>
+
+				</li></ul>
+		</div>
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		</div>
+    
+</body>
+
+</html>
+

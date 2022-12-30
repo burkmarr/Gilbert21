@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://www.gilbert21.org.uk/AppFileTransfer.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script type="text/javascript" async="" src="./The Gilbert 21 Project - G21App file transfer_files/ga.js.download"></script><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	The Gilbert 21 Project - G21App file transfer
+</title><meta name="description" content="Setup for automatic file transfer"><link rel="Stylesheet" href="./The Gilbert 21 Project - G21App file transfer_files/StyleSheet.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21719985-1']);
+      _gaq.push(['_trackPageview']);
+     
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+
+    <form name="form1" method="post" action="http://www.gilbert21.org.uk/AppFileTransfer.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODg5MjM1MDI1ZGRB7Mfo247ylgZzNV4xgYbb5GmPdQ==">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6056D5E6">
+</div>
+    <div class="main">
+    
+        
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><img id="Gilbert21Banner1_visiontac" src="./The Gilbert 21 Project - G21App file transfer_files/Visiontac2.gif" style="border-width:0px;"></td>
+<td style="vertical-align:bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height:100%">
+     <td>
+     <span style="font-size:xx-large; font-weight:bold;">The&nbsp;Gilbert&nbsp;21&nbsp;Project</span><br>
+     <span style="font-size:large">Personal&nbsp;Biological&nbsp;Recording&nbsp;Software</span>
+     </td>
+     <td style="padding-left:20px;"><a id="Gilbert21Banner1_HyperLink1" href="http://www.gilbert21.org.uk/default.aspx" style="padding:5px;">Home</a>
+        <a id="Gilbert21Banner1_HyperLink2" href="http://www.gilbert21.org.uk/DataLogger.aspx" style="padding:5px;">Datalogger</a>
+        <a id="Gilbert21Banner1_HyperLink7" href="http://www.gilbert21.org.uk/G21App.aspx" style="padding:5px;">G21App</a>
+        <a id="Gilbert21Banner1_HyperLink3" href="http://www.gilbert21.org.uk/Software.aspx" style="padding:5px;">Software</a>
+        <a id="Gilbert21Banner1_Hyperlink6" href="http://www.gilbert21.org.uk/Downloads.aspx" style="padding:5px;">Downloads</a>
+        <a id="Gilbert21Banner1_Hyperlink5" href="http://www.gilbert21.org.uk/Blog.aspx" style="padding:5px;">Blog</a>
+        <a id="Gilbert21Banner1_Hyperlink4" href="http://www.gilbert21.org.uk/HelpHTML/Gilbert%2021.html" style="padding:5px;">Help</a>
+        <a id="Gilbert21Banner1_Hyperlink9" href="http://www.gilbert21.org.uk/Contact.aspx" style="padding:5px;">Contact</a>
+     </td>
+</tr>
+<tr><td colspan="3"><img src="./The Gilbert 21 Project - G21App file transfer_files/RedPencil2.gif" alt="Pencil"></td>
+</tr></tbody></table></td>
+<td><img id="Gilbert21Banner1_Image1" src="./The Gilbert 21 Project - G21App file transfer_files/GilbertWhiteTransH110.gif" style="border-width:0px;"></td>
+</tr>
+<tr><td colspan="3" align="right"><div id="Gilbert21Banner1_PageLinks">
+
+</div></td></tr>
+</tbody></table>
+
+
+        
+        <div class="page-header">Setting up automatic cloud transfer of files from App to PC</div>
+        
+        <p>
+            This page describes one way in which automatic file transfer via cloud storage 
+            can be set up between your G21 Android app and your PC. One tried and tested 
+            approach is described here. Other combinations of Apps and/or cloud storage 
+            providers could also work well.</p>
+        <p>
+            <i>Using the setup described here, I make recordings in the field using my 
+            Android phone. Then later, when I am using my laptop, I get a notification from 
+            Gilbert 21 (which is running in the background on my computer) to say that sound 
+            files are ready for import. I open Gilbert 21 and then open the files that are ready 
+            for importing. I make records from the files and when I'm done I click a button 
+            on Gilbert 21 and the imported files are archived. There's no need to remove the 
+            files from my phone - the cloud storage and synchronisation apps take care of 
+            all that for me. I don't have to do any file management outside of Gilbert 21.</i></p>
+        
+         <div class="sub-header">Setup overview</div>
+       
+        <p>
+            The steps I carried out to set up the workflow described above are summarised 
+            below. For more details of these steps, see the sections below on setting up the 
+            smartphone and setting up the PC.</p>
+        <ul>
+            <li>I installed Google Drive on my PC.</li>
+            <li>I created a folder on my PC in the Google Drive folder called 'G21V2'.</li>
+            <li>I installed the Google Drive app on my Smartphone.</li>
+            <li>I installed the Autosynch Drive app on my Smartphone.</li>
+            <li>I configured the Autosynch Drive app to do a '2-way synch' between the Goole 
+                Drive 'G21V2' folder on my phone and the G21 app file folder 
+                'Phone\Android\data\uk.org.gilbert21.app\files'.</li>
+            <li>On my PC I configured Gilbert 21 so that the 'Default import folder' setting was 
+                set to the path of the Google Drive 'G21V2' folder.</li>
+            <li>I checked the 'Watch' option next to this setting.</li>
+            <li>I set up a folder (outside of cloud storage) to store processed sound files.</li>
+            <li>I set the 'Folder for processed' on the settings form to the path of this 
+                folder.</li>
+            <li>From the open file dialog ('File-&gt;Open files') I set the file type to 'Gilbert 
+                21 App sound files'.</li>
+        </ul>
+             
+        <div class="sub-header">Setup on the smartphone</div>
+        
+        <img id="Image1" class="ImageRight" src="./The Gilbert 21 Project - G21App file transfer_files/g21-phone-apps.png" style="border-width:0px;width: 150px;float:right">
+        <p>
+            The screenshot on the right shows the shortcut for the Gilbert 21 app and, 
+            immediately to the left of that, two 
+            more apps that I use to implement this automatic file transfer workflow: <i>Google Drive</i> and 
+            <i>Drive 
+            Autosych</i>. I use the subscription-free versions of these apps/services.</p>
+        <p>
+            I also have Google Drive installed on my PC and in the the Google Drive folder 
+            on my PC I created a folder (which I called 'G21V2') to store the sound files 
+            from the G21 app. Because of the way that Google Drive works, an equivalent 
+            'G21V2' storage area is automatically setup on my phone by its Google Drive app 
+            once both PC and app have synchronised via the Google Drive cloud storage.</p>
+        <p>
+            Google Drive (like Dropbox) works differently on Android compared to the way it 
+            works on a Windows PC. On Android, Google Drive does not create an actual 'G21V2' folder on the phone that the 
+            G21 app could write into; the 'G21V2' folder is a virtual folder on the phone 
+            and only other apps which use the Google Drive API can write to it. Drive 
+            Autosynch is one such app.</p>
+        <p>
+            Drive Autosynch allows you to synchronise an actual folder on your phone with a 
+            virtual Google Drive folder. So I have configured Drive Autosynch to do a 
+            'two-way' synch between the 'G21V2' Drive folder and the actual folder on the 
+            phone that the G21 app writes its sound files to (on my phone it's 
+            'Phone\Android\data\uk.org.gilbert21.app\files'). </p>
+        <p>
+            So when the G21 app creates sound files in its app folder, they will 
+            be automatically copied to the Google Drive 'G21V2' folder by Drive 
+            Autosynch and, in turn, Google Drive will automatically copy them, via 'the 
+            cloud', to the 'G21V2' folder on my PC. </p>
+        
+        <div class="sub-header">Setup on the PC</div>
+        
+        <p>
+            Google Drive is installed on the PC and sound files 
+            from the app are automatically transferred to the PC via Drive Autosynch and 
+            Google Drive. On the 'General' tab of the Gilbert 21 Options dialog, there are a 
+            number of options - shown below - that must be set up correctly to get the most 
+            out of this workflow. </p>
+            
+        <img id="Image3" src="./The Gilbert 21 Project - G21App file transfer_files/g21-watch-import-folder.png" style="border-width:0px;">
+        <p>
+            The 'Default import folder' should be set to the Google Drive folder that holds 
+            the sound files transferred from the G21 app. Next to this is the 'Watch' 
+            checkbox. When this is checked, Gilbert 21 does not minimise to the taskbar or 
+            exit when the form minimise or close icons are used (top-right of form) - 
+            instead it disappears to the Windows system tray from where it monitors the 
+            default import folder. Periodically, if it finds files in that folder, it 
+            informs you by popping up a message bubble (see below).</p>
+            
+        <img id="Image2" src="./The Gilbert 21 Project - G21App file transfer_files/G21-records-waiting.png" style="border-width:0px;">
+        <p>
+            You can also check if there are files waiting to be processed at any time simply 
+            by passing your mouse cursor over the G21 system tray icon. To open Gilbert 21, 
+            just click on the system tray icon. Then use the 'File-&gt;Open files' menu item to 
+            open the waiting G21 app files. The open file dialog will open initially on the 
+            folder specified by your 'Default import folder' option. If you do not see your 
+            files immediately, you may need to change the file type in the dialog to 
+            'Gilbert 21 App sound files'. Your computer will remember this file type 
+            selection for future sessions.</p>
+        <p>
+            I like to have my PC set up so that Gilbert 21 starts automatically when I start 
+            the PC. Then, once it has started, I just use the form's exit or minimise 
+            control to send Gilbert 21 to the system tray where it sits quietly monitoring 
+            the default import folder. In order to start Gilbert 21 automatically when my PC 
+            boots, I copied a shortcut to it into the following folder: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup. 
+            I think that you need admin priviledges to do that. Note that with the 'Watch' 
+            option checked, you can only quit Gilbert 21 by using the 'File-&gt;Exit Gilbert 
+            21' menu item.</p>
+        <p>
+            Once I have processed waiting sound files, then I use the 'Move/delete G21 sound 
+            files' toolbutton (on the far right in the image below) to move the sound files 
+            out of my default import folder ('G21V2') and into the folder specified by the 
+            'Folder for processed' option (see image above). If you do not want to 
+            keep the sound files, then check the 'Delete' checkbox next to the 'Folder for 
+            processed' option and Gilbert 21 will just delete the sound files when you use 
+            the toolbutton (after first asking you to confirm the deletion).</p>
+            
+        <img id="Image4" src="./The Gilbert 21 Project - G21App file transfer_files/g21-move-delete-files.png" style="border-width:0px;">
+        <p>
+            In due course, Google Drive notes that the files have been removed from 'G21V2' 
+            and synchronises this to the cloud storage. My smartphone's Google Drive app, in 
+            due course, syncrhonises with the cloud storage and removes the files from the 
+            virtual 'G21V2' folder on the phone. Autosynch Drive, in due course, notes that 
+            the files have been removed from 'G21V2' and, because it is set up to do a 
+            '2-way synch', removes the sound files from G21 apps file storage folder. All 
+            this without any intervention from me.</p>
+        <p>
+            Note that synching may not always happen immediately or when you expect it to. 
+            There could be many reasons for this. For example cloud storage syncrhonisation 
+            can be configured to work only when a wifi connection is available (as opposed 
+            to a 3G connection for example). Autosynch Drive can be configured only to 
+            syncrhonise when the battery level of your phone is above a certain threshold 
+            (the default is 50%). So you may need to tinker with settings in these apps. 
+            Remeber that both Autosynch Drive and Google Drive should allow you to 'force' a 
+            syncrhonise at any given point in time. </p>
+            
+            
+        
+    </div>
+    </form>
+
+</body></html>

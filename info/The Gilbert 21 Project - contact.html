@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0052)http://www.gilbert21.org.uk/VisiontacFileFormat.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><script type="text/javascript" async="" src="./The Gilbert 21 Project - contact_files/ga.js.download"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	The Gilbert 21 Project - contact
+</title><meta name="description" content="File format of the Visiontac VGPS-900 data logger as used for the Gilbert 21 project."><link rel="Stylesheet" href="./The Gilbert 21 Project - contact_files/StyleSheet.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-21719985-1']);
+      _gaq.push(['_trackPageview']);
+     
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</head>
+<body>
+
+    <form name="form1" method="post" action="http://www.gilbert21.org.uk/VisiontacFileFormat.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTMxMDA0NTM5ZGRG3qqGW6kFPWp58aBPreylcxCEdg==">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D3C53F4D">
+</div>
+    <div class="main">
+        
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+<td><img id="Gilbert21Banner1_visiontac" src="./The Gilbert 21 Project - contact_files/Visiontac2.gif" style="border-width:0px;"></td>
+<td style="vertical-align:bottom"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height:100%">
+     <td>
+     <span style="font-size:xx-large; font-weight:bold;">The&nbsp;Gilbert&nbsp;21&nbsp;Project</span><br>
+     <span style="font-size:large">Personal&nbsp;Biological&nbsp;Recording&nbsp;Software</span>
+     </td>
+     <td style="padding-left:20px;"><a id="Gilbert21Banner1_HyperLink1" href="http://www.gilbert21.org.uk/default.aspx" style="padding:5px;">Home</a>
+        <a id="Gilbert21Banner1_HyperLink2" href="http://www.gilbert21.org.uk/DataLogger.aspx" style="padding:5px;">Datalogger</a>
+        <a id="Gilbert21Banner1_HyperLink7" href="http://www.gilbert21.org.uk/G21App.aspx" style="padding:5px;">G21App</a>
+        <a id="Gilbert21Banner1_HyperLink3" href="http://www.gilbert21.org.uk/Software.aspx" style="padding:5px;">Software</a>
+        <a id="Gilbert21Banner1_Hyperlink6" href="http://www.gilbert21.org.uk/Downloads.aspx" style="padding:5px;">Downloads</a>
+        <a id="Gilbert21Banner1_Hyperlink5" href="http://www.gilbert21.org.uk/Blog.aspx" style="padding:5px;">Blog</a>
+        <a id="Gilbert21Banner1_Hyperlink4" href="http://www.gilbert21.org.uk/HelpHTML/Gilbert%2021.html" style="padding:5px;">Help</a>
+        <a id="Gilbert21Banner1_Hyperlink9" href="http://www.gilbert21.org.uk/Contact.aspx" style="padding:5px;">Contact</a>
+     </td>
+</tr>
+<tr><td colspan="3"><img src="./The Gilbert 21 Project - contact_files/RedPencil2.gif" alt="Pencil"></td>
+</tr></tbody></table></td>
+<td><img id="Gilbert21Banner1_Image1" src="./The Gilbert 21 Project - contact_files/GilbertWhiteTransH110.gif" style="border-width:0px;"></td>
+</tr>
+<tr><td colspan="3" align="right"><div id="Gilbert21Banner1_PageLinks">
+	<a href="http://www.gilbert21.org.uk/VisiontacVGPS-900.aspx">Using the Visiontac VGPS-900</a><span> | </span><a href="http://www.gilbert21.org.uk/DataLogger.aspx">Data logger</a>
+</div></td></tr>
+</tbody></table>
+
+
+    
+        <div class="page-header">Visiontac VGPS-900 file format</div>
+        <img alt="Visiontac files" src="./The Gilbert 21 Project - contact_files/VisiontacFiles.jpg" style="width: 161px; height: 596px" class="ImageRight">
+                
+        <p>
+            Please note that you don't need to read any of this to use Gilbert 21! This is 
+            merely more information for those who are curious.</p>
+        <p>
+        Whenever the Visointac is used to make a record in the field, the device creates a standard WAV file 
+        which is a voice recording of what was said. The name of 
+        this file is stored in a CSV file which includes the location (WGS 84 
+        latitude and longitude) and the date &amp; time (amongst other things). Whilst it 
+        is switched on the device is also regulary recording your position in this CSV 
+        file - even when you are not recording tags - which means that you end up with 
+        an entire 'track' of where you have been.</p>
+        <p>
+            On the right you can see an image which shows a list of files which would 
+            typically be produced by the Vistiontac device for a single 'trip' where a 
+            number of voice tags were made. In fact this listing is for the files provided 
+            as a <a href="http://www.gilbert21.org.uk/Downloads.aspx">downloadable sample</a>.
+        </p>
+        <p>
+            The image below shows a section of the CSV file (opened in MS Excel).
+        </p>
+        
+            <img alt="Visiontac file format" src="./The Gilbert 21 Project - contact_files/VisiontacFileFormat.jpg" style="width: 500px; height: 159px">
+      
+      <p>
+      The
+          Visiontac is creating a tracking point every few seconds (denoted by 'T' in the 
+          TAG column), but whenever a voice tag is made (denoted by 'V' in the TAG column) 
+          the name of the WAV file (minus the file extension) is stored in the VOX column. 
+          The other columns are fairly self-explanatory: DATE is in the format yymmdd; 
+          TIME is in the format hhmmss; latitude and longitude are in WGS 84 coordinates.</p>
+    </div>
+    </form>
+
+
+</body></html>
